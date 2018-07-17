@@ -1,0 +1,37 @@
+description = "Layout-Core"
+
+[viewBag]
+
+[staticPage]
+useContent = 1
+default = 0
+==
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% partial 'common/head' %}
+</head>
+
+<body class="has-fixed-top">
+  <!-- Header -->
+  <header id="layout-header" class="fixed-top">
+    {% partial 'common/header' %}
+  </header>
+
+  <!-- Content -->
+  <section id="layout-content">
+    {% placeholder layout_content %}
+    {% page %}
+  </section>
+
+  <!-- Footer -->
+  <footer id="layout-footer">
+    {% partial 'common/footer' %}
+  </footer>
+
+  <!-- Scripts -->
+  {% partial 'common/scripts' %}
+</body>
+
+</html>
