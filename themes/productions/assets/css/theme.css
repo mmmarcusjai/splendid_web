@@ -1,3 +1,7 @@
+body {
+    color: #fff;
+}
+
 .font-homenaje {
     font-family: 'Homenaje', sans-serif;
 }
@@ -13,6 +17,10 @@ nav img.home-logo {
 
 nav.scroll-home {
     background-color: #5ea1a5;
+}
+
+nav.scroll-quality {
+    background-color: #260045;
 }
 
 nav.hide {
@@ -39,4 +47,15 @@ nav.hide {
 
 img.followus-icon {
     width: 2%;
+}
+
+/* Page content */
+.title {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
