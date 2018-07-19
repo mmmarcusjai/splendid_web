@@ -3,12 +3,116 @@
     height: 100vh;
     background-color: #5c2c86;
     padding-top: 8rem;
+    background-image: url('../images/quality_safety_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
 }
 
 .quality-content .button-block-container {
     width: 100%;
-    height: 100%;
-    background-image: url('../images/quality_safety_bg.png');
-    background-repeat: no-repeat;
-    background-size: 90%;
+}
+
+/* Hexagon common style */
+.hexagon {
+  position: relative;
+  background-color: #00000000;
+  border-left: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+  transform: rotate(90deg);
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background-color: inherit;
+}
+/* Hexagon 1 */
+#hex-1 {
+    width: 230px;
+    height: 132px;
+    top: 76px;
+    left: -19px;
+}
+
+#hex-1:before,
+#hex-1:after {
+    width: 162px;
+    height: 162px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    left: 32px;
+}
+
+#hex-1:before {
+  top: -81px;
+  border-top: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+}
+
+#hex-1:after {
+  bottom: -81px;
+  border-bottom: solid 1px #ffffff;
+  border-left: solid 1px #ffffff;
+}
+/* Hexagon 2 */
+#hex-2 {
+    width: 375px;
+    height: 216px;
+    top: 106px;
+    left: 168px;
+}
+
+#hex-2:before,
+#hex-2:after {
+    width: 265px;
+    height: 265px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    left: 54px;
+}
+
+#hex-2:before {
+  top: -132px;
+  border-top: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+}
+
+#hex-2:after {
+  bottom: -132px;
+  border-bottom: solid 1px #ffffff;
+  border-left: solid 1px #ffffff;
+}
+/* Hexagon 3 */
+#hex-3 {
+    width: 200px;
+    height: 115px;
+    top: 91px;
+    left: 85px;
+}
+
+#hex-3:before,
+#hex-3:after {
+    width: 141px;
+    height: 141px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    left: 28px;
+}
+
+#hex-3:before {
+  top: -70px;
+  border-top: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+}
+
+#hex-3:after {
+  bottom: -70px;
+  border-bottom: solid 1px #ffffff;
+  border-left: solid 1px #ffffff;
 }
