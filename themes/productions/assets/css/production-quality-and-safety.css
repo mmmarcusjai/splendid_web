@@ -2,23 +2,28 @@
     width: 100%;
     height: 100vh;
     background-color: #5c2c86;
-    padding-top: 8rem;
-    background-image: url('../images/quality_safety_bg.png');
+    padding-top: 9rem;
+    /* background-image: url('../images/quality_safety_bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: bottom;
+    background-position: bottom; */
 }
 
 .quality-content .button-block-container {
     width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    height:81%;
+    position: relative;
 }
 
 /* Hexagon common style */
+
 .hexagon {
   position: relative;
   background-color: #00000000;
-  border-left: solid 1px #ffffff;
-  border-right: solid 1px #ffffff;
+  border-left: solid 1px #ffffff5e;
+  border-right: solid 1px #ffffff5e;
   transform: rotate(90deg);
 }
 
@@ -28,91 +33,236 @@
   position: absolute;
   z-index: 1;
   background-color: inherit;
-}
-/* Hexagon 1 */
-#hex-1 {
-    width: 230px;
-    height: 132px;
-    top: 76px;
-    left: -19px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
 }
 
-#hex-1:before,
-#hex-1:after {
+.hexagon:before {
+    border-top: solid 1px #ffffff5e;
+    border-right: solid 1px #ffffff5e;
+}
+
+.hexagon:after {
+    border-bottom: solid 1px #ffffff5e;
+    border-left: solid 1px #ffffff5e;
+}
+
+/* Hexagon 1 */
+.button-block-container #hex-1 {
+    width: 230px;
+    height: 132px;
+    top: 8%;
+    left: 0%;
+}
+
+.button-block-container #hex-1:before,
+.button-block-container #hex-1:after {
     width: 162px;
     height: 162px;
-    -webkit-transform: scaleY(0.5774) rotate(-45deg);
-    -ms-transform: scaleY(0.5774) rotate(-45deg);
-    transform: scaleY(0.5774) rotate(-45deg);
     left: 32px;
 }
 
-#hex-1:before {
-  top: -81px;
-  border-top: solid 1px #ffffff;
-  border-right: solid 1px #ffffff;
+.button-block-container #hex-1:before{
+    top: -81px;
 }
 
-#hex-1:after {
-  bottom: -81px;
-  border-bottom: solid 1px #ffffff;
-  border-left: solid 1px #ffffff;
+.button-block-container #hex-1:after{
+    bottom: -81px;
 }
 /* Hexagon 2 */
-#hex-2 {
+.button-block-container #hex-2 {
     width: 375px;
     height: 216px;
-    top: 106px;
-    left: 168px;
+    top: 12%;
+    left: 8%;
 }
 
-#hex-2:before,
-#hex-2:after {
+.button-block-container #hex-2:before,
+.button-block-container #hex-2:after {
     width: 265px;
     height: 265px;
-    -webkit-transform: scaleY(0.5774) rotate(-45deg);
-    -ms-transform: scaleY(0.5774) rotate(-45deg);
-    transform: scaleY(0.5774) rotate(-45deg);
     left: 54px;
 }
 
-#hex-2:before {
-  top: -132px;
-  border-top: solid 1px #ffffff;
-  border-right: solid 1px #ffffff;
+.button-block-container #hex-2:before {
+    top: -132px;
 }
 
-#hex-2:after {
-  bottom: -132px;
-  border-bottom: solid 1px #ffffff;
-  border-left: solid 1px #ffffff;
+.button-block-container #hex-2:after {
+    bottom: -132px;
 }
 /* Hexagon 3 */
-#hex-3 {
+.button-block-container #hex-3 {
     width: 200px;
     height: 115px;
-    top: 91px;
-    left: 85px;
+    top: 10%;
+    left: 4%;
 }
 
-#hex-3:before,
-#hex-3:after {
+.button-block-container #hex-3:before,
+.button-block-container #hex-3:after {
     width: 141px;
     height: 141px;
-    -webkit-transform: scaleY(0.5774) rotate(-45deg);
-    -ms-transform: scaleY(0.5774) rotate(-45deg);
-    transform: scaleY(0.5774) rotate(-45deg);
     left: 28px;
 }
 
-#hex-3:before {
-  top: -70px;
-  border-top: solid 1px #ffffff;
-  border-right: solid 1px #ffffff;
+.button-block-container #hex-3:before {
+    top: -70px;
 }
 
-#hex-3:after {
-  bottom: -70px;
-  border-bottom: solid 1px #ffffff;
-  border-left: solid 1px #ffffff;
+.button-block-container #hex-3:after {
+    bottom: -70px;
+}
+/* Hexagon 4 */
+.button-block-container #hex-4 {
+    width: 230px;
+    height: 132px;
+    top: 16%;
+    left: 57%;
+}
+.button-block-container #hex-4:before,
+.button-block-container #hex-4:after {
+    width: 162px;
+    height: 162px;
+    left: 32px;
+}
+
+.button-block-container #hex-4:before{
+    top: -81px;
+}
+
+.button-block-container #hex-4:after{
+    bottom: -81px;
+}
+/* Hexagon 5 */
+.button-block-container #hex-5 {
+    width: 400px;
+    height: 230px;
+    top: 0%;
+    left: 66%;
+}
+
+.button-block-container #hex-5:before,
+.button-block-container #hex-5:after {
+    width: 282px;
+    height: 282px;
+    left: 57px;
+}
+
+.button-block-container #hex-5:before {
+    top: -141px;
+}
+
+.button-block-container #hex-5:after {
+    bottom: -141px;
+}
+/* Hexagon 6 */
+.button-block-container #hex-6 {
+    width: 220px;
+    height: 127px;
+    top: -40%;
+    left: 79%;
+}
+.button-block-container #hex-6:before,
+.button-block-container #hex-6:after {
+    width: 155px;
+    height: 155px;
+    left: 31px;
+}
+
+.button-block-container #hex-6:before{
+    top: -77px;
+}
+
+.button-block-container #hex-6:after{
+    bottom: -77px;
+}
+
+/* Hexagon Block item */
+.button-block-container .hex-row {
+    position: absolute;
+    z-index: 1;
+}
+
+.heax-item {
+    width: 189px;
+    height: 230px;
+    position: relative;
+    display: inline-block;
+}
+
+.hexagon-btn {
+    overflow: hidden;
+    visibility: hidden;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.hexagon-btn.even-down {
+    margin-top: 53%;
+}
+
+.hexagon-btn.even-up {
+    margin-top: -55%;
+}
+
+.hexagon2 {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    top: -85px;
+}
+
+.hexagon-in1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+
+.hexagon-in2 {
+    /* -webkit-box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48);
+    box-shadow: inset 0 0 0 200px rgba(176, 218, 212, 0.48); */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    -webkit-background-size: 125%;
+    -moz-background-size: 125%;
+    background-size: 100%;
+    visibility: visible;
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#hex-row-1 {
+    margin: 4% 2%;
+}
+
+#hex-row-2 {
+    margin-left: 55%;
+    margin-top: 10%;
+}
+
+#hex-row-3 {
+    margin-top: 31%;
+    margin-left: 2%;
 }
