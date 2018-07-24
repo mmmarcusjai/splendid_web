@@ -13,7 +13,7 @@ window.onscroll = () => {
     } else if(this.scrollY >= quality_top){
         class_name = 'scroll-quality';
         vid.pause();
-    } else if(this.scrollY > facilities_top && this.scrollY < quality_top) {
+    } else if(this.scrollY >= facilities_top) {
         class_name = 'hide';
         vid.play();
     } else {
@@ -23,3 +23,14 @@ window.onscroll = () => {
 
     nav.className = class_name;
 };
+
+function show_home_popup(target) {
+    // var popup = document.querySelector('.home-popup');
+    // var popup_content = document.querySelector('.popup-content > .content[data-index='+target+']');
+    $('.home-popup').addClass('show-popup');
+    // popup_content.style.display = 'block';
+}
+
+function hide_popup() {
+    $('.home-popup').removeClass('show-popup');
+}

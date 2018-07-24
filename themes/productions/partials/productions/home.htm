@@ -7,29 +7,43 @@ description = "Production-home"
 {% endput %}
 <section id="home">
     <div class="home">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col left-content">
-                    <div class="title font-homenaje">
-                        <p>People On the Move</p>
-                    </div>
-                    <div class="sub-title font-homenaje">
-                        <p>We can make anthing possible!</p>
-                    </div>
-                    <br>
-                    <div class="home-content font-lato">
-                        <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
-                        <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
-                        <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
+                <div class="col-xl-6 col-md-12">
+                    <div class="left-content">
+                        <div class="title font-homenaje">
+                            <p>People On the Move</p>
+                        </div>
+                        <div class="sub-title font-homenaje">
+                            <p>We can make anthing possible!</p>
+                        </div>
+                        <br>
+                        <div class="home-content font-lato">
+                            <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
+                            <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
+                            <p>We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!We can make anthing possible!</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col right-content">
-                    <div class="home-gif">
-                        <img src="{{ 'productions/home-n.gif'|media }}" />
+                <div class="col-xl-6 col-md-12">
+                    <div class="right-content">
+                        <!-- <img src="{{ 'productions/home-n.gif'|media }}" /> -->
+                        <div class="home-gif">
+                            <div class="home-pin" id="home-pro-pin" data-toggle="pro"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {% partial "productions/come-together" %}
+    <div class="home-popup" id="popup-bg">
+        <div class="popup-base">
+            <div class="close-container"><img class="close" src="{{ 'productions/cross.png'|media }}" /></div>
+            <div class="popup-content container">
+                <div class="row">
+                    {% partial "productions/come-together" %}
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

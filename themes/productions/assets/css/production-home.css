@@ -1,23 +1,118 @@
 .home {
     width: 100%;
-    height: 100vh;
+    height: 105vh;
     background-color: #80cfd4;
     padding-top: 8rem;
 }
 
 .home .left-content {
     margin-top: 8rem;
+    padding-left: 10rem;
+}
+
+.home .right-content {
+    /* background-color: #ffffff00;
+    opacity: 0.5; */
 }
 
 .home-content {
     font-size: 1em;
-    font-weight: lighter;
+    font-weight: 300;
 }
+
 
 .home-gif {
-    text-align: center;
+    /* text-align: center; */
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url(../images/home-n.gif);
+    /* background-size: 130%; */
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
-.home-gif img{
+/* .home-gif img{
     width: 100%;
+} */
+
+.home-gif .home-pin{
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+
+}
+
+.home-gif .home-pin#home-pro-pin {
+    top: 10%;
+    left: 50%;
+    transform: rotate(30deg);
+    transform-origin: 15%;
+    width: 35%;
+    height: 10%;
+}
+
+/* Home popup */
+.home-popup#popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0000006b;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    /* display: none; */
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.home-popup .popup-base {
+    background-color: #80cfd4;
+    height: 85%;
+    margin: 5%;
+    width: 90%;
+    padding: 20px;
+
+}
+
+.home-popup .close-container {
+    height: 30px;
+}
+
+.home-popup .close-container img.close{
+    width: 2%;
+}
+
+.home-popup#popup-bg.show-popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 1200px) {
+    .home {
+        height: auto;
+    }
+
+    .home .left-content {
+        padding-left: unset;
+    }
+
+    /* .home-gif {
+        background-size: 100%;
+    } */
+}
+
+/*
+@media screen and (max-width: 768px) {
+    .home-gif {
+        background-size: 150%;
+    }
+}
+ */
+@media screen and (max-width: 425px) {
+    .home-gif {
+        background-size: 100%;
+    }
 }
