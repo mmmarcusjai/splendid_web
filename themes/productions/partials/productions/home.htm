@@ -11,10 +11,10 @@ description = "Production-home"
             <div class="row">
                 <div class="col-xl-6 col-md-12">
                     <div class="left-content">
-                        <div class="title font-homenaje">
+                        <div class="title text-uppercase font-homenaje">
                             <p>People On the Move</p>
                         </div>
-                        <div class="sub-title font-homenaje">
+                        <div class="sub-title text-uppercase font-homenaje">
                             <p>We can make anthing possible!</p>
                         </div>
                         <br>
@@ -40,10 +40,10 @@ description = "Production-home"
         </div>
     </div>
     <div class="home-popup" id="popup-bg">
-        <div class="popup-base">
+        <div class="popup-base base-bg">
             <div class="close-container"><img class="close" src="{{ 'productions/cross.png'|media }}" /></div>
-            <div class="popup-arrow" id="left-arrow" target=""><img src="{{ 'productions/left_arrow.png'|media }}"/></div>
-            <div class="popup-arrow" id="right-arrow" target=""><img src="{{ 'productions/right_arrow.png'|media }}"/></div>
+            <div class="popup-arrow" id="left-arrow" toggle="" target=""><img src="{{ 'productions/left_arrow.png'|media }}"/></div>
+            <div class="popup-arrow" id="right-arrow"toggle="" target=""><img src="{{ 'productions/right_arrow.png'|media }}"/></div>
             {% partial "productions/come-together" %}
             {% partial "productions/design-and-innovation" %}
             {% partial "productions/produce" %}

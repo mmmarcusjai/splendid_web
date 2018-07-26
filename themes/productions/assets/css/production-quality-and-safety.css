@@ -21,6 +21,10 @@
     position: relative;
 }
 
+.quality-content .content {
+    font-weight: 300;
+}
+
 /* Hexagon common style */
 
 .hexagon {

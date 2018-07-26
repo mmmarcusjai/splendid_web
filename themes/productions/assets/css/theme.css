@@ -28,6 +28,10 @@ nav.scroll-quality {
     background-color: #260045;
 }
 
+nav.scroll-sustainability {
+    background-color: #008b54;
+}
+
 nav.hide {
     transform: translateY(-100%);
     transition: 0.5s ease;
@@ -57,10 +61,8 @@ img.followus-icon {
 /* Page content */
 .title {
     font-size: 3em;
-    text-transform: uppercase;
 }
 
 .sub-title {
     font-size: 1.5em;
-    text-transform: uppercase;
 }

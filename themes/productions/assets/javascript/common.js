@@ -1,10 +1,18 @@
+AOS.init();
 var facilities_top = document.querySelector('.facilities').offsetTop;
 var quality_top = document.querySelector('.quality-content').offsetTop;
+var sustainability_top = document.querySelector('.sustainability').offsetTop;
 var vid = document.querySelector('.facilities video');
 
 var curr_popup_index = 0;
 var total_home_popup = $('.home-pin').length;
-
+var home_popup_arr = {
+    1: 'pro',
+    2: 'du',
+    3: 'ct',
+    4: 'io',
+    5: 'ns',
+}
 window.onscroll = () => {
     const nav = document.querySelector('nav');
     var class_name = '';
@@ -13,17 +21,22 @@ window.onscroll = () => {
     if(this.scrollY <= 10) {
         class_name = '';
         vid.pause();
-    } else if(this.scrollY >= quality_top){
-        class_name = 'scroll-quality';
-        vid.pause();
-    } else if(this.scrollY >= facilities_top) {
+    } else if(this.scrollY >= facilities_top && this.scrollY < quality_top) {
         class_name = 'hide';
         vid.play();
+    } else if(this.scrollY >= quality_top && this.scrollY < sustainability_top){
+        class_name = 'scroll-quality';
+        vid.pause();
+    } else if(this.scrollY >= sustainability_top) {
+        class_name = 'scroll-sustainability';
+        vid.pause();
     } else {
         class_name = 'scroll-home';
         vid.pause();
     }
-
+    // console.log('scrollY :::: ' + scrollY);
+    // console.log('sustainability_top ::::: ' + sustainability_top);
+    // console.log('class ::::: ' + class_name);
     nav.className = class_name;
 };
 
@@ -54,6 +67,7 @@ function change_home_popup_content(target) {
     curr_popup_index = target;
     update_home_popup_target();
     $('.popup-content').addClass('d-none');
+    $('.home-popup .popup-base.base-bg').css('background-image', 'url(themes/productions/assets/images/'+target+'_bg.png)');
     $('.popup-content[data-index="'+target+'"]').removeClass('d-none');
 }
 
@@ -69,10 +83,6 @@ function update_home_popup_target() {
         prev_index = total_home_popup;
         $('.popup-arrow[id=left-arrow]').attr('target', prev_index);
     }
-
-    console.log('prev_index ::::: ' + prev_index);
-    console.log('next_index ::::: ' + next_index);
-    console.log('curr_popup_index ::::: ' + curr_popup_index);
 }
 
 function hide_popup() {

@@ -1,0 +1,53 @@
+.sustainability {
+    width: 100%;
+    height: 100vh;
+    background-color: #00bc71;
+    padding-top: 8rem;
+}
+
+.sustainability .sustainability-content {
+    text-align: center;
+    height: 40%;
+}
+
+.sustainability .sustainability-content-container {
+    margin: auto;
+}
+
+.sustainability .sustainability-text-content {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.sustainability .sustainability-flip-object{
+    height: calc(100vh - 8rem - 40%);
+    text-align: center;
+}
+
+.sustainability .sustainability-flip-object .flip-object {
+    width: 45%;
+}
+
+.sustainability .object-container {
+    position: relative;
+}
+
+.sustainability .object-container .control{
+    position: absolute;
+    z-index: 1;
+}
+.sustainability .object-container .control#left{
+    left: 20%;
+    top: 38%;
+}
+
+.sustainability .object-container .control#right{
+    left: 79%;
+    top: 38%;
+}
+
+@media screen and (max-width: 1200px) {
+    .sustainability {
+        height: auto;
+    }
+}
