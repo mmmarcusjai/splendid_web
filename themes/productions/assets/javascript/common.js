@@ -40,6 +40,46 @@ window.onscroll = () => {
     nav.className = class_name;
 };
 
+let touchstartX = 0;
+let touchstartY = 0;
+let touchendX = 0;
+let touchendY = 0;
+
+const gestureZone = document.getElementById('object-container');
+
+gestureZone.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+}, false);
+
+gestureZone.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+}, false);
+
+function handleGesture() {
+    if (touchendX <= touchstartX) {
+        alert('Swiped left');
+    }
+
+    if (touchendX >= touchstartX) {
+        alert('Swiped right');
+    }
+
+    if (touchendY <= touchstartY) {
+        alert('Swiped up');
+    }
+
+    if (touchendY >= touchstartY) {
+        alert('Swiped down');
+    }
+
+    if (touchendY === touchstartY) {
+        alert('Tap');
+    }
+}
+
 $('document').ready(function() {
     $('.home-pin').on('click', function() {
         var index = $(this).attr('data-index');

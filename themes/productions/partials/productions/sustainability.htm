@@ -6,18 +6,20 @@ description = "Production-Sustainability"
 {% put styles %}
     <link href="{{ 'assets/css/production-sustainability.css'|theme }}" rel="stylesheet">
 {% endput %}
-<script src="{{ 'assets/javascript/three.js'|theme }}"></script>
+<!-- <script src="{{ 'assets/javascript/three.js'|theme }}"></script>
 <script src="{{ 'assets/javascript/Detector.js'|theme }}"></script>
 <script src="{{ 'assets/javascript/OrbitControls.js'|theme }}"></script>
 <script src="{{ 'assets/javascript/OBJLoader.js'|theme }}"></script>
-<script src="{{ 'assets/javascript/MTLLoader.js'|theme }}"></script>
+<script src="{{ 'assets/javascript/MTLLoader.js'|theme }}"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
 <section id="sustainability">
     <div class="sustainability">
         <div class="container sustainability-content">
             <div class="row">
                 <div class="col-xl-6 sustainability-content-container">
                     <div class="title font-homenaje text-uppercase" data-aos="fade-down">
-                        <p>Susrainability and Social Responsibilities</p>
+                        <p>Sustainability and Social Responsibilities</p>
                     </div>
                     <div class="sustainability-text-content font-lato" data-aos="fade-up" data-aos-delay="300" data-aos-offset="0">
                         <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
@@ -26,156 +28,42 @@ description = "Production-Sustainability"
             </div>
         </div>
         <div class="container sustainability-flip-object">
-            <div class="row">
-                <!-- <div class="col-xl-12 object-container" id="object-container">
-                    <i class="control fa fa-angle-left fa-3x" id="left"></i>
-                    <i class="control fa fa-angle-right fa-3x" id="right"></i>
-                    <div class="objects" data-aos="flip-left" data-aos-delay="500">
-                        <img class="flip-object" src="{{ 'productions/sustainability_base.png'|media }}" />
+            <div class="row sustainability-flip-content">
+                <div class="col-xl-12 object-container" id="object-container">
+                    <!-- <i class="control fa fa-angle-left fa-3x" id="left"></i>
+                    <i class="control fa fa-angle-right fa-3x" id="right"></i> -->
+                    <!-- <div class="objects" data-aos="flip-left" data-aos-delay="500">
+                        <div class="flip-object d-none"><img class="flip-img" src="{{ 'productions/sustainability_base.png'|media }}" /></div>
+                        <div class="flip-object"><img class="flip-img" src="{{ 'productions/sustainability_face_1.png'|media }}" /></div>
                     </div> -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" id="slide-1"></div>
+                            <div class="swiper-slide" id="slide-2"></div>
+                        </div>
+
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script>
-
-    if (!Detector.webgl) {
-        Detector.addGetWebGLMessage();
-    }
-
-    var container;
-
-    var camera, controls, scene, renderer;
-    var lighting, ambient, keyLight, fillLight, backLight;
-
-    init();
-    animate();
-
-    function init() {
-
-        // container = document.createElement('div');
-        container = document.getElementById('object-container');
-        // document.body.appendChild(container);
-
-        /* Camera */
-
-        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.z = 3;
-
-        /* Scene */
-
-        scene = new THREE.Scene();
-        lighting = false;
-
-        ambient = new THREE.AmbientLight(0xffffff, 1.0);
-        scene.add(ambient);
-
-        keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-        keyLight.position.set(-100, 0, 100);
-
-        fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 0.75);
-        fillLight.position.set(100, 0, 100);
-
-        backLight = new THREE.DirectionalLight(0xffffff, 1.0);
-        backLight.position.set(100, 0, -100).normalize();
-
-        /* Model */
-
-        var mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setBaseUrl('themes/productions/assets/3d_model/');
-        mtlLoader.setPath('themes/productions/assets/3d_model/');
-        mtlLoader.load('female-croupier-2013-03-26.mtl', function (materials) {
-
-            materials.preload();
-
-            materials.materials.default.map.magFilter = THREE.NearestFilter;
-            materials.materials.default.map.minFilter = THREE.LinearFilter;
-
-            var objLoader = new THREE.OBJLoader();
-            objLoader.setMaterials(materials);
-            objLoader.setPath('themes/productions/assets/3d_model/');
-            objLoader.load('female-croupier-2013-03-26.obj', function (object) {
-
-                scene.add(object);
-
-            });
-
-        });
-
-        /* Renderer */
-
-        renderer = new THREE.WebGLRenderer();
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setClearColor(new THREE.Color("hsl(0, 0%, 10%)"));
-
-        container.appendChild(renderer.domElement);
-        // $(renderer.domElement).appendTo($('.object-container'));
-
-        /* Controls */
-
-        controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.enableZoom = false;
-
-        /* Events */
-
-        window.addEventListener('resize', onWindowResize, false);
-        window.addEventListener('keydown', onKeyboardEvent, false);
-
-    }
-
-    function onWindowResize() {
-
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-    }
-
-    function onKeyboardEvent(e) {
-
-        if (e.code === 'KeyL') {
-
-            lighting = !lighting;
-
-            if (lighting) {
-
-                ambient.intensity = 0.25;
-                scene.add(keyLight);
-                scene.add(fillLight);
-                scene.add(backLight);
-
-            } else {
-
-                ambient.intensity = 1.0;
-                scene.remove(keyLight);
-                scene.remove(fillLight);
-                scene.remove(backLight);
-
-            }
-
-        }
-
-    }
-
-    function animate() {
-
-        requestAnimationFrame(animate);
-
-        controls.update();
-
-        render();
-
-    }
-
-    function render() {
-
-        renderer.render(scene, camera);
-
-    }
-
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'flip',
+        grabCursor: true,
+        pagination: {
+        el: '.swiper-pagination',
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    });
 </script>

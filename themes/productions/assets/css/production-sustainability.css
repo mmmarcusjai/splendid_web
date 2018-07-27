@@ -3,6 +3,9 @@
     height: 100vh;
     background-color: #00bc71;
     padding-top: 8rem;
+    background-image: url(../images/sustainability_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .sustainability .sustainability-content {
@@ -24,7 +27,15 @@
     text-align: center;
 }
 
-.sustainability .sustainability-flip-object .flip-object {
+.sustainability .sustainability-flip-content {
+    height: 100%;
+}
+
+.sustainability .sustainability-flip-object .flip-object{
+    position: absolute;
+}
+
+.sustainability .sustainability-flip-object .flip-img {
     width: 45%;
 }
 
@@ -38,12 +49,93 @@
 }
 .sustainability .object-container .control#left{
     left: 20%;
-    top: 38%;
+    /* top: 38%; */
+    margin-top: 16%;
 }
 
 .sustainability .object-container .control#right{
     left: 79%;
-    top: 38%;
+    /* top: 38%; */
+    margin-top: 16%;
+}
+
+.swiper-container {
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide#slide-1 {
+    background-image: url(../images/sustainability_base.png);
+}
+
+.swiper-slide#slide-2 {
+    background-image: url(../images/sustainability_face_1.png);
+}
+
+
+.flip-vertical-right {
+	-webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
+
+@-webkit-keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+@keyframes flip-vertical-right {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+.flip-vertical-left {
+	-webkit-animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+	        animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
+
+@-webkit-keyframes flip-vertical-left {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  98% {
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+  }
+  100% {
+            visibility: hidden;
+  }
+}
+@keyframes flip-vertical-left {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  98% {
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+  }
+  100% {
+            visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 1200px) {
