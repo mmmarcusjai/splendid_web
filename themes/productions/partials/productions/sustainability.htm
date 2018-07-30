@@ -6,13 +6,11 @@ description = "Production-Sustainability"
 {% put styles %}
     <link href="{{ 'assets/css/production-sustainability.css'|theme }}" rel="stylesheet">
 {% endput %}
-<!-- <script src="{{ 'assets/javascript/three.js'|theme }}"></script>
-<script src="{{ 'assets/javascript/Detector.js'|theme }}"></script>
-<script src="{{ 'assets/javascript/OrbitControls.js'|theme }}"></script>
-<script src="{{ 'assets/javascript/OBJLoader.js'|theme }}"></script>
-<script src="{{ 'assets/javascript/MTLLoader.js'|theme }}"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+{% put scripts %}
+    <script src="{{ 'assets/javascript/sustainability.js'|theme }}"></script>
+{% endput %}
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css"> -->
 <section id="sustainability">
     <div class="sustainability">
         <div class="container sustainability-content">
@@ -30,40 +28,39 @@ description = "Production-Sustainability"
         <div class="container sustainability-flip-object">
             <div class="row sustainability-flip-content">
                 <div class="col-xl-12 object-container" id="object-container">
-                    <!-- <i class="control fa fa-angle-left fa-3x" id="left"></i>
-                    <i class="control fa fa-angle-right fa-3x" id="right"></i> -->
-                    <!-- <div class="objects" data-aos="flip-left" data-aos-delay="500">
-                        <div class="flip-object d-none"><img class="flip-img" src="{{ 'productions/sustainability_base.png'|media }}" /></div>
-                        <div class="flip-object"><img class="flip-img" src="{{ 'productions/sustainability_face_1.png'|media }}" /></div>
-                    </div> -->
-                    <div class="swiper-container">
+                    <i class="control disable fa fa-angle-left fa-3x" id="left" to=""></i>
+                    <i class="control fa fa-angle-right fa-3x" id="right" to="27"></i>
+                    <div class="animate-area"></div>
+
+                    <!-- Swiper JS -->
+                    <!--div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" id="slide-1"></div>
                             <div class="swiper-slide" id="slide-2"></div>
                         </div>
-
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-
-                        <!-- Add Arrows -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-                    </div>
+                    </div-->
+
                 </div>
             </div>
         </div>
     </div>
 </section>
 <script type="text/javascript">
+    /*
     var swiper = new Swiper('.swiper-container', {
+        flipEffect: {
+            slideShadows: false,
+        },
         effect: 'flip',
         grabCursor: true,
-        pagination: {
-        el: '.swiper-pagination',
-        },
         navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        },
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
     });
+    */
+    // var sustain_prev = 1;
+    // var sustain_next = 15;
 </script>

@@ -13,72 +13,16 @@ var home_popup_arr = {
     4: 'io',
     5: 'ns',
 }
+window.onresize = () => {
+    facilities_top = document.querySelector('.facilities').offsetTop;
+    quality_top = document.querySelector('.quality-content').offsetTop;
+    sustainability_top = document.querySelector('.sustainability').offsetTop;
+    update_nav_class(this.scrollY);
+}
 window.onscroll = () => {
-    const nav = document.querySelector('nav');
-    var class_name = '';
-    var position;
-
-    if(this.scrollY <= 10) {
-        class_name = '';
-        vid.pause();
-    } else if(this.scrollY >= facilities_top && this.scrollY < quality_top) {
-        class_name = 'hide';
-        vid.play();
-    } else if(this.scrollY >= quality_top && this.scrollY < sustainability_top){
-        class_name = 'scroll-quality';
-        vid.pause();
-    } else if(this.scrollY >= sustainability_top) {
-        class_name = 'scroll-sustainability';
-        vid.pause();
-    } else {
-        class_name = 'scroll-home';
-        vid.pause();
-    }
-    // console.log('scrollY :::: ' + scrollY);
-    // console.log('sustainability_top ::::: ' + sustainability_top);
-    // console.log('class ::::: ' + class_name);
-    nav.className = class_name;
+    update_nav_class(this.scrollY);
 };
 
-let touchstartX = 0;
-let touchstartY = 0;
-let touchendX = 0;
-let touchendY = 0;
-
-const gestureZone = document.getElementById('object-container');
-
-gestureZone.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
-
-gestureZone.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesture();
-}, false);
-
-function handleGesture() {
-    if (touchendX <= touchstartX) {
-        alert('Swiped left');
-    }
-
-    if (touchendX >= touchstartX) {
-        alert('Swiped right');
-    }
-
-    if (touchendY <= touchstartY) {
-        alert('Swiped up');
-    }
-
-    if (touchendY >= touchstartY) {
-        alert('Swiped down');
-    }
-
-    if (touchendY === touchstartY) {
-        alert('Tap');
-    }
-}
 
 $('document').ready(function() {
     $('.home-pin').on('click', function() {
@@ -95,6 +39,32 @@ $('document').ready(function() {
         change_home_popup_content(target)
     });
 });
+
+function update_nav_class(scroll_y) {
+    const nav = document.querySelector('nav');
+    var class_name = '';
+
+    if(scroll_y <= 10) {
+        class_name = '';
+        vid.pause();
+    } else if(scroll_y >= facilities_top && scroll_y < quality_top) {
+        class_name = 'hide';
+        vid.play();
+    } else if(scroll_y >= quality_top && scroll_y < sustainability_top){
+        class_name = 'scroll-quality';
+        vid.pause();
+    } else if(scroll_y >= sustainability_top) {
+        class_name = 'scroll-sustainability';
+        vid.pause();
+    } else {
+        class_name = 'scroll-home';
+        vid.pause();
+    }
+    // console.log('scrollY :::: ' + scrollY);
+    // console.log('sustainability_top ::::: ' + sustainability_top);
+    // console.log('class ::::: ' + class_name);
+    nav.className = class_name;
+}
 
 function show_home_popup(target) {
     $('html, body').css('overflow', 'hidden');
