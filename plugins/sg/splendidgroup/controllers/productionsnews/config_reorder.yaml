@@ -1,0 +1,4 @@
+title: ProductionsNews
+modelClass: sg\SplendidGroup\Models\ProductionsNews
+toolbar:
+    buttons: reorder_toolbar

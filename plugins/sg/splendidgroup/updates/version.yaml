@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table sg_splendidgroup_production_news'
+    - builder_table_create_sg_splendidgroup_production_news.php
+1.0.3:
+    - 'Updated table sg_splendidgroup_production_news'
+    - builder_table_update_sg_splendidgroup_production_news.php
+1.0.4:
+    - 'Updated table sg_splendidgroup_production_news'
+    - builder_table_update_sg_splendidgroup_production_news_2.php

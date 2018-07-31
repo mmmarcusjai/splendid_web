@@ -1,0 +1,20 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    content:
+        label: Content
+        size: ''
+        span: full
+        type: richeditor
+    news_image:
+        label: 'News image'
+        mode: image
+        span: full
+        type: mediafinder
+    news_image_thumbnail:
+        label: 'News image(Thumbnail)'
+        mode: image
+        span: full
+        type: mediafinder

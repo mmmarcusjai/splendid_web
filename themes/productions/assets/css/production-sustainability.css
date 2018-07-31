@@ -3,10 +3,19 @@
     height: 100vh;
     background-color: #00bc71;
     padding-top: 8rem;
-    background-image: url(../images/sustainability_bg.png);
+    /* background-image: url(../images/sustainability_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: top; */
+    min-height: 1000px;
+}
+
+.sustainability .sustainability-part-bg  {
+    position: absolute;
+}
+
+.sustainability .sustainability-part-bg img {
+    width: 29%;
 }
 
 .sustainability .sustainability-content {
@@ -90,10 +99,9 @@
 .sustainability .animate-area {
     width: 700px;
     height: 616px;
-    /* width: 213px;
-    height: 500px; */
     background: url(../images/sustainability_frame.png) no-repeat 0 0;
     margin: auto;
+    margin-top: -9%;
 
 }
 /*

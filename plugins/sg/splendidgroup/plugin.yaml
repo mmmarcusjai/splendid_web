@@ -1,0 +1,16 @@
+plugin:
+    name: 'sg.splendidgroup::lang.plugin.name'
+    description: 'sg.splendidgroup::lang.plugin.description'
+    author: sg
+    icon: oc-icon-codepen
+    homepage: ''
+navigation:
+    productions:
+        label: Productions
+        url: sg/splendidgroup/productionsnews
+        icon: icon-connectdevelop
+        sideMenu:
+            production-news:
+                label: News
+                url: sg/splendidgroup/productionsnews
+                icon: icon-newspaper-o

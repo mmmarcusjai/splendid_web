@@ -1,0 +1,10 @@
+name: ProductionsNews
+form: $/sg/splendidgroup/models/productionsnews/fields.yaml
+modelClass: sg\SplendidGroup\Models\ProductionsNews
+defaultRedirect: sg/splendidgroup/productionsnews
+create:
+    redirect: 'sg/splendidgroup/productionsnews/update/:id'
+    redirectClose: sg/splendidgroup/productionsnews
+update:
+    redirect: sg/splendidgroup/productionsnews
+    redirectClose: sg/splendidgroup/productionsnews

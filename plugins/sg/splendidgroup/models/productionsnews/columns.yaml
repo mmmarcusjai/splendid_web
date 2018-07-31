@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: id
+        type: text
+    title:
+        label: title
+        type: text
+    content:
+        label: content
+        type: text
+    news_image:
+        label: news_image
+        type: text
+    news_image_thumbnail:
+        label: news_image_thumbnail
+        type: text
+    sort_index:
+        label: sort_index
+        type: number
+        invisible: true
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        invisible: true
