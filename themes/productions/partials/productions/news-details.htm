@@ -1,0 +1,26 @@
+description = "Production-News details"
+
+[builderDetails newsDetails]
+modelClass = "sg\SplendidGroup\Models\ProductionsNews"
+identifierValue = "{{ :newsid }}"
+modelKeyColumn = "id"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[viewBag]
+==
+{% put styles %}
+    <link href="{{ 'assets/css/production-news.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="news">
+    <div class="news">
+        {% set newsInfo = newsDetails.record %}
+        <div class="news-details">
+            <span>ID: {{ newsInfo.id }}</span>
+            <br>
+            <div>Content: {{ newsInfo.content | nl2br }}</div>
+            <br>
+            <span>Image: s{{ newsInfo.news_image|media }}</span>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,7 @@
-var frame_display_arr = [1, 27, 53];
+var frame_display_arr = [1, 25, 49];
 var instance = $(".animate-area").spriteClip({
-totalFrames: 78,
-frameRate: 40,
+totalFrames: 72,
+frameRate: 50,
 // stops: [1, 15],
 // frameWidth: 500,
 }).data("spriteClip");
