@@ -3,6 +3,7 @@ var facilities_top = document.querySelector('.facilities').offsetTop;
 var quality_top = document.querySelector('.quality-content').offsetTop;
 var sustainability_top = document.querySelector('.sustainability').offsetTop;
 var news_top = document.querySelector('.news').offsetTop;
+var contactus_top = document.querySelector('.contact-us').offsetTop;
 var vid = document.querySelector('.facilities video');
 
 var curr_popup_index = 0;
@@ -40,6 +41,14 @@ $('document').ready(function() {
         var target = $(this).attr('target');
         change_home_popup_content(target)
     });
+
+    // setTimeout(function() {
+        if(fromDetails && fromDetails != undefined) {
+            $('html, body').animate({
+                scrollTop: news_top + 9 + 'rem'
+            });
+        }
+    // }, 3000);
 });
 
 function update_nav_class(scroll_y) {
@@ -58,8 +67,11 @@ function update_nav_class(scroll_y) {
     } else if(scroll_y >= sustainability_top && scroll_y < news_top) {
         class_name = 'scroll-sustainability';
         vid.pause();
-    } else if(scroll_y >= news_top) {
+    } else if(scroll_y >= news_top && scroll_y < contactus_top) {
         class_name = 'scroll-news';
+        vid.pause();
+    } else if(scroll_y >= contactus_top ) {
+        class_name = 'scroll-contactus';
         vid.pause();
     } else {
         class_name = 'scroll-home';

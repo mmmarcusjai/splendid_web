@@ -1,13 +1,13 @@
 .sustainability {
     width: 100%;
     height: 100vh;
+    min-height: 900px;
     background-color: #00bc71;
     padding-top: 8rem;
     /* background-image: url(../images/sustainability_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top; */
-    min-height: 1000px;
 }
 
 .sustainability .sustainability-part-bg  {

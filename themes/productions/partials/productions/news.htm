@@ -2,7 +2,6 @@ description = "Production-News"
 
 [viewBag]
 ==
-
 {% put styles %}
     <link href="{{ 'assets/css/production-news.css'|theme }}" rel="stylesheet">
 {% endput %}
@@ -20,24 +19,17 @@ description = "Production-News"
                 </div>
                 <div class="col-xl-9 col-md-12 news-list">
                     <ul id="hexGrid">
-                        <li class="hex">
-                            <div class="hexIn">
-                                <a class="hexLink" href="#">
-                                    <img class="hex-main" src="https://farm9.staticflickr.com/8461/8048823381_0fbc2d8efb.jpg" alt="" />
-                                    <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                    <h1 class="font-homenaje">This is a title</h1>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="hex">
-                            <div class="hexIn">
-                                <a class="hexLink" href="#">
-                                    <img class="hex-main" src="https://farm5.staticflickr.com/4144/5053682635_b348b24698.jpg" alt="" />
-                                    <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                    <h1 class="font-homenaje">This is a title</h1>
-                                </a>
-                            </div>
-                        </li>
+                    {% for record in coreList.records %}
+                    <li class="hex">
+                        <div class="hexIn">
+                            <a class="hexLink" href="./productions-news/{{record.id}}">
+                                <img class="hex-main" src="{{ record.news_image|media }}" alt="" />
+                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
+                                <h1 class="font-homenaje">{{ record.title }}</h1>
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
                     </ul>
                 </div>
             </div>

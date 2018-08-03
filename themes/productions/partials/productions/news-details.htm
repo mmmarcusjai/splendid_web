@@ -1,12 +1,5 @@
 description = "Production-News details"
 
-[builderDetails newsDetails]
-modelClass = "sg\SplendidGroup\Models\ProductionsNews"
-identifierValue = "{{ :newsid }}"
-modelKeyColumn = "id"
-displayColumn = "title"
-notFoundMessage = "Record not found"
-
 [viewBag]
 ==
 {% put styles %}
@@ -14,13 +7,36 @@ notFoundMessage = "Record not found"
 {% endput %}
 <section id="news">
     <div class="news">
-        {% set newsInfo = newsDetails.record %}
-        <div class="news-details">
-            <span>ID: {{ newsInfo.id }}</span>
-            <br>
-            <div>Content: {{ newsInfo.content | nl2br }}</div>
-            <br>
-            <span>Image: s{{ newsInfo.news_image|media }}</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <ul class="btn-list">
+                        <li class="btn-icon" id="back"><a href="../productions"><img style="width:30%" src="{{ 'productions/back_button.png'|media }}" ></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="news-details row">
+                <div class="news-detail-image col-xl-6 col-md-12">
+                    <div class="details-hex">
+                        <div class="hexIn">
+                            <a class="hexLink" href="#">
+                                <img class="hex-main" src=" {{ newsInfo.news_image|media }} " alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-detail-content col-xl-4 col-md-12">
+                    <div class="title font-homenaje">{{ newsInfo.title }}</div>
+                    <div class="content font-lato">{{ newsInfo.content | raw }}</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="news-list">
+            {% for record in coreList.records %}
+                <a href="{{ record.id }}"><img style="width:10%;" src="{{ record.news_image_thumbnail|media }}"></a>
+            {% endfor %}
         </div>
     </div>
 </section>

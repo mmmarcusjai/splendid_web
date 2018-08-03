@@ -1,6 +1,30 @@
 description = "Productions news detail"
+
+[builderList newsList]
+modelClass = "sg\SplendidGroup\Models\ProductionsNews"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[builderDetails newsDetails]
+modelClass = "sg\SplendidGroup\Models\ProductionsNews"
+identifierValue = "{{ :newsid }}"
+modelKeyColumn = "id"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+==
+<?
+function onStart()
+{
+    Session::put('fromNewsDetail', TRUE);
+}
+?>
 ==
 {% put layout_content %}
-    {% partial 'productions/news-details' %}
+    {% partial 'productions/news-details' newsInfo=newsDetails.record coreList=newsList %}
 {% endput %}
 {% partial 'core' %}

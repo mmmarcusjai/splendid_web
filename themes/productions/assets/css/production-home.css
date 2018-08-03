@@ -29,7 +29,7 @@
     width: 100%;
     height: 80vh;
     background-image: url(../images/home-n.gif);
-    /* background-size: 110%; */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center top;
 }
@@ -43,38 +43,38 @@
 }
 
 .home-gif .home-pin#home-pro-pin {
-    top: 4%;
+    top: 6%;
     left: 48%;
-    width: 45%;
-    height: 19%;
+    width: 50%;
+    height: 26%;
 }
 
 .home-gif .home-pin#home-du-pin {
-    top: 9%;
-    left: 15%;
-    width: 45%;
-    height: 21%;
+    top: 17%;
+    left: 10%;
+    width: 49%;
+    height: 28%;
 }
 
 .home-gif .home-pin#home-ct-pin {
-    top: 28%;
-    left: 54%;
-    width: 28%;
-    height: 21%;
+    top: 39%;
+    left: 56%;
+    width: 36%;
+    height: 30%;
 }
 
 .home-gif .home-pin#home-io-pin {
-    top: 35%;
-    left: 24%;
-    width: 24%;
-    height: 21%;
+    top: 52%;
+    left: 9%;
+    width: 37%;
+    height: 25%;
 }
 
 .home-gif .home-pin#home-ns-pin {
-    top: 46%;
+    top: 67%;
     left: 44%;
-    width: 29%;
-    height: 21%;
+    width: 37%;
+    height: 23%;
 }
 
 /* Home popup */
@@ -103,7 +103,7 @@
 }
 
 .home-popup .popup-base.base-bg {
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 

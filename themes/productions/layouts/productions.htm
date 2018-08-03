@@ -1,10 +1,34 @@
 description = "Productions"
+
+[builderList newsList]
+modelClass = "sg\SplendidGroup\Models\ProductionsNews"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "productions-news"
+detailsKeyColumn = "title"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?
+function onStart()
+{
+    $fromNewsDetail = Session::get('fromNewsDetail');
+    Session::forget('fromNewsDetail');
+    $this['fromNewsDetail'] = $fromNewsDetail;
+}
+?>
 ==
 {% put layout_content %}
     {% partial 'productions/home' %}
     {% partial 'productions/facilities' %}
     {% partial 'productions/quality-and-safety' %}
     {% partial 'productions/sustainability' %}
-    {% partial 'productions/news' %}
+    {% partial 'productions/news' coreList=newsList %}
+    {% partial 'productions/contact-us' %}
+    <script>
+        var fromDetails = '{{fromNewsDetail}}';
+    </script>
 {% endput %}
 {% partial 'core' %}
