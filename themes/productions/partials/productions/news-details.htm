@@ -33,9 +33,15 @@ description = "Production-News details"
                 </div>
             </div>
         </div>
-        <div class="news-list">
+        <div class="news-list-more">
             {% for record in coreList.records %}
-                <a href="{{ record.id }}"><img style="width:10%;" src="{{ record.news_image_thumbnail|media }}"></a>
+                <div class="details-hex-more">
+                    <div class="hexIn">
+                        <a class="hexLink" href="{{ record.id }}">
+                            <img class="hex-main" src="{{ record.news_image_thumbnail|media }}" alt="" />
+                        </a>
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>

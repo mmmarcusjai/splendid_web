@@ -14,6 +14,7 @@
     text-align: right;
 }
 
+/* News details page style */
 .news ul.btn-list {
     float: right;
     list-style-type: none;
@@ -24,13 +25,56 @@
 }
 
 .news .news-detail-image {
-    height: 60vh;
-    min-height: 600px;
+    height: 50vh;
+    min-height: 100px;
     background: url(../images/news_detail_image_bg.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 70% -20px;
 }
+
+.news .news-list-more {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.news .more-news-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 36%;
+    cursor: pointer;
+}
+
+.news .more-news-arrow#left {
+    left: -3%;
+}
+
+.news .more-news-arrow#right {
+    right: -3%;
+}
+
+@media (max-width:1200px) {
+    .news .news-list-more {
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media (max-width:600px) {
+    .news .more-news-arrow {
+        top: 17%;
+    }
+
+    .news .more-news-arrow#left {
+        left: -7%;
+    }
+
+    .news .more-news-arrow#right {
+        right: -7%;
+    }
+}
+/* End of news details page style */
 
 /* Hex Style */
 #hexGrid {
@@ -44,8 +88,13 @@
 }
 
 .details-hex {
-    width: 50%;
+    width: 60%;
     margin: auto;
+}
+
+.details-hex-more {
+    width: 15%;
+    display: inline-block;
 }
 
 .hex, .details-hex {
@@ -73,6 +122,15 @@
           transform: rotate3d(0,0,1,-60deg) skewY(30deg);
 }
 
+.details-hex > .hexIn {
+    padding-bottom: 100%; /* =  width / sin(60) */
+    margin: unset;
+}
+
+.details-hex-more > .hexIn {
+    position: static;
+}
+
 .hexIn * {
     position: absolute;
     visibility: visible;
@@ -94,7 +152,7 @@
 }
 
 /*** HEX CONTENT **********************************************************************/
-.hex img, .details-hex img {
+.hex img, .details-hex img, .details-hex-more img {
     left: -100%;
     right: -100%;
     width: auto;
@@ -160,7 +218,6 @@
         margin-left:12.5%;  /* = width of .hex / 2  to indent odd rows */
     }
 }
-
 @media (max-width: 1200px) and (min-width:901px) { /* <- 3-4  hexagons per row */
     #hexGrid{
         padding-bottom: 5.5%
@@ -170,6 +227,9 @@
     }
     .hex:nth-child(7n-6){ /* first hexagon of odd rows */
         margin-left:12.5%;  /* = width of .hex / 2  to indent odd rows */
+    }
+    .news .details-hex {
+        width: 40%;
     }
 }
 
@@ -194,6 +254,9 @@
     }
     .hex:nth-child(3n-2){ /* first hexagon of odd rows */
         margin-left:25%;  /* = width of .hex / 2  to indent odd rows */
+    }
+    .news .details-hex {
+        width: 60%;
     }
 }
 

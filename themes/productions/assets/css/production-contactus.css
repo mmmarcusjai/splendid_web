@@ -4,4 +4,37 @@
     min-height: 100vh;
     background-color: #fcdc00;
     padding-top: 8rem;
+    color: black;
+}
+
+.contact-us .contact-us-container > .row{
+    height: 100%;
+}
+
+/* Address part style */
+.contact-us .address-detail:not(#hk-office) {
+    opacity: 0;
+}
+
+.contact-us .control-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.contact-us .control-btn #up-btn {
+
+}
+
+.contact-us .control-btn #down-btn {
+
+}
+
+.contact-us .address {
+    margin-top: 15%;
+}
+
+/* Contact-us Part style */
+.contact-us .content-us-content {
+    margin-top: 30%;
 }

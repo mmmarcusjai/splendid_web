@@ -14,9 +14,13 @@ pageNumber = "{{ :page }}"
 <?
 function onStart()
 {
+    // Get Session 'fromNewsDetail'
     $fromNewsDetail = Session::get('fromNewsDetail');
+    // Clear the session 'fromNewsDetail'
     Session::forget('fromNewsDetail');
+
     $this['fromNewsDetail'] = $fromNewsDetail;
+    $this->addJs('assets/javascript/productions.js');
 }
 ?>
 ==
