@@ -49,6 +49,13 @@ $('document').ready(function() {
             });
         }
     // }, 3000);
+    // $('.side-slider').vortex({
+	// 	speed:500,
+	// 	clockwise: true,
+	// 	manualAdvance: true,
+	// 	beforeAnimation: null,
+	// 	afterAnimation: null
+	// });
 });
 
 function update_nav_class(scroll_y) {
@@ -115,4 +122,12 @@ function update_home_popup_target() {
 function hide_popup() {
     $('html, body').css('overflow', 'visible');
     $('.home-popup').removeClass('show-popup');
+}
+
+function prev_contactus_slide() {
+
+}
+
+function next_contactus_slide() {
+
 }

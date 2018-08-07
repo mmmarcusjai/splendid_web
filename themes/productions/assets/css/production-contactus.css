@@ -1,19 +1,59 @@
 .contact-us {
     width: 100%;
-    height: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 100%;
     background-color: #fcdc00;
     padding-top: 8rem;
     color: black;
+    overflow: hidden;
+    background-image: url(../images/contact_us_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contact-us .contact-us-container {
+    height: calc(100vh - 8rem);
 }
 
 .contact-us .contact-us-container > .row{
     height: 100%;
 }
 
+/* Side slider part style */
+#contact-us .side-slider {
+    position: absolute;
+    width: 100%;
+    /* width: 40%; */
+    height: 100%;
+    overflow: hidden;
+}
+
+#contact-us .side-slider #slide-1{
+    left: -42%;
+    top: -11%;
+}
+
+#contact-us .side-slider #slide-2{
+    left: -42%;
+    top: 27%;
+}
+
+#contact-us .side-slider #slide-3{
+    left: -42%;
+    top: 65%;
+}
+
+#contact-us .side-slider .center {
+    transform: translateX(250px);
+}
+
+
+
+
 /* Address part style */
 .contact-us .address-detail:not(#hk-office) {
-    opacity: 0;
+    display: none;
+    /* opacity: 0; */
 }
 
 .contact-us .control-btn {
@@ -31,10 +71,12 @@
 }
 
 .contact-us .address {
-    margin-top: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 4%;
 }
 
 /* Contact-us Part style */
 .contact-us .content-us-content {
-    margin-top: 30%;
+    /* margin-top: 45%; */
 }

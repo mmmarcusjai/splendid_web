@@ -6,15 +6,43 @@ description = "Production-Contact Us"
     <link href="{{ 'assets/css/production-contactus.css'|theme }}" rel="stylesheet">
 {% endput %}
 <section id="contact-us">
+    <div class="side-slider">
+        <!-- <img class="hex-main" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" />
+        <img class="hex-main" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" />
+        <img class="hex-main" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" /> -->
+        <div class="contactus-hex" id="slide-1">
+            <div class="hexIn">
+                <a class="hexLink" href="#">
+                    <img class="hex-main" src=" {{ 'productions/contact_us_1.png'|media }} " alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="contactus-hex center" id="slide-2">
+            <div class="hexIn">
+                <a class="hexLink" href="#">
+                    <img class="hex-main" src=" {{ 'productions/contact_us_2.png'|media }} " alt="" />
+                </a>
+            </div>
+        </div>
+        <div class="contactus-hex" id="slide-3">
+            <div class="hexIn">
+                <a class="hexLink" href="#">
+                    <img class="hex-main" src=" {{ 'productions/contact_us_3.png'|media }} " alt="" />
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="contact-us">
         <div class="container-fluid contact-us-container">
             <div class="row">
                 <!-- Address img Slider -->
-                <div class="col-xl-4">
-                    Slider
+                <div class="col-xl-4 col-md-4">
+                    <!-- <div class="slide" id="slide-1"></div>
+                    <div class="slide center" id="slide-2"></div>
+                    <div class="slide" id="slide-3"></div> -->
                 </div>
                 <!-- Address Detail -->
-                <div class="col-xl-3 address">
+                <div class="col-xl-3 col-md-3 address">
                     <div class="address-detail" id="hk-office" contact-index="1">
                         <div class="office-title font-homenaje text-uppercase">
                             <p><b>HEAD OFFICE HONG KONG</b></p>
@@ -64,7 +92,7 @@ description = "Production-Contact Us"
                     </div>
                 </div>
 
-                <div class="control-btn col-xl-1">
+                <div class="control-btn col-xl-1 col-md-1">
                     <!-- <i class="fa fa-angle-up fa-3x"></i>
                     <i class="fa fa-angle-down fa-3x"></i> -->
                     <img id="up-btn" src="{{ 'productions/up_arrow.png'|media }}" alt="">
@@ -72,7 +100,7 @@ description = "Production-Contact Us"
                 </div>
 
                 <!-- Contact us content -->
-                <div class="content-us-content col-xl-3 text-right">
+                <div class="content-us-content col-xl-3 col-md-3 text-right">
                     <div class="title font-homenaje text-uppercase">
                         <p>Contact Us</p>
                     </div>
