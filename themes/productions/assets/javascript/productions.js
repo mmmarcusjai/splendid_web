@@ -42,20 +42,16 @@ $('document').ready(function() {
         change_home_popup_content(target)
     });
 
-    // setTimeout(function() {
-        if(fromDetails && fromDetails != undefined) {
-            $('html, body').animate({
-                scrollTop: news_top + 9 + 'rem'
-            });
-        }
-    // }, 3000);
-    // $('.side-slider').vortex({
-	// 	speed:500,
-	// 	clockwise: true,
-	// 	manualAdvance: true,
-	// 	beforeAnimation: null,
-	// 	afterAnimation: null
-	// });
+    if(fromDetails && fromDetails != undefined) {
+        $('html, body').animate({
+            scrollTop: news_top + 9 + 'rem'
+        });
+    }
+
+    $('.contact-us .control-btn img').on('click', function() {
+        action = $(this).attr('action');
+        contactus_slide(action);
+    });
 });
 
 function update_nav_class(scroll_y) {
@@ -124,10 +120,28 @@ function hide_popup() {
     $('.home-popup').removeClass('show-popup');
 }
 
-function prev_contactus_slide() {
 
-}
+function contactus_slide(action) {
+    if($('.slide-hide[img-display=1]').length == $('.slide-hide').length) {
+    	$('.slide-hide').attr('img-display', '0');
+    }
 
-function next_contactus_slide() {
+    switch(action) {
+        case 'next' :
+            $('.slide-bottom').removeClass('slide-bottom').addClass('slide-hide');
+            $('.slide-main').removeClass('slide-main').addClass('slide-bottom');
+            $('.slide-top').removeClass('slide-top').addClass('slide-main');
+            $('.slide-hide[img-display=0]').last().removeClass('slide-hide').addClass('slide-top').attr('img-display', '1');
+            break;
+        case 'prev' :
+            $('.slide-top').removeClass('slide-top').addClass('slide-hide');
+            $('.slide-main').removeClass('slide-main').addClass('slide-top');
+            $('.slide-bottom').removeClass('slide-bottom').addClass('slide-main');
+            $('.slide-hide[img-display=0]').last().removeClass('slide-hide').addClass('slide-bottom').attr('img-display', '1');
+        break;
+    }
+    $('.address-detail').addClass('d-none');
 
+    $('.address-detail[id='+ $('.slide-main').data('display') +']').removeClass('d-none');
+    // console.log('ID ::: ' + $('.slide-main').attr('id'));
 }

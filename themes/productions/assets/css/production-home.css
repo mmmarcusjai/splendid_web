@@ -183,6 +183,10 @@
     .home-popup .close-container img.close {
         width: 5%;
     }
+
+    .home-popup .popup-base.base-bg {
+        background-image: none !important;
+    }
 }
 
 @media screen and (max-width: 768px) {

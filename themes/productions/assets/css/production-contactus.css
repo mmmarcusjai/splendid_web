@@ -23,60 +23,93 @@
 #contact-us .side-slider {
     position: absolute;
     width: 100%;
-    /* width: 40%; */
     height: 100%;
     overflow: hidden;
 }
 
-#contact-us .side-slider #slide-1{
-    left: -42%;
-    top: -11%;
+#contact-us img.hex-main {
+    position: absolute;
+    max-width: 25%;
+    top: 31%;
+    left: -6%;
+    z-index: 100;
 }
 
-#contact-us .side-slider #slide-2{
-    left: -42%;
-    top: 27%;
+#contact-us img.hex-main.slide-top {
+    transform: translateY(-105%)  scale(1);
+    transition: transform 1s;
 }
 
-#contact-us .side-slider #slide-3{
-    left: -42%;
-    top: 65%;
+#contact-us img.hex-main.slide-main {
+    transform: translateX(55%);
+    transition: transform 1s;
 }
 
-#contact-us .side-slider .center {
-    transform: translateX(250px);
+#contact-us img.hex-main.slide-bottom {
+    transform: translateY(105%);
+    transition: transform 1s;
 }
 
+#contact-us img.hex-main.slide-hide {
+    transform: translateX(-100%) scale(0.2);
+    transition: transform 1s;
+}
 
-
+@media (max-width: 768px) {
+    #contact-us .side-slider {
+        display: none;
+    }
+}
 
 /* Address part style */
-.contact-us .address-detail:not(#hk-office) {
+/* .contact-us .address-detail:not(#hk-office) {
     display: none;
-    /* opacity: 0; */
+} */
+
+.contact-us .address .address-detail {
+    width: 90%;
+    display: inline-block;
+    height: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+}
+
+.contact-us .address .address-detail .office-title{
+    font-size: 1.5rem;
 }
 
 .contact-us .control-btn {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: center;
+    width: calc(100% - 90% - 1rem);
+    display: inline-block;
+    position: relative;
+    height: calc(100% - 1rem);
+    text-align: left;
+}
+
+.contact-us .control-btn img{
+    display: block;
+    cursor: pointer;
+    position: relative;
 }
 
 .contact-us .control-btn #up-btn {
-
+    top: 10%;
 }
 
 .contact-us .control-btn #down-btn {
-
+    top: 60%;
 }
 
 .contact-us .address {
     margin-top: auto;
     margin-bottom: auto;
     padding-left: 4%;
+    height: 25%;
 }
 
 /* Contact-us Part style */
 .contact-us .content-us-content {
-    /* margin-top: 45%; */
+    height: 30%;
+    margin-top: auto;
+    margin-bottom: 3%;
 }
