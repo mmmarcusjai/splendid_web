@@ -52,6 +52,7 @@ $('document').ready(function() {
         action = $(this).attr('action');
         contactus_slide(action);
     });
+    $('map').imageMapResize();
 });
 
 function update_nav_class(scroll_y) {

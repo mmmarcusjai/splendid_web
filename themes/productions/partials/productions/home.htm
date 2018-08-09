@@ -27,14 +27,20 @@ description = "Production-home"
                 </div>
                 <div class="col-xl-6 col-md-12">
                     <div class="right-content">
-                        <div class="home-gif">
-                            <div class="home-pin" id="home-pro-pin" data-toggle="pro" data-index="1"></div>
-                            <div class="home-pin" id="home-du-pin" data-toggle="du" data-index="2"></div>
-                            <div class="home-pin" id="home-ct-pin" data-toggle="ct" data-index="3"></div>
-                            <div class="home-pin" id="home-io-pin" data-toggle="io" data-index="4"></div>
-                            <div class="home-pin" id="home-ns-pin" data-toggle="ns" data-index="5"></div>
-                            <div style="position: absolute;top: 5%;left: 55%;"><img src="{{ 'productions/come_together.png'|media }}" style="max-width:70%;"></div>
-                        </div>
+                        <img class="img-home-gif" src="{{ 'productions/home-n.gif'|media }}" usemap="#image-map">
+
+                        <map name="image-map">
+                            <area class="home-pin" id="home-pro-pin" data-toggle="pro" data-index="1" coords="436,169,525,117,593,157,612,275,728,329,774,297,788,236,895,252,895,459,778,481,697,468,625,442,591,462,546,442,484,365,435,339,431,206" shape="poly">
+                            <img src="{{ 'productions/come_together.png'|media }}">
+                            <area class="home-pin" id="home-du-pin" data-toggle="du" data-index="2" coords="98,271,204,213,260,245,245,308,311,366,316,453,364,435,366,366,418,353,438,380,452,416,503,487,499,552,369,668,163,654,137,631,77,595,68,375,115,344" shape="poly">
+                            <img src="{{ 'productions/design_n_innovate.png'|media }}">
+                            <area class="home-pin" id="home-ct-pin" data-toggle="ct" data-index="3" coords="610,451,563,470,538,512,473,586,445,669,520,726,547,772,596,825,620,836,691,810,828,776,864,758,863,687,705,474,653,455" shape="poly">
+                            <img src="{{ 'productions/produce.png'|media }}">
+                            <area class="home-pin" id="home-io-pin" data-toggle="io" data-index="4" coords="94,605,53,629,50,750,0,784,51,834,52,849,87,868,117,877,140,856,149,920,229,955,294,948,351,976,392,953,368,858,331,792,328,714,235,676,154,705,128,628" shape="poly">
+                            <img src="{{ 'productions/oversee.png'|media }}">
+                            <area class="home-pin" id="home-ns-pin" data-toggle="ns" data-index="5" coords="398,773,447,745,631,851,656,919,697,992,733,1042,633,1099,574,1090,501,1073,452,1049,398,1018" shape="poly">
+                            <img src="{{ 'productions/deliver.png'|media }}">
+                        </map>
                     </div>
                 </div>
             </div>

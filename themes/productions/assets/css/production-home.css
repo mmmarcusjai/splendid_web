@@ -1,7 +1,7 @@
 .home {
     width: 100%;
     height: 100vh;
-    min-height: 100%;
+    min-height: 1000px;
     background-color: #80cfd4;
     padding-top: 8rem;
 }
@@ -14,6 +14,8 @@
 .home .right-content {
     /* background-color: #ffffff00;
     opacity: 0.5; */
+    text-align: center;
+    position: relative;
 }
 
 .home-content {
@@ -22,59 +24,70 @@
     text-align: justify;
 }
 
-
-.home-gif {
-    /* text-align: center; */
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    background-image: url(../images/home-n.gif);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center top;
+.home .img-home-gif {
+    max-width: 56%;
 }
 
-.home-gif .home-pin{
+.home .home-pin+img {
     position: absolute;
-    /* background-color: black;
-    opacity: 0.5; */
-    transform: rotate(30deg);
-    transform-origin: 15%;
+    opacity: 0;
+    transition: 0.5s ease;
 }
 
-.home-gif .home-pin#home-pro-pin {
-    top: 6%;
-    left: 48%;
-    width: 50%;
-    height: 26%;
+.home .home-pin:hover+img{
+    opacity: 1;
+    transition: 0.5s ease;
+    animation: bounce 1s;
 }
 
-.home-gif .home-pin#home-du-pin {
-    top: 17%;
-    left: 10%;
-    width: 49%;
-    height: 28%;
-}
-
-.home-gif .home-pin#home-ct-pin {
-    top: 39%;
+.home .home-pin#home-pro-pin+img {
     left: 56%;
-    width: 36%;
-    height: 30%;
+    top: 6%;
+    max-width: 16%;
 }
 
-.home-gif .home-pin#home-io-pin {
-    top: 52%;
-    left: 9%;
-    width: 37%;
-    height: 25%;
+.home .home-pin#home-du-pin+img {
+    left:34%;
+    top: 24%;
+    max-width: 16%;
 }
 
-.home-gif .home-pin#home-ns-pin {
-    top: 67%;
-    left: 44%;
-    width: 37%;
-    height: 23%;
+.home .home-pin#home-ct-pin+img {
+    left: 63%;
+    top: 41%;
+    max-width: 11%;
+}
+
+.home .home-pin#home-io-pin+img {
+    left: 29%;
+    top: 47%;
+    max-width: 11%;
+}
+
+.home .home-pin#home-ns-pin+img {
+    left: 54%;
+    top: 66%;
+    max-width: 11%;
+}
+
+
+
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
 }
 
 /* Home popup */
@@ -192,6 +205,10 @@
 @media screen and (max-width: 768px) {
     .home-popup .popup-arrow {
         top: 25%;
+    }
+
+    .home .img-home-gif {
+        max-width: 90%;
     }
 }
 
