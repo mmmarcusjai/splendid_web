@@ -28,6 +28,7 @@ window.onscroll = () => {
 
 
 $('document').ready(function() {
+    // Home
     $('.home-pin').on('click', function() {
         var index = $(this).attr('data-index');
         show_home_popup(index);
@@ -42,16 +43,32 @@ $('document').ready(function() {
         change_home_popup_content(target)
     });
 
+    // News
     if(fromDetails && fromDetails != undefined) {
         $('html, body').animate({
             scrollTop: news_top + 9 + 'rem'
         });
     }
 
+    // Contact us
     $('.contact-us .control-btn img').on('click', function() {
         action = $(this).attr('action');
         contactus_slide(action);
     });
+
+    // News popup
+    show_news_popup();
+
+    $('.news-popup .btn-container #btn-close').on('click', function() {
+        hide_news_popup();
+    });
+
+    $('.news-popup-main-hex').on('click', function() {
+        var position = $(this).data('position');
+        news_popup_slider(position);
+    });
+
+    // Active responsive image map
     $('map').imageMapResize();
 });
 
@@ -121,6 +138,30 @@ function hide_popup() {
     $('.home-popup').removeClass('show-popup');
 }
 
+function show_news_popup() {
+    $('html, body').css('overflow', 'hidden');
+    $('.news-popup').removeClass('inactive');
+}
+
+function hide_news_popup() {
+    $('html, body').css('overflow', 'visible');
+    $('.news-popup').addClass('inactive');
+}
+
+function news_popup_slider(position) {
+    //right to left
+    console.log(position);
+    if(position != 'center') {
+        if($('.details-img-hide[img-display=1]').length == $('.details-img-hide').length) {
+            $('.details-img-hide').attr('img-display', '0');
+        }
+
+        $('.details-img-2').removeClass('details-img-2').addClass('details-img-hide');
+        $('.details-img-1').removeClass('details-img-1').addClass('details-img-2');
+        $('.details-img-3').removeClass('details-img-3').addClass('details-img-1');
+        $('.details-img-hide[img-display=0]').last().removeClass('details-img-hide').addClass('details-img-3').attr('img-display', '1');
+    }
+}
 
 function contactus_slide(action) {
     if($('.slide-hide[img-display=1]').length == $('.slide-hide').length) {

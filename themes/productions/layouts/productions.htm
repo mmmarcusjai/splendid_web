@@ -10,8 +10,10 @@ detailsPage = "productions-news"
 detailsKeyColumn = "title"
 detailsUrlParameter = "id"
 pageNumber = "{{ :page }}"
+sortColumn = "id"
+sortDirection = "desc"
 ==
-<?
+<?php
 function onStart()
 {
     // Get Session 'fromNewsDetail'
@@ -25,7 +27,7 @@ function onStart()
 ?>
 ==
 {% put layout_content %}
-    {% partial 'productions/home' %}
+    {% partial 'productions/home' coreList=newsList %}
     {% partial 'productions/facilities' %}
     {% partial 'productions/quality-and-safety' %}
     {% partial 'productions/sustainability' %}
