@@ -24,11 +24,7 @@
     width: 55%;
 }
 
-.news-popup-more-hex {
-    width: 20%;
-}
-
-.hex, .details-hex, .news-popup-main-hex, .news-popup-more-hex {
+.hex, .details-hex, .news-popup-main-hex {
     position: relative;
     visibility:hidden;
     outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
@@ -84,7 +80,7 @@
 }
 
 /*** HEX CONTENT **********************************************************************/
-.hex img, .details-hex img, .details-hex-more img, .news-popup-main-hex img, .news-popup-more-hex img {
+.hex img, .details-hex img, .details-hex-more img, .news-popup-main-hex img {
     left: -100%;
     right: -100%;
     width: auto;

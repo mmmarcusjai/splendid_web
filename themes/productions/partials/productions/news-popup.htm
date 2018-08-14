@@ -12,7 +12,7 @@ description = "Production-News popup"
                 <div class="news-popup-content col-xl-4 col-md-4">
                     {% for record in coreList.records %}
                         {% if loop.index <= 4 %}
-                            <div class="news-details {% if loop.index != 1 %} d-none {% endif %}">
+                            <div class="news-details {% if loop.index != 1 %} d-none {% endif %}" data-index="{{loop.index}}">
                                 <div class="title font-homenaje text-uppercase">{{ record.title }}</div>
                                 <div class="content font-lato">{{ record.content|raw }}</div>
                             </div>

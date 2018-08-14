@@ -191,6 +191,7 @@
 
     .home .left-content {
         padding-left: unset;
+        margin-top: unset;
     }
 
     .home-popup .close-container img.close {
@@ -199,6 +200,10 @@
 
     .home-popup .popup-base.base-bg {
         background-image: none !important;
+    }
+
+    .home .img-home-gif {
+        max-width: 80%;
     }
 }
 

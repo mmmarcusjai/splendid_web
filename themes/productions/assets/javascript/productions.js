@@ -1,4 +1,5 @@
 AOS.init();
+var home_top = (document.querySelector('.home') != null) ? document.querySelector('.home').offsetTop : '';
 var facilities_top = (document.querySelector('.facilities') != null) ? document.querySelector('.facilities').offsetTop : '';
 var quality_top = (document.querySelector('.quality-content') != null) ? document.querySelector('.quality-content').offsetTop : '';
 var sustainability_top = (document.querySelector('.sustainability') != null) ? document.querySelector('.sustainability').offsetTop : '';
@@ -16,18 +17,50 @@ var home_popup_arr = {
     5: 'ns',
 }
 window.onresize = () => {
+    home_top = document.querySelector('.home').offsetTop;
     facilities_top = document.querySelector('.facilities').offsetTop;
     quality_top = document.querySelector('.quality-content').offsetTop;
     sustainability_top = document.querySelector('.sustainability').offsetTop;
     news_top = document.querySelector('.news').offsetTop;
-    update_nav_class(this.scrollY);
+    contactus_top = document.querySelector('.contact-us').offsetTop;
+    update_nav_class(Math.round(this.scrollY));
 }
 window.onscroll = () => {
-    update_nav_class(this.scrollY);
+    update_nav_class(Math.round(this.scrollY));
 };
 
 
 $('document').ready(function() {
+    // Buddle menu
+    $('.bubble-menu .bullet').on('click', function() {
+        var id = $(this).attr('id');
+        switch (id) {
+            case 'home':
+                to = home_top;
+                break;
+            case 'facilities':
+                to = facilities_top;
+                break;
+            case 'quality':
+                to = quality_top;
+                break;
+            case 'sustainability':
+                to = sustainability_top;
+                break;
+            case 'news':
+                to = news_top;
+                break;
+            case 'contactus':
+                to = contactus_top;
+                break;
+            default:
+
+        }
+        $('html, body').animate({
+            scrollTop: to
+        });
+    });
+
     // Home
     $('.home-pin').on('click', function() {
         var index = $(this).attr('data-index');
@@ -73,29 +106,37 @@ $('document').ready(function() {
 });
 
 function update_nav_class(scroll_y) {
+    console.log(scroll_y);
     const nav = document.querySelector('nav');
     var class_name = '';
-
+    $('.bubble-menu .opt').removeClass('active');
     if(scroll_y <= 10) {
         class_name = '';
+        $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
         vid.pause();
     } else if(scroll_y >= facilities_top && scroll_y < quality_top) {
         class_name = 'hide';
+        $('.bubble-menu .opt .bullet#facilities').closest('.opt').addClass('active');
         vid.play();
     } else if(scroll_y >= quality_top && scroll_y < sustainability_top){
         class_name = 'scroll-quality';
+        $('.bubble-menu .opt .bullet#quality').closest('.opt').addClass('active');
         vid.pause();
     } else if(scroll_y >= sustainability_top && scroll_y < news_top) {
         class_name = 'scroll-sustainability';
+        $('.bubble-menu .opt .bullet#sustainability').closest('.opt').addClass('active');
         vid.pause();
     } else if(scroll_y >= news_top && scroll_y < contactus_top) {
         class_name = 'scroll-news';
+        $('.bubble-menu .opt .bullet#news').closest('.opt').addClass('active');
         vid.pause();
     } else if(scroll_y >= contactus_top ) {
         class_name = 'scroll-contactus';
+        $('.bubble-menu .opt .bullet#contactus').closest('.opt').addClass('active');
         vid.pause();
     } else {
         class_name = 'scroll-home';
+        $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
         vid.pause();
     }
     // console.log('scrollY :::: ' + scrollY);
@@ -149,18 +190,28 @@ function hide_news_popup() {
 }
 
 function news_popup_slider(position) {
-    //right to left
-    console.log(position);
-    if(position != 'center') {
-        if($('.details-img-hide[img-display=1]').length == $('.details-img-hide').length) {
-            $('.details-img-hide').attr('img-display', '0');
-        }
-
-        $('.details-img-2').removeClass('details-img-2').addClass('details-img-hide');
-        $('.details-img-1').removeClass('details-img-1').addClass('details-img-2');
-        $('.details-img-3').removeClass('details-img-3').addClass('details-img-1');
-        $('.details-img-hide[img-display=0]').last().removeClass('details-img-hide').addClass('details-img-3').attr('img-display', '1');
+    if($('.details-img-hide[img-display=1]').length == $('.details-img-hide').length) {
+        $('.details-img-hide').attr('img-display', '0');
     }
+    switch (position) {
+        //right to left
+        case 'right' :
+            $('.details-img-2').removeClass('details-img-2').addClass('details-img-hide').data('position', '');
+            $('.details-img-1').removeClass('details-img-1').addClass('details-img-2').data('position', 'left');
+            $('.details-img-3').removeClass('details-img-3').addClass('details-img-1').data('position', 'center');
+            $('.details-img-hide[img-display=0]').last().removeClass('details-img-hide').addClass('details-img-3').data('position', 'right').attr('img-display', '1');
+            break;
+        // left to right
+        case 'left' :
+            $('.details-img-3').removeClass('details-img-3').addClass('details-img-hide').data('position', '');
+            $('.details-img-1').removeClass('details-img-1').addClass('details-img-3').data('position', 'right');
+            $('.details-img-2').removeClass('details-img-2').addClass('details-img-1').data('position', 'center');
+            $('.details-img-hide[img-display=0]').last().removeClass('details-img-hide').addClass('details-img-2').data('position', 'left').attr('img-display', '1');
+            break;
+    }
+    var current = $('.details-img-1').data('detail');
+    $('.news-details').addClass('d-none');
+    $('.news-details[data-index='+current+']').removeClass('d-none');
 }
 
 function contactus_slide(action) {
