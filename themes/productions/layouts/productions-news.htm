@@ -1,25 +1,19 @@
 description = "Productions news detail"
 
-[builderList newsList]
-modelClass = "sg\SplendidGroup\Models\ProductionsNews"
-scope = "-"
-scopeValue = "{{ :scope }}"
-displayColumn = "title"
-noRecordsMessage = "No records found"
-detailsPage = "-"
-detailsUrlParameter = "id"
-pageNumber = "{{ :page }}"
-
 [builderDetails newsDetails]
-modelClass = "sg\SplendidGroup\Models\ProductionsNews"
+modelClass = "sg\SplendidGroup\Models\GlobalNews"
 identifierValue = "{{ :newsid }}"
 modelKeyColumn = "id"
 displayColumn = "title"
 notFoundMessage = "Record not found"
 ==
-<?
+<?php
+use sg\SplendidGroup\Models\GlobalNews;
 function onStart()
 {
+    $news = GlobalNews::NewsCat('productions')->get();
+    $this['news'] = $news;
+
     Session::put('fromNewsDetail', TRUE);
 }
 ?>
@@ -32,7 +26,7 @@ function onStart()
     {% partial 'productions/header' %}
 {% endput %}
 {% put layout_content %}
-    {% partial 'productions/news-details' newsInfo=newsDetails.record coreList=newsList %}
+    {% partial 'productions/news-details' newsInfo=newsDetails.record %}
 {% endput %}
 {% put scripts %}
     <script src="{{ 'assets/javascript/productions-news.js'|theme }}"></script>

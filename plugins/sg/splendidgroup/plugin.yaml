@@ -14,3 +14,7 @@ navigation:
                 label: News
                 url: sg/splendidgroup/productionsnews
                 icon: icon-newspaper-o
+    main-menu-item:
+        label: 'Global News'
+        url: sg/splendidgroup/globalnews
+        icon: icon-newspaper-o

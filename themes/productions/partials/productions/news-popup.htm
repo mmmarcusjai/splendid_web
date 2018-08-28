@@ -10,7 +10,7 @@ description = "Production-News popup"
             </div>
             <div class="row">
                 <div class="news-popup-content col-xl-4 col-md-4">
-                    {% for record in coreList.records %}
+                    {% for record in news %}
                         {% if loop.index <= 4 %}
                             <div class="news-details {% if loop.index != 1 %} d-none {% endif %}" data-index="{{loop.index}}">
                                 <div class="title font-homenaje text-uppercase">{{ record.title }}</div>
@@ -20,7 +20,7 @@ description = "Production-News popup"
                     {% endfor %}
                 </div>
                 <div class="news-popup-detail-img col-xl-8 col-md-8">
-                    {% for record in coreList.records %}
+                    {% for record in news %}
                         {% if loop.index <= 4 %}
                             <div class="news-detail-img news-popup-main-hex details-img-{{loop.index}} {% if loop.index >= 4 %}details-img-hide{% endif %}" data-detail="{{loop.index}}" data-position="{% if loop.index == 1 %}center{% elseif loop.index == 2 %}left{% elseif loop.index == 3 %}right{% else %}hide{% endif %}" img-display="{% if loop.index >= 4 %}0{% else %}1{% endif %}">
                                 <div class="hexIn">

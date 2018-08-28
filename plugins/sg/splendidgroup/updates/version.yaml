@@ -9,3 +9,6 @@
 1.0.4:
     - 'Updated table sg_splendidgroup_production_news'
     - builder_table_update_sg_splendidgroup_production_news_2.php
+1.0.5:
+    - 'Created table sg_splendidgroup_global_news'
+    - builder_table_create_sg_splendidgroup_global_news.php

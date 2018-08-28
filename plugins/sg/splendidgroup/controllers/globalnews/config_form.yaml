@@ -1,0 +1,10 @@
+name: GlobalNews
+form: $/sg/splendidgroup/models/globalnews/fields.yaml
+modelClass: sg\SplendidGroup\Models\GlobalNews
+defaultRedirect: sg/splendidgroup/globalnews
+create:
+    redirect: 'sg/splendidgroup/globalnews/update/:id'
+    redirectClose: sg/splendidgroup/globalnews
+update:
+    redirect: sg/splendidgroup/globalnews
+    redirectClose: sg/splendidgroup/globalnews

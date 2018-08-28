@@ -1,0 +1,4 @@
+title: GlobalNews
+modelClass: sg\SplendidGroup\Models\GlobalNews
+toolbar:
+    buttons: reorder_toolbar
