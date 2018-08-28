@@ -32,7 +32,7 @@ window.onscroll = () => {
 
 $('document').ready(function() {
     // Buddle menu
-    $('.bubble-menu .bullet').on('click', function() {
+    $('.bubble-menu .opt , .side-wrapper ul li a').on('click', function() {
         var id = $(this).attr('id');
         switch (id) {
             case 'home':
@@ -55,6 +55,10 @@ $('document').ready(function() {
                 break;
             default:
 
+        }
+        if($('.side-wrapper').hasClass('active')) {
+            $('.side-wrapper').removeClass('active');
+            $('#nav-icon').removeClass('open');
         }
         $('html, body').animate({
             scrollTop: to
@@ -91,6 +95,7 @@ $('document').ready(function() {
 
     // News popup
     show_news_popup();
+    set_session_stroage('news_shown', true);
 
     $('.news-popup .btn-container #btn-close').on('click', function() {
         hide_news_popup();
@@ -101,16 +106,25 @@ $('document').ready(function() {
         news_popup_slider(position);
     });
 
+    $('#nav-icon').click(function(){
+		$(this).toggleClass('open');
+        if($(this).hasClass('open')) {
+            $('.side-wrapper').addClass('active');
+        } else {
+            $('.side-wrapper').removeClass('active');
+        }
+	});
+
     // Active responsive image map
     $('map').imageMapResize();
 });
 
 function update_nav_class(scroll_y) {
-    console.log(scroll_y);
+    scroll_y+=100;
     const nav = document.querySelector('nav');
     var class_name = '';
     $('.bubble-menu .opt').removeClass('active');
-    if(scroll_y <= 10) {
+    if(scroll_y <= 100) {
         class_name = '';
         $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
         vid.pause();
@@ -180,8 +194,11 @@ function hide_popup() {
 }
 
 function show_news_popup() {
-    $('html, body').css('overflow', 'hidden');
-    $('.news-popup').removeClass('inactive');
+    var get_show = get_session_stroage('news_shown');
+    if(!get_show) {
+        $('html, body').css('overflow', 'hidden');
+        $('.news-popup').removeClass('inactive');
+    }
 }
 
 function hide_news_popup() {
@@ -237,4 +254,13 @@ function contactus_slide(action) {
 
     $('.address-detail[id='+ $('.slide-main').data('display') +']').removeClass('d-none');
     // console.log('ID ::: ' + $('.slide-main').attr('id'));
+}
+
+function set_session_stroage(key, val) {
+    sessionStorage.setItem(key, val);
+}
+
+function get_session_stroage(key) {
+    var val = sessionStorage.getItem(key);
+    return val;
 }

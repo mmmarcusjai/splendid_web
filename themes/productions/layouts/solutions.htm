@@ -1,3 +1,23 @@
 description = "Solutions"
 ==
-<div>Solutions</div>
+<?php
+function onStart()
+{
+
+}
+?>
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ 'assets/css/solutions-theme.css'|theme }}">
+{% endput %}
+{% put header_content %}
+    {% partial 'solutions/header' %}
+{% endput %}
+{% put layout_content %}
+    {% partial 'solutions/home' %}
+    {% partial 'solutions/about' %}
+{% endput %}
+{% put scripts %}
+    <script src="{{ 'assets/javascript/solutions.js'|theme }}" type="text/javascript"></script>
+{% endput %}
+{% partial 'core' %}

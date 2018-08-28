@@ -3,7 +3,7 @@
     height: 100%;
     min-height: 100vh;
     background-color: #00bc71;
-    padding-top: 8rem;
+    padding-top: 7rem;
     background-image: url(../images/sustainability_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@
 }
 
 .sustainability .sustainability-flip-object{
-    height: calc(100vh - 8rem - 50%);
+    height: calc(100vh - 7rem - 50%);
     text-align: center;
 }
 
@@ -66,14 +66,12 @@
 
 .sustainability .object-container .control#left{
     left: 20%;
-    /* top: 38%; */
-    margin-top: 16%;
+    margin-top: 24%;
 }
 
 .sustainability .object-container .control#right{
-    left: 79%;
-    /* top: 38%; */
-    margin-top: 16%;
+    left: 77%;
+    margin-top: 24%;
 }
 
 .swiper-container {
@@ -111,5 +109,11 @@
 @media screen and (max-width: 1200px) {
     .sustainability {
         height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sustainability-flip-content {
+        display: none;
     }
 }

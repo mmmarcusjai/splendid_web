@@ -16,18 +16,31 @@ sortDirection = "desc"
 <?php
 function onStart()
 {
-    // Get Session 'fromNewsDetail'
+    // Get Session
     $fromNewsDetail = Session::get('fromNewsDetail');
-    // Clear the session 'fromNewsDetail'
+    $landed = Session::get('landed');
+
+    // Clear the session
     Session::forget('fromNewsDetail');
 
+    // Set variable for view
     $this['fromNewsDetail'] = $fromNewsDetail;
+
+    // Load JS
+    $this->addJs('assets/javascript/spriteclip.js');
     $this->addJs('assets/javascript/productions.js');
 }
 ?>
 ==
+{% put styles %}
+<link href="{{ 'assets/css/productions-theme.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/productions-hex.css'|theme }}" rel="stylesheet">
+{% endput %}
+{% put header_content %}
+    {% partial 'productions/header' %}
+{% endput %}
 {% put layout_content %}
-    {% partial 'productions/bubble-menu' %}
+    {% partial 'productions/menu' %}
     {% partial 'productions/home' coreList=newsList %}
     {% partial 'productions/facilities' %}
     {% partial 'productions/quality-and-safety' %}
@@ -37,5 +50,8 @@ function onStart()
     <script>
         var fromDetails = '{{fromNewsDetail}}';
     </script>
+{% endput %}
+{% put scripts %}
+
 {% endput %}
 {% partial 'core' %}

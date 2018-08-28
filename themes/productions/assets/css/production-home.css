@@ -208,6 +208,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .home {
+        padding-top: 6rem;
+    }
+
     .home-popup .popup-arrow {
         top: 25%;
     }
