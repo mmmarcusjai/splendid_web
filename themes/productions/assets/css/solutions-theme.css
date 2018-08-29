@@ -1,10 +1,12 @@
 body {
     margin: 0;
     padding: 0;
+    color: #28292b;
+    font-family: 'Lato', sans-serif;
 }
 
 nav {
-    color: #c0976b;
+    color: #585858;
     z-index: 1;
     transform: translateY(-100%);
     transition: 0.4s;
@@ -40,7 +42,7 @@ nav ul li {
 
 .menu-btn span{
     text-transform: uppercase;
-    color: #c0976b;
+    color: #585858;
     margin-left: 12px;
     -webkit-transition: color .3s ease;
     transition: color .3s ease;
@@ -61,7 +63,7 @@ nav ul li {
 .menu-line {
     width: 25px;
     height: 2px;
-    background-color: #c0976b;
+    background-color: #585858;
     margin: 8px 0;
     transition: 0.4s;
 }
@@ -76,4 +78,26 @@ nav ul li {
 .change .menu-line-bottom {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.content {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media (max-width: 1440px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .title {
+        font-size: 3rem;
+    }
 }

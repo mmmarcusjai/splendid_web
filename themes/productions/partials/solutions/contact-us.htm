@@ -1,0 +1,91 @@
+description = "Solutions-Contact Us"
+
+[viewBag]
+==
+
+{% put styles %}
+    <link href="{{ 'assets/css/solutions-contactus.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="contact-us">
+    <div class="side-slider">
+        <img class="hex-main slide-top" id="slide-cn" data-display="china-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-main" id="slide-hk" data-display="hk-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-bottom" id="slide-ams" data-display="ams-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-hide" id="slide-fac" data-display="factory" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="0"/>
+    </div>
+    <div class="contact-us">
+        <div class="container-fluid contact-us-container">
+            <div class="row">
+                <div class="contact-us-bg"></div>
+                <!-- Address img Slider -->
+                <div class="col-xl-3 col-md-3">
+                </div>
+                <!-- Address Detail -->
+                <div class="col-xl-4 col-md-4 address">
+                    <div class="address-detail" id="hk-office" contact-index="1">
+                        <div class="office-title text-uppercase">
+                            <p>HEAD OFFICE HONG KONG</p>
+                        </div>
+                        <div class="content office-address">
+                            <p>24th floor,Connaught Commercial Building,<br>
+                            185 Wanchai road,<br>
+                            Wanchai, Hong Kong</p>
+                        </div>
+                        <div class="content office-contact">
+                            <p>Tel: +852 2555 0012<br>
+                            Email: sales@splendidgroup.asia</p>
+                        </div>
+                    </div>
+                    <div class="address-detail d-none" id="china-office" contact-index="2">
+                        <div class="office-title text-uppercase">
+                            <p>CHINA OFFICE</p>
+                        </div>
+                        <div class="content office-address">
+                            <p>Office F309,<br>
+                            NanBo Building, ZhangMuTou,<br>
+                            DongGuan, GD, China PO.523620</p>
+                        </div>
+                        <div class="content office-contact">
+                            <p>Tel: +86 0769-89386960</p>
+                        </div>
+                    </div>
+                    <div class="address-detail d-none" id="ams-office" contact-index="3">
+                        <div class="office-title text-uppercase">
+                            <p>Amsterdam office</p>
+                        </div>
+                        <div class="content office-address">
+                            <p>Rokin 75, 1012 KL Amsterdam,<br>
+                            the Netherlands</p>
+                        </div>
+                        <div class="content office-contact">
+                            <p>Tel: +31 (0) 20 308 08 56</p>
+                        </div>
+                    </div>
+                    <div class="address-detail d-none" id="factory" contact-index="4">
+                        <div class="office-title text-uppercase">
+                            <p>Factory locations</p>
+                        </div>
+                        <div class="content office-address">
+                            <p>Dongguan, Guangzhou, Shenzhen.</p>
+                        </div>
+                    </div>
+                    <div class="control-btn">
+                        <img id="up-btn" action="prev" src="{{ 'solutions/up_arrow.png'|media }}" alt="">
+                        <img id="down-btn" action="next" src="{{ 'solutions/down_arrow.png'|media }}" alt="">
+                    </div>
+                </div>
+                <!-- Contact us content -->
+                <div class="contact-us-block col-xl-5 col-md-5 text-right">
+                    <div class="contact-us-content">
+                        <div class="title text-uppercase">
+                            <p>Contact Us</p>
+                        </div>
+                        <div class="content">
+                            Headquartered in Hong Kong, with an office and our own production facilities in China, we are active in more than 20 countries around the world.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

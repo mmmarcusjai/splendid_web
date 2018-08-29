@@ -1,0 +1,61 @@
+.sustainability {
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    margin: 5rem auto;
+    position: relative;
+}
+
+.sustainability .content {
+    width: 50%;
+    margin-left: auto;
+}
+
+.sustainability .content > p {
+    margin-top: 1.5rem;
+}
+
+.sustainability .title {
+    width: 60%;
+}
+
+.sustainability .sustainability-bg {
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    top: -17%;
+    right: 0%;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/about_bg.png);
+    -webkit-clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
+    clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
+    z-index: 0;
+}
+
+.sustainability .sustainability-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #a9db68;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.sustainability .animate-container {
+    margin: 5rem auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .sustainability .sustainability-bg {
+        width: 100%;
+    }
+
+    .sustainability .title-block {
+        order: -1;
+    }
+}

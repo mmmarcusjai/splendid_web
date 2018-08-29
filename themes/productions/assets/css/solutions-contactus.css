@@ -1,0 +1,146 @@
+.contact-us {
+    width: 100%;
+    height: 130vh;
+    min-height: 100%;
+    /* background-color: red; */
+}
+
+.contact-us .contact-us-container {
+    height: 100%;
+    position: relative;
+}
+
+.contact-us .contact-us-container > .row{
+    height: 100%;
+}
+
+/* Side slider part style */
+#contact-us .side-slider {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    overflow: hidden;
+}
+
+#contact-us img.hex-main {
+    position: absolute;
+    max-width: 25%;
+    top: 30%;
+    left: -10%;
+    z-index: 100;
+}
+
+#contact-us img.hex-main.slide-top {
+    transform: translateY(-80%)  scale(1);
+    transition: transform 1s;
+}
+
+#contact-us img.hex-main.slide-main {
+    transform: translateX(55%);
+    transition: transform 1s;
+}
+
+#contact-us img.hex-main.slide-bottom {
+    transform: translateY(80%);
+    transition: transform 1s;
+}
+
+#contact-us img.hex-main.slide-hide {
+    transform: translateX(-100%) scale(0.2);
+    transition: transform 1s;
+}
+
+@media (max-width: 768px) {
+    #contact-us .side-slider {
+        display: none;
+    }
+}
+
+/* Address part style */
+/* .contact-us .address-detail:not(#hk-office) {
+    display: none;
+} */
+
+.contact-us .address .address-detail {
+    width: 90%;
+    display: inline-block;
+    height: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 8%;
+}
+
+.contact-us .control-btn {
+    width: calc(100% - 90% - 1rem);
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    text-align: left;
+}
+
+.contact-us .control-btn img{
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.contact-us .control-btn #up-btn {
+    top: 10%;
+}
+
+.contact-us .control-btn #down-btn {
+    top: 60%;
+}
+
+.contact-us .address {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 4%;
+    height: 25%;
+}
+
+/* Contact-us Part style */
+.contact-us .contact-us-block {
+
+}
+
+.contact-us .contact-us-container .contact-us-bg {
+    width: 60%;
+    height: 75%;
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    background-color: #37ddc9;
+    background-size: cover;
+    -webkit-clip-path: polygon(15% 0%, 100% 10%, 100% 55%, 30% 80%);
+    clip-path: polygon(15% 0%, 100% 10%, 100% 55%, 30% 80%);
+    z-index: 0;
+}
+
+.contact-us .contact-us-block .contact-us-content {
+    width:87%;
+    height: 30%;
+    margin-top: 23%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-us .contact-us-block .contact-us-content .title {
+    opacity: 0.9;
+    text-align: center;
+}
+
+.contact-us .contact-us-block .contact-us-content .content {
+    width: 50%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .contact-us .contact-us-container .contact-us-bg {
+        width: 100%;
+        height: 45%;
+        top: 60%;
+    }
+}
