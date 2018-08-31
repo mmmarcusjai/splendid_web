@@ -2,21 +2,26 @@
     width: 100%;
     height: 100vh;
     min-height: 100%;
-    margin: 5rem auto;
     position: relative;
 }
 
-.sustainability .content {
+.sustainability .content-block .content {
     width: 50%;
     margin-left: auto;
+    text-align: right;
 }
 
-.sustainability .content > p {
+.sustainability .content-block .content > p {
     margin-top: 1.5rem;
 }
 
-.sustainability .title {
+.sustainability .title-block {
+    line-height: 1;
+}
+
+.sustainability .title-block .title {
     width: 60%;
+    text-align: left;
 }
 
 .sustainability .sustainability-bg {
@@ -50,6 +55,26 @@
     text-align: center;
 }
 
+.sustainability .animate-area {
+    width: 642px;
+    height: 650px;
+    background: url(../images/sustainability_frame.png) no-repeat 0 0;
+    margin: auto;
+    margin-top: -7%;
+}
+
+@media (max-width: 1920px) {
+    .sustainability .content-block .content > p {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .sustainability .content-block .content {
+        width: 80%;
+    }
+}
+
 @media (max-width: 768px) {
     .sustainability .sustainability-bg {
         width: 100%;
@@ -57,5 +82,14 @@
 
     .sustainability .title-block {
         order: -1;
+    }
+
+    .sustainability .title-block .title, .sustainability .content-block .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .animate-object {
+        display: none;
     }
 }

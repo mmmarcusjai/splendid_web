@@ -1,0 +1,78 @@
+.footer-container {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    margin-top: -5%;
+}
+
+.footer-container .footer-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: -1;
+}
+.footer-container .footer-mask#bottom-mask {
+    background-color: #1b9c86;
+    -webkit-clip-path: polygon(0 20%, 97% 0%, 95% 100%, 0% 100%);
+    clip-path: polygon(0 20%, 97% 0%, 95% 100%, 0% 100%);
+}
+
+.footer-container .footer-mask#top-mask {
+    background-color: #70cebe;
+    opacity: 0.8;
+    -webkit-clip-path: polygon(0 30%, 100% 10%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 30%, 100% 10%, 100% 100%, 0% 100%);
+}
+
+.footer-container .footer-content-block {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.footer-container .footer-content-block .page-block{
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    border-bottom: solid 2px #ffffffab;
+}
+
+.footer-container .page-content ul {
+    width: 50%;
+    color: #fff;
+    list-style: none;
+    padding: 16px 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.footer-container .page-content ul.page li {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 170px;
+}
+
+.footer-container .page-content ul.page li {
+    text-transform: uppercase;
+}
+
+.footer-container .page-content ul.follow-us li:not(:nth-child(1)) {
+    display: inline-block;
+}
+
+.footer-container .page-content ul.follow-us {
+    position: absolute;
+    top: 10%;
+}
+
+.footer-container .footer-content-block .footer-tnc {
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container .page-content ul.follow-us {
+        position: static;
+    }
+}

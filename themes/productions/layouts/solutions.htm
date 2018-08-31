@@ -1,9 +1,11 @@
 description = "Solutions"
 ==
 <?php
+use sg\SplendidGroup\Models\GlobalNews;
 function onStart()
 {
-
+    $news = GlobalNews::NewsCat('solutions')->get();
+    $this['news'] = $news;
 }
 ?>
 ==
@@ -16,8 +18,11 @@ function onStart()
 {% put layout_content %}
     {% partial 'solutions/home' %}
     {% partial 'solutions/about' %}
+    {% partial 'solutions/how-we-work' %}
     {% partial 'solutions/sustainability' %}
+    {% partial 'solutions/news' %}
     {% partial 'solutions/contact-us' %}
+    {% partial 'solutions/footer' %}
 {% endput %}
 {% put scripts %}
     <script src="{{ 'assets/javascript/solutions.js'|theme }}" type="text/javascript"></script>

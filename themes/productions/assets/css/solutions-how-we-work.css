@@ -1,0 +1,68 @@
+.how-we-work {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.how-we-work  .come-together {
+    width: 15%;
+    height: 35%;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    background-color: #ffe083;
+    background-size: cover;
+    -webkit-clip-path: polygon(13% 14%, 91% 22%, 100% 100%, 0% 100%);
+    clip-path: polygon(13% 14%, 91% 22%, 100% 100%, 0% 100%);
+}
+
+.how-we-work  .we-design {
+    width: 15%;
+    height: 35%;
+    position: absolute;
+    top: 31%;
+    left: 30%;
+    background-color: #ec9466;
+    background-size: cover;
+    -webkit-clip-path: polygon(8% 8%, 100% 3%, 100% 100%, 18% 91%);
+    clip-path: polygon(8% 8%, 100% 3%, 100% 100%, 18% 91%);
+}
+
+.roll-in-blurred-left {
+	-webkit-animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}

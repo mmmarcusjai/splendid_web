@@ -31,22 +31,22 @@
 }
 
 #contact-us img.hex-main.slide-top {
-    transform: translateY(-80%)  scale(1);
+    transform: translateY(-80%)  scale(0.75);
     transition: transform 1s;
 }
 
 #contact-us img.hex-main.slide-main {
-    transform: translateX(55%);
+    transform: translateX(55%) scale(1);
     transition: transform 1s;
 }
 
 #contact-us img.hex-main.slide-bottom {
-    transform: translateY(80%);
+    transform: translateY(80%) scale(0.75);
     transition: transform 1s;
 }
 
 #contact-us img.hex-main.slide-hide {
-    transform: translateX(-100%) scale(0.2);
+    transform: translateX(-100%) scale(0.1);
     transition: transform 1s;
 }
 
@@ -66,6 +66,7 @@
     display: inline-block;
     height: 100%;
     padding-top: 1rem;
+    padding-left: 2rem;
     vertical-align: top;
     font-weight: 500;
     font-size: 1.2rem;

@@ -1,0 +1,47 @@
+description = "Solutions-Footer"
+
+[viewBag]
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ 'assets/css/solutions-footer.css'|theme }}">
+{% endput %}
+<footer class="footer-container">
+    <div class="footer-mask" id="bottom-mask"></div>
+    <div class="footer-mask" id="top-mask"></div>
+    <div class="footer-content-block">
+        <div class="container-fluid page-block">
+            <div class="row">
+                <div class="col-xl-6 col-md-6"></div>
+                <div class="col-xl-6 col-md-6">
+                    <div class="page-content">
+                        <ul class="page">
+                            <li>About splendid</li>
+                            <li>Sustainability</li>
+                            <li>How we work</li>
+                            <li>News</li>
+                            <li>Our servise</li>
+                            <li>Contact us</li>
+                        </ul>
+                        <ul class="follow-us">
+                            <li>Follow us on</li>
+                            <li><img src="{{ 'icon/facebook.png'|media }}"></li>
+                            <li><img src="{{ 'icon/twitter.png'|media }}"></li>
+                            <li><img src="{{ 'icon/instagram.png'|media }}"></li>
+                            <li><img src="{{ 'icon/pinterest.png'|media }}"></li>
+                            <li><img src="{{ 'icon/linkedin.png'|media }}"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-tnc">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-8">&copy;2018 Splendid Solution ltd. All Rights Reserved</div>
+                    <div class="col-xl-2">Privacy Policy</div>
+                    <div class="col-xl-2">Terms of Use</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

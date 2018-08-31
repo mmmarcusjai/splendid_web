@@ -5,6 +5,11 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+#layout-header.active {
+    /* background-color: #e8e8e8;
+    transition: 0.5s; */
+}
+
 nav {
     color: #585858;
     z-index: 1;
@@ -99,5 +104,11 @@ nav ul li {
 @media (max-width: 1200px) {
     .title {
         font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
     }
 }

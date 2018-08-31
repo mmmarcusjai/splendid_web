@@ -66,6 +66,10 @@ $('document').ready(function() {
     });
 
     // Home
+    $('.home-pin').on('mouseover', function() {
+        // $('.test').css({'z-index': 1});
+    });
+
     $('.home-pin').on('click', function() {
         var index = $(this).attr('data-index');
         show_home_popup(index);

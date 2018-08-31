@@ -1,0 +1,48 @@
+.news {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    /* background-color: #e54179; */
+    position: relative;
+}
+
+.news .news-description {
+    width: 50%;
+    margin: auto;
+}
+
+.news .news-bg {
+    width: 40%;
+    height: 80%;
+    position: absolute;
+    top: -17%;
+    left: 0%;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/about_bg.png);
+    -webkit-clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
+    clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
+    z-index: 0;
+}
+
+.news .news-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #47bb58;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .news .news-bg {
+        width: 100%;
+    }
+    
+    .news .news-description {
+        width: 100%;
+    }
+}
