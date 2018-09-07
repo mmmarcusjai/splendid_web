@@ -31,8 +31,8 @@
     top: -17%;
     right: 0%;
     background-size: cover;
-    background-position: center;
-    background-image: url(../images/about_bg.png);
+    background-repeat: no-repeat;
+    background-image: url(../images/solutions/sustainability_block_bg.jpg);
     -webkit-clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
     clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
     z-index: 0;
@@ -50,15 +50,29 @@
     z-index: 1;
 }
 
-.sustainability .animate-container {
-    margin: 5rem auto;
-    text-align: center;
+.sustainability .object-container {
+    position: relative;
+}
+
+.sustainability .object-container .control{
+    position: absolute;
+    z-index: 1;
+    margin-top: 35%;
+    cursor: pointer;
+}
+
+.sustainability .object-container .control#left{
+    left: 20%;
+}
+
+.sustainability .object-container .control#right{
+    left: 77%;
 }
 
 .sustainability .animate-area {
-    width: 642px;
-    height: 650px;
-    background: url(../images/sustainability_frame.png) no-repeat 0 0;
+    width: 850px;
+    height: 850px;
+    background: url(../images/solutions/solutions_cube_rotation.png) no-repeat 0 0;
     margin: auto;
     margin-top: -7%;
 }
@@ -80,7 +94,7 @@
         width: 100%;
     }
 
-    .sustainability .title-block {
+    .sustainability .title-block-container {
         order: -1;
     }
 
@@ -89,7 +103,7 @@
         text-align: center;
     }
 
-    .animate-object {
+    .sustainability-flip-content {
         display: none;
     }
 }

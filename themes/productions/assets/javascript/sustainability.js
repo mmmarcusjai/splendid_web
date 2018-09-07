@@ -1,8 +1,8 @@
 var auto_animate;
 var animate_counter = 0;
-var frame_display_arr = [1, 25, 49];
+var frame_display_arr = [1, 31, 51, 71];
 var instance = $(".animate-area").spriteClip({
-totalFrames: 72,
+totalFrames: 101,
 frameRate: 50,
 }).data("spriteClip");
 
@@ -33,6 +33,12 @@ function update_sustainability_target(target_frame) {
             // $('.sustainability .object-container .control#right').addClass('disable');
             $('.sustainability .object-container .control#left').attr('to', frame_display_arr[1]);
             // $('.sustainability .object-container .control#right').attr('to', '');
+            $('.sustainability .object-container .control#right').attr('to', frame_display_arr[3]);
+            break;
+        case 3 :
+            // $('.sustainability .object-container .control#right').addClass('disable');
+            $('.sustainability .object-container .control#left').attr('to', frame_display_arr[2]);
+            // $('.sustainability .object-container .control#right').attr('to', '');
             $('.sustainability .object-container .control#right').attr('to', frame_display_arr[0]);
             break;
     }
@@ -40,7 +46,7 @@ function update_sustainability_target(target_frame) {
 
 function auto_play() {
     auto_animate = setInterval(function() {
-        if(animate_counter < 3) {
+        if(animate_counter < frame_display_arr.length) {
             if(animate_counter != 0) {
                 next_sustainability_animate(frame_display_arr[animate_counter]);
                 update_sustainability_target(frame_display_arr[animate_counter]);

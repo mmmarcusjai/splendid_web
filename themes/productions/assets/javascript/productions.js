@@ -67,7 +67,14 @@ $('document').ready(function() {
 
     // Home
     $('.home-pin').on('mouseover', function() {
-        // $('.test').css({'z-index': 1});
+        var toggle = $(this).data('toggle');
+        $('.img-home-gif[data-bg='+toggle+']').css({'opacity': 1, 'transition': '0.5s ease;'});
+        $('.img-home-gif[id=main]').css({'opacity': 0});
+    });
+
+    $('.home-pin').on('mouseout', function() {
+        $('.img-home-gif.dimmed').css({'opacity': 0});
+        $('.img-home-gif[id=main]').css({'opacity': 1});
     });
 
     $('.home-pin').on('click', function() {

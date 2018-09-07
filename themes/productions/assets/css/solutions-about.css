@@ -6,5 +6,28 @@
 }
 
 .about .container-fluid {
-    padding-top: 5rem;
+    padding: 6rem;
+}
+
+.about .title-block {
+    float: right;
+}
+
+.about .title-block div {
+    display: inline-block;
+}
+
+.about .title-block .sub-title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.about .content-block {
+    width: 60%;
+    height: 40%;
+    overflow: auto;
+    text-align: right;
+    margin-left: auto;
+    padding-right: 1rem;
 }

@@ -5,64 +5,211 @@
     position: relative;
 }
 
-.how-we-work  .come-together {
-    width: 15%;
-    height: 35%;
+.how-we-work .how-we-work-bg {
+    width: 70%;
+    height: 90%;
     position: absolute;
-    top: 20%;
-    left: 5%;
-    background-color: #ffe083;
+    top: -17%;
+    left: 0%;
     background-size: cover;
-    -webkit-clip-path: polygon(13% 14%, 91% 22%, 100% 100%, 0% 100%);
-    clip-path: polygon(13% 14%, 91% 22%, 100% 100%, 0% 100%);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../images/solutions/how_we_work_bg.jpg);
+    -webkit-clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
+    clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
+    z-index: 0;
+    opacity: 0.8;
 }
 
-.how-we-work  .we-design {
-    width: 15%;
-    height: 35%;
+.how-we-work .how-we-work-bg::before {
+    content: "";
     position: absolute;
-    top: 31%;
-    left: 30%;
-    background-color: #ec9466;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd56c;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.how-we-work .container-fluid {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.how-we-work .content-container {
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    padding: 1rem;
+}
+
+.how-we-work .content-container .content-block{
+    width: 70%;
+    height: 20%;
+    overflow: auto;
+    padding-right: 1rem;
+}
+
+.how-we-work .description-container {
+    max-width: 95%;
+    text-align: center;
+    position: relative;
+    margin: 50px auto;
+    margin-top: -20rem;
+}
+
+.how-we-work .description-block {
+    width: calc((100% - 60px * 2 * 4) / 4);
+    height: calc((100vw - 30px * 2 * 4) / 4 * (3 / 4));
+    display: inline-block;
     background-size: cover;
-    -webkit-clip-path: polygon(8% 8%, 100% 3%, 100% 100%, 18% 91%);
-    clip-path: polygon(8% 8%, 100% 3%, 100% 100%, 18% 91%);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 30px;
+    -webkit-box-shadow: 9px 12px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 9px 12px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    vertical-align: bottom;
+    cursor: pointer;
+    opacity: 0;
 }
 
-.roll-in-blurred-left {
-	-webkit-animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-	        animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+.how-we-work .description-block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: 1;
 }
 
-@-webkit-keyframes roll-in-blurred-left {
-  0% {
-    -webkit-transform: translateX(-1000px) rotate(-720deg);
-            transform: translateX(-1000px) rotate(-720deg);
-    -webkit-filter: blur(50px);
-            filter: blur(50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    -webkit-filter: blur(0);
-            filter: blur(0);
+.how-we-work .description-block::after {
+    color: #fff;
+    font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 1;
-  }
+    z-index: 2;
+    line-height: 1;
 }
-@keyframes roll-in-blurred-left {
-  0% {
-    -webkit-transform: translateX(-1000px) rotate(-720deg);
-            transform: translateX(-1000px) rotate(-720deg);
-    -webkit-filter: blur(50px);
-            filter: blur(50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) rotate(0deg);
-            transform: translateX(0) rotate(0deg);
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
+
+.how-we-work .description-block#come-together {
+    background-image: url(../images/solutions/come_together.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.how-we-work .description-block#come-together::before {
+    outline: solid 13.65rem #ffdd50;
+    outline-offset: -218px;
+    transition: .5s ease;
+}
+
+.how-we-work .description-block.active#come-together::before {
+    outline: solid 5rem #ffdd50 !important;
+    outline-offset: -80px !important;
+}
+
+.how-we-work .description-block#come-together::after {
+    content: "WE COME TOGETHER";
+}
+
+.how-we-work .description-block#we-design {
+    background-image: url(../images/solutions/we_design.jpg);
+    background-size: cover;
+    background-position: center;
+    animation-delay: .2s;
+}
+
+.how-we-work .description-block#we-design::before {
+    outline: solid 13.65rem #f9b916;
+    outline-offset: -218px;
+    transition: .5s ease;
+}
+
+.how-we-work .description-block.active#we-design::before {
+    outline: solid 5rem #f9b916 !important;
+    outline-offset: -80px !important;
+}
+
+.how-we-work .description-block#we-design::after {
+    content: "WE\A DESIGN";
+    white-space: pre;
+}
+
+.how-we-work .description-block#we-produce {
+    background-image: url(../images/solutions/we_produce.jpg);
+    background-size: cover;
+    background-position: center;
+    animation-delay: .4s;
+}
+
+.how-we-work .description-block#we-produce::before {
+    outline: solid 13.65rem #ff7610;
+    outline-offset: -218px;
+    transition: .5s ease;
+}
+
+.how-we-work .description-block.active#we-produce::before {
+    outline: solid 5rem #ff7610 !important;
+    outline-offset: -80px !important;
+}
+
+.how-we-work .description-block#we-produce::after {
+    content: "WE PRODUCE";
+}
+
+.how-we-work .description-block#we-deliver {
+    background-image: url(../images/solutions/we_deliver.jpg);
+    background-size: cover;
+    background-position: center;
+    animation-delay: .6s;
+}
+
+.how-we-work .description-block#we-deliver::before {
+    outline: solid 13.65rem #f44a1c;
+    outline-offset: -218px;
+    transition: .5s ease;
+}
+
+.how-we-work .description-block.active#we-deliver::before {
+    outline: solid 5rem #f44a1c !important;
+    outline-offset: -80px !important;
+}
+
+
+.how-we-work .description-block#we-deliver::after {
+    content: "WE\A DELIVER";
+    white-space: pre;
+}
+
+@media screen and (max-width: 2000px) {
+    .how-we-work .description-container {
+        margin-top: -35rem;
+    }
+
+    .how-we-work .description-block {
+        width: calc((100% - 40px * 2 * 4) / 4);
+        height: calc((100vw - 15px * 2 * 4) / 4 * (3 / 4))
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .how-we-work .description-container {
+        margin-top: -50rem;
+    }
+
+    .how-we-work .description-block {
+        width: calc((100% - 40px * 2 * 4) / 4);
+        height: calc((100vw - 15px * 2 * 4) / 4 * (3 / 4))
+    }
 }

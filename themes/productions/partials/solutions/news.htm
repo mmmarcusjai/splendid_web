@@ -12,28 +12,32 @@ description = "Solutions-News"
             <div class="row">
                 <div class="col-xl-12">
                     <div class="news-description">
-                        <div class="title text-uppercase">
-                            <p>News</p>
+                        <div class="title-block">
+                            <div class="title text-uppercase">
+                                <p>News</p>
+                            </div>
                         </div>
-                        <div class="content">
-                            <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
-                            <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
-                            <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
+                        <div class="content-block">
+                            <div class="content">
+                                <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
+                                <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
+                                <p>We recognize that the way in which we operate has an impact on the environment and are committed to integrating sustainability best practices into our decision-making and business activities worldwide. We invest in new production techniques and materials to offer clients a better sustainable alternative to what is currently available in the marketplace. Our strategy is comprised of the following 3 pillars.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-12">
-                    {% for record in news %}
-                        <div class="">Record ID: {{record.id}}</div>
-                        <div class="">Record Title: {{record.title}}</div>
-                    {% endfor %}
-                </div>
+    </div>
+</section>
+<section id="news-block">
+    <div class="news-grid">
+        {% for i in 1..9 %}
+        <div class="news-item">
+            <div class="news-desc-block">
+                <p class="news-title">I AM TITLE</p>
             </div>
-
         </div>
+        {% endfor %}
     </div>
 </section>

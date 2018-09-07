@@ -3,10 +3,15 @@ var video = $('#my-video');
 var ele_window = $(window);
 
 window.onscroll = () => {
+    // Navbar
     if(this.scrollY >= document.querySelector('.about').offsetTop) {
         $('#layout-header').addClass('active');
     } else {
         $('#layout-header').removeClass('active');
+    }
+    //
+    if(this.scrollY > document.querySelector('.how-we-work').offsetTop) {
+        $('.description-block').addClass('roll-in-blurred-left');
     }
 };
 
@@ -30,4 +35,12 @@ $(document).ready(function() {
             $('.menu-text').text('menu');
         }
 	});
+
+    $('.description-block').on('mouseover', function() {
+        $(this).addClass('active');
+    })
+
+    $('.description-block').on('mouseout', function() {
+        $(this).removeClass('active');
+    })
 });

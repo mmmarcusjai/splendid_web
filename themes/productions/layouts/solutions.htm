@@ -6,6 +6,9 @@ function onStart()
 {
     $news = GlobalNews::NewsCat('solutions')->get();
     $this['news'] = $news;
+
+    // Load JS
+    $this->addJs('assets/javascript/spriteclip.js');
 }
 ?>
 ==
@@ -19,6 +22,7 @@ function onStart()
     {% partial 'solutions/home' %}
     {% partial 'solutions/about' %}
     {% partial 'solutions/how-we-work' %}
+    {% partial 'solutions/our-servise' %}
     {% partial 'solutions/sustainability' %}
     {% partial 'solutions/news' %}
     {% partial 'solutions/contact-us' %}

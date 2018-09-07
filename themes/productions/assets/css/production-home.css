@@ -26,6 +26,14 @@
 
 .home .img-home-gif {
     max-width: 56%;
+    z-index: 1;
+    position: absolute;
+    margin-left: -35%;
+    transition: 0.5s ease;
+}
+
+.home .img-home-gif.dimmed {
+    opacity: 1;
 }
 
 .home .home-pin+img {
@@ -36,37 +44,47 @@
 
 .home .home-pin:hover+img{
     opacity: 1;
-    transition: 0.5s ease;
     animation: bounce 1s;
+    z-index: 1;
 }
 
 .home .home-pin#home-pro-pin+img {
-    left: 56%;
-    top: 6%;
+    /* left: 56%; */
+    /* top: 6%; */
+    left: 46%;
+    margin-top: 6%;
     max-width: 16%;
 }
 
 .home .home-pin#home-du-pin+img {
-    left:34%;
-    top: 24%;
+    /* left:34%; */
+    /* top: 24%; */
+    left:24%;
+    margin-top: 19%;
     max-width: 16%;
 }
 
 .home .home-pin#home-ct-pin+img {
-    left: 63%;
-    top: 41%;
+    /* left: 63%; */
+    /* top: 41%; */
+    left: 53%;
+    margin-top: 30%;
     max-width: 11%;
 }
 
 .home .home-pin#home-io-pin+img {
-    left: 29%;
-    top: 47%;
+    /* left: 29%; */
+    /* top: 47%; */
+    left: 19%;
+    margin-top: 37%;
     max-width: 11%;
 }
 
 .home .home-pin#home-ns-pin+img {
-    left: 54%;
-    top: 66%;
+    /* left: 54%; */
+    /* top: 66%; */
+    left: 44%;
+    margin-top: 50%;
     max-width: 11%;
 }
 

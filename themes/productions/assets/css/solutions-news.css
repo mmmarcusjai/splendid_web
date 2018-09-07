@@ -18,8 +18,9 @@
     top: -17%;
     left: 0%;
     background-size: cover;
-    background-position: center;
-    background-image: url(../images/about_bg.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../images/solutions/news_block_bg.jpg);
     -webkit-clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
     clip-path: polygon(0 0, 86% 24%, 59% 92%, 0 83%);
     z-index: 0;
@@ -37,11 +38,88 @@
     z-index: 1;
 }
 
+section#news-block {
+    margin-top: -20%;
+}
+
+.news-grid {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.news-grid .news-item {
+    height: 300px;
+    margin: 10px 1em;
+    flex: 0 1 30%;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.news-item:nth-child(1) {
+    -webkit-clip-path: polygon(15% 25%, 100% 15%, 100% 100%, 10% 100%);
+    clip-path: polygon(15% 25%, 100% 15%, 100% 100%, 10% 100%);
+    background-color: #51cb9a;
+}
+
+.news-item:nth-child(2) {
+    -webkit-clip-path: polygon(0 15%, 100% 5%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 15%, 100% 5%, 100% 100%, 0% 100%);
+    background-color: #36a47d;
+}
+
+.news-item:nth-child(3) {
+    -webkit-clip-path: polygon(0 5%, 85% 0%, 90% 100%, 0% 100%);
+    clip-path: polygon(0 5%, 85% 0%, 90% 100%, 0% 100%);
+    background-color: #409969;
+}
+
+.news-item:nth-child(4) {
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 5% 100%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 5% 100%);
+    background-color: #45d2af;
+}
+
+.news-item:nth-child(5) {
+    background-color: #2cb887;
+}
+
+.news-item:nth-child(6) {
+    -webkit-clip-path: polygon(0 0, 90% 0, 95% 100%, 0% 100%);
+    clip-path: polygon(0 0, 90% 0, 95% 100%, 0% 100%);
+    background-color: #38a880;
+}
+
+.news-item:nth-child(7) {
+    -webkit-clip-path: polygon(5% 0, 100% 0%, 100% 90%, 0% 85%);
+    clip-path: polygon(5% 0, 100% 0%, 100% 90%, 0% 85%);
+    background-color: #419a6a;
+}
+
+.news-item:nth-child(8) {
+    -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 95%, 0% 90%);
+    clip-path: polygon(0% 0, 100% 0%, 100% 95%, 0% 90%);
+    background-color: #66dcac;
+}
+
+.news-item:nth-child(9) {
+    -webkit-clip-path: polygon(0% 0, 95% 0%, 100% 100%, 0% 95%);
+    clip-path: polygon(0% 0, 95% 0%, 100% 100%, 0% 95%);
+    background-color: #46bc7f;
+}
+
+.news-grid .news-item .news-desc-block {
+    height: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .news .news-bg {
         width: 100%;
     }
-    
+
     .news .news-description {
         width: 100%;
     }

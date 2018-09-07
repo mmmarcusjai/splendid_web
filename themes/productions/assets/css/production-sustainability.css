@@ -56,6 +56,7 @@
 .sustainability .object-container .control{
     position: absolute;
     z-index: 1;
+    margin-top: 24%;
     cursor: pointer;
 }
 
@@ -66,12 +67,10 @@
 
 .sustainability .object-container .control#left{
     left: 20%;
-    margin-top: 24%;
 }
 
 .sustainability .object-container .control#right{
     left: 77%;
-    margin-top: 24%;
 }
 
 .swiper-container {
@@ -95,9 +94,9 @@
 }
 
 .sustainability .animate-area {
-    width: 642px;
-    height: 650px;
-    background: url(../images/sustainability_frame.png) no-repeat 0 0;
+    width: 850px;
+    height: 850px;
+    background: url(../images/productions/production_cube_rotation.png) no-repeat 0 0;
     margin: auto;
     margin-top: -7%;
 
