@@ -1,0 +1,142 @@
+.our-servise {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+    margin: 5rem auto;
+}
+
+.our-servise .our-servise-bg {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: -17%;
+    left: 0%;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../images/solutions/our_servise.jpg);
+    -webkit-clip-path: polygon(40% 30%, 100% 0%, 100% 100%, 49% 85%);
+    clip-path: polygon(40% 30%, 100% 0%, 100% 100%, 49% 85%);
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.our-servise .our-servise-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #eb4e69;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.our-servise .content-container {
+    width: 50%;
+    height: 100%;
+    margin-right: auto;
+    text-align: right;
+    padding: 1rem;
+}
+
+.our-servise .content-container .content-block{
+    width: 70%;
+    height: 20%;
+    overflow: auto;
+    padding-right: 1rem;
+    float: right;
+}
+
+/* Servise block style */
+#servise-block {
+    margin-top: -25rem;
+    margin-bottom: 20rem;
+}
+
+.servise-block .block {
+    height: 100%;
+    min-height: 80vh;
+    color: #fff;
+    width: 30%;
+    padding-top: 8rem;
+}
+
+.servise-block .block .content-block{
+    width: 60%;
+}
+
+.servise-block .block .title{
+    font-size: 3rem;
+}
+
+.servise-block .food-and-beverage {
+    background-color: #ef703f;
+    background-image: url(../images/solutions/our_servise_bg.png);
+    background-size: cover;
+    -webkit-clip-path: polygon(0% 0%, 100% 23%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 23%, 100% 100%, 0% 100%);
+}
+
+
+.servise-block .marketing-brand {
+    background-color: #f9b916;
+    background-image: url(../images/solutions/our_servise_flip_bg.png);
+    background-size: cover;
+}
+
+.servise-block .packaging-solutions {
+    background-color: #95db61;
+    background-image: url(../images/solutions/our_servise_flip_align_right_bg.png);
+    background-size: cover;
+}
+
+.servise-block .warehouse-logistics {
+    background-color: #eb4e69;
+    background-image: url(../images/solutions/our_servise_flip_bg.png);
+    background-size: cover;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 77%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 77%);
+}
+
+.servise-block .food-and-beverage .content-container {
+    text-align: right;
+}
+
+.servise-block .marketing-brand .content-container {
+    text-align: left;
+    margin-left: auto;
+}
+
+.servise-block .packaging-solutions .content-container {
+    padding-top: 15rem;
+    text-align: right;
+}
+
+.servise-block .warehouse-logistics .content-container {
+    padding-top: 17rem;
+    text-align: left;
+    margin-left: auto;
+}
+
+.servise-block .food-and-beverage .content-container .content-block, .servise-block .packaging-solutions .content-container .content-block {
+    margin-left: auto;
+}
+
+.servise-block .marketing-brand .content-container .content-block, .servise-block .warehouse-logistics .content-container .content-block {
+    margin-right: auto;
+}
+
+.servise-block .material-img {
+    position: absolute;
+    margin-top: -10%;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+.servise-block .material-img img {
+    width: 30%;
+}
