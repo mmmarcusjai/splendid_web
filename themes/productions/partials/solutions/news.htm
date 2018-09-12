@@ -32,10 +32,12 @@ description = "Solutions-News"
 </section>
 <section id="news-block">
     <div class="news-grid">
-        {% for i in 1..9 %}
-        <div class="news-item">
+        {% for record in news %}
+        <!-- <div class="news-item" style="background-image: url({{'solutions/slide-1.jpg'|media}})"> -->
+        <div class="news-item" style="background-image: url({{record.news_image|media}})">
             <div class="news-desc-block">
-                <p class="news-title">I AM TITLE</p>
+                <p class="news-title text-uppercase">{{ record.title }}</p>
+                <p class="news-desc">Description Description Description Description </p>
             </div>
         </div>
         {% endfor %}

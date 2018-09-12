@@ -3,6 +3,10 @@ fields:
         label: Title
         span: auto
         type: text
+    description:
+        label: Description
+        span: auto
+        type: text
     content:
         label: Content
         size: ''
@@ -29,4 +33,11 @@ fields:
             logistics: logistics
             group: group
         span: auto
+        type: dropdown
+    news_type:
+        label: 'News type'
+        span: auto
+        options:
+            product: product
+            company: company
         type: dropdown

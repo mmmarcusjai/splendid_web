@@ -6,11 +6,15 @@
 }
 
 .about .container-fluid {
-    padding: 6rem;
+    /* padding: 6rem; */
 }
 
-.about .title-block {
-    float: right;
+.about .content-container {
+    width: 40%;
+    height: 100%;
+    margin-right: auto;
+    text-align: right;
+    padding: 15rem 1rem;
 }
 
 .about .title-block div {
@@ -30,4 +34,28 @@
     text-align: right;
     margin-left: auto;
     padding-right: 1rem;
+}
+
+/* carousel */
+.about .carousel {
+    position: absolute;
+    top: 6%;
+    right: 0;
+    -webkit-clip-path: polygon(0% 15%, 100% 0%, 100% 90%, 15% 100%);
+    clip-path: polygon(0% 15%, 100% 0%, 100% 90%, 15% 100%);
+    z-index: -1;
+    width: 70%;
+    margin-left: auto;
+}
+
+.about .carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.4;
+    z-index: 1;
 }

@@ -29,6 +29,8 @@ function onStart()
     {% partial 'solutions/footer' %}
 {% endput %}
 {% put scripts %}
+    <!-- <script src="https://unpkg.com/mini-parallax" type="text/javascript"></script> -->
+    <script src="{{ 'assets/javascript/mini-parallax-iife-min.js'|theme }}" type="text/javascript"></script>
     <script src="{{ 'assets/javascript/solutions.js'|theme }}" type="text/javascript"></script>
 {% endput %}
 {% partial 'core' %}

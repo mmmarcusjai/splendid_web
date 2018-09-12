@@ -6,7 +6,7 @@ body {
 }
 
 #layout-header.active {
-    background: linear-gradient(to bottom, #fff, transparent);
+    background: linear-gradient(to bottom, #fff, rgba(255,255,255,0));
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
 
 nav.active {
     transform: translateY(0%);
-    background: linear-gradient(to bottom, #fff, transparent);
+    background: linear-gradient(to bottom, #fff, rgba(255,255,255,0));
 }
 
 nav ul {
@@ -122,6 +122,10 @@ nav img.logo {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
 	background-color: #ee8c1f;
+}
+
+span.special-letter {
+    font-size: 2rem;
 }
 
 @media (max-width: 1440px) {

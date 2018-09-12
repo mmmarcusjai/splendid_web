@@ -1,4 +1,3 @@
-AOS.init();
 var video = $('#my-video');
 var ele_window = $(window);
 
@@ -9,11 +8,12 @@ window.onscroll = () => {
     } else {
         $('#layout-header').removeClass('active');
     }
-    //
+    // How we work
     if(this.scrollY > document.querySelector('.how-we-work').offsetTop) {
         $('.description-block').addClass('roll-in-blurred-left');
     }
 };
+
 
 window.onresize = () => {
     // var videoWidth = video.width();
@@ -43,4 +43,8 @@ $(document).ready(function() {
     $('.description-block').on('mouseout', function() {
         $(this).removeClass('active');
     })
+
+    const { NormalParallax } = MiniParallax;
+
+    new NormalParallax('.js-parallax');
 });

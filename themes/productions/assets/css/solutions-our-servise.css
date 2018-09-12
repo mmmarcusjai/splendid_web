@@ -56,6 +56,10 @@
     margin-bottom: 20rem;
 }
 
+.servise-block {
+    position: relative;
+}
+
 .servise-block .block {
     height: 100%;
     min-height: 80vh;
@@ -80,11 +84,22 @@
     clip-path: polygon(0% 0%, 100% 23%, 100% 100%, 0% 100%);
 }
 
-
 .servise-block .marketing-brand {
     background-color: #f9b916;
     background-image: url(../images/solutions/our_servise_flip_bg.png);
     background-size: cover;
+}
+
+.servise-block .packaging-solutions .block .content-block:nth-of-type(2) {
+    width: 70%;
+}
+
+.servise-block .packaging-solutions .block .content-block:nth-of-type(3) {
+    font-style: italic;
+}
+
+.servise-block .packaging-solutions .block .content-block:nth-of-type(3) .content {
+    font-weight: bold;
 }
 
 .servise-block .packaging-solutions {
@@ -95,7 +110,7 @@
 
 .servise-block .warehouse-logistics {
     background-color: #eb4e69;
-    background-image: url(../images/solutions/our_servise_flip_bg.png);
+    background-image: url(../images/solutions/our_servise_flip_30_bg.png);
     background-size: cover;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 77%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 77%);
@@ -139,4 +154,106 @@
 
 .servise-block .material-img img {
     width: 30%;
+}
+
+/* Floating object */
+.servise-block .floating-obj {
+    position: absolute;
+}
+
+.servise-block .floating-obj img {
+    max-width: 100%;
+}
+
+.servise-block .floating-obj#bean-1 {
+    left: 25%;
+    top: 7%;
+}
+
+.servise-block .floating-obj#bean-2 {
+    left: 80%;
+    top: 10%;
+}
+
+.servise-block .floating-obj#bean-3 {
+    left: 72%;
+    top: 17%;
+}
+
+.servise-block .floating-obj#bean-4 {
+    left: 18%;
+    top: 18%;
+}
+
+.servise-block .floating-obj#bean-5 {
+    left: 79%;
+    top: 25%;
+}
+
+.servise-block .floating-obj#bean-6 {
+    left: 23%;
+    top: 28%;
+}
+
+.servise-block .floating-obj#salt-1 {
+    left: 25%;
+    top: 49%;
+    transform: rotate(25deg);
+}
+
+.servise-block .floating-obj#salt-2 {
+    left: 20%;
+    top: 55%;
+}
+
+.servise-block .floating-obj#salt-3 {
+    left: 10%;
+    top: 45%;
+    transform: rotate(90deg);
+}
+
+.servise-block .floating-obj#salt-4 {
+    left: 11%;
+    top: 74%;
+}
+
+.servise-block .floating-obj#salt-5 {
+    left: 19%;
+    top: 78%;
+    transform: scaleX(-1);
+}
+
+.servise-block .floating-obj#salt-6 {
+    left: 24%;
+    top: 83%;
+    transform: rotate(160deg);
+}
+
+.servise-block .floating-obj#salt-7 {
+    left: 11%;
+    top: 85%;
+}
+
+.servise-block .floating-obj#caramel-1 {
+    left: 85%;
+    top: 52%;
+    transform: rotate(-40deg);
+}
+
+.servise-block .floating-obj#caramel-2 {
+    left: 60%;
+    top: 69%;
+    transform: rotate(20deg) scale(0.8);
+}
+
+.servise-block .floating-obj#caramel-3 {
+    left: 70%;
+    top: 60%;
+    transform: rotate(5deg);
+}
+
+.servise-block .floating-obj#caramel-4 {
+    left: 85%;
+    top: 77%;
+    transform: rotate(-40deg);
 }
