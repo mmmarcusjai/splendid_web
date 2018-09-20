@@ -4,8 +4,10 @@ description = "Solutions"
 use sg\SplendidGroup\Models\GlobalNews;
 function onStart()
 {
-    $news = GlobalNews::NewsCat('solutions')->get();
-    $this['news'] = $news;
+    $product_news = GlobalNews::NewsbyType('solutions', 'product')->orderBy('id', 'desc')->get();
+    $company_news = GlobalNews::NewsbyType('solutions', 'company')->orderBy('id', 'desc')->get();
+    $this['product_news'] = $product_news;
+    $this['company_news'] = $company_news;
 
     // Load JS
     $this->addJs('assets/javascript/spriteclip.js');
@@ -19,17 +21,23 @@ function onStart()
     {% partial 'solutions/header' %}
 {% endput %}
 {% put layout_content %}
+    {% partial 'solutions/menu' %}
     {% partial 'solutions/home' %}
     {% partial 'solutions/about' %}
     {% partial 'solutions/how-we-work' %}
     {% partial 'solutions/our-servise' %}
+    {% partial 'solutions/quality-and-safety' %}
     {% partial 'solutions/sustainability' %}
     {% partial 'solutions/news' %}
     {% partial 'solutions/contact-us' %}
+    {% partial 'common/group-desc' %}
     {% partial 'solutions/footer' %}
 {% endput %}
 {% put scripts %}
     <!-- <script src="https://unpkg.com/mini-parallax" type="text/javascript"></script> -->
+    <script>
+        var base_url = "{{url('/')}}";
+    </script>
     <script src="{{ 'assets/javascript/mini-parallax-iife-min.js'|theme }}" type="text/javascript"></script>
     <script src="{{ 'assets/javascript/solutions.js'|theme }}" type="text/javascript"></script>
 {% endput %}

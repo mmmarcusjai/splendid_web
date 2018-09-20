@@ -6,12 +6,13 @@ description = "Solutions-Contact Us"
 {% put styles %}
     <link href="{{ 'assets/css/solutions-contactus.css'|theme }}" rel="stylesheet">
 {% endput %}
-<section id="contact-us">
+<section class="scroll-section" id="contact-us" data-section-name="contact-us">
     <div class="side-slider">
-        <img class="hex-main slide-top" id="slide-cn" data-display="china-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
-        <img class="hex-main slide-main" id="slide-hk" data-display="hk-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
-        <img class="hex-main slide-bottom" id="slide-ams" data-display="ams-office" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="1" />
-        <img class="hex-main slide-hide" id="slide-fac" data-display="factory" src=" {{ 'productions/news/News page content-10-thumbnail.png'|media }} " alt="" img-display="0"/>
+        <img class="hex-main slide-top" id="slide-hk" data-display="hk-office" src=" {{ 'contactus/hk-office.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-main" id="slide-hk-head" data-display="hk-head-office" src=" {{ 'contactus/hk-head-office.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-bottom" id="slide-ams" data-display="ams-office" src=" {{ 'contactus/ams-office.png'|media }} " alt="" img-display="1" />
+        <img class="hex-main slide-hide" id="slide-toronto" data-display="toronto-office" src=" {{ 'contactus/toronto-office.png'|media }} " alt="" img-display="0"/>
+        <img class="hex-main slide-hide" id="slide-sh" data-display="shanghai-office" src=" {{ 'contactus/sh-office.png'|media }} " alt="" img-display="0" />
     </div>
     <div class="contact-us">
         <div class="container-fluid contact-us-container">
@@ -22,31 +23,32 @@ description = "Solutions-Contact Us"
                 </div>
                 <!-- Address Detail -->
                 <div class="col-xl-4 col-md-4 address">
-                    <div class="address-detail" id="hk-office" contact-index="1">
+                    <div class="address-detail" id="hk-head-office" contact-index="1">
                         <div class="office-title text-uppercase">
-                            <p>HEAD OFFICE HONG KONG</p>
+                            <p>Hong Kong Head Office</p>
                         </div>
                         <div class="content office-address">
-                            <p>24th floor,Connaught Commercial Building,<br>
+                            <p>Suite 1001, 10th floor, Connaught Commercial Building,<br>
                             185 Wanchai road,<br>
                             Wanchai, Hong Kong</p>
                         </div>
                         <div class="content office-contact">
-                            <p>Tel: +852 2555 0012<br>
-                            Email: sales@splendidgroup.asia</p>
+                            <p>Tel: +852 2555 6573<br>
+                            Email: sales@splendid.group</p>
                         </div>
                     </div>
-                    <div class="address-detail d-none" id="china-office" contact-index="2">
+                    <div class="address-detail d-none" id="hk-office" contact-index="2">
                         <div class="office-title text-uppercase">
-                            <p>CHINA OFFICE</p>
+                            <p>Hong Kong Office</p>
                         </div>
                         <div class="content office-address">
-                            <p>Office F309,<br>
-                            NanBo Building, ZhangMuTou,<br>
-                            DongGuan, GD, China PO.523620</p>
+                            <p>Suite 2402-03, 24th floor, Connaught Commercial Building,<br>
+                            185 Wanchai road,<br>
+                            Wanchai, Hong Kong</p>
                         </div>
                         <div class="content office-contact">
-                            <p>Tel: +86 0769-89386960</p>
+                            <p>Tel: +852 2555 6573<br>
+                            Email: sales@splendid.group</p>
                         </div>
                     </div>
                     <div class="address-detail d-none" id="ams-office" contact-index="3">
@@ -54,19 +56,39 @@ description = "Solutions-Contact Us"
                             <p>Amsterdam office</p>
                         </div>
                         <div class="content office-address">
-                            <p>Rokin 75, 1012 KL Amsterdam,<br>
-                            the Netherlands</p>
+                            <p>Herengracht 450, 1017 CA, Amsterdam</p>
                         </div>
                         <div class="content office-contact">
-                            <p>Tel: +31 (0) 20 308 08 56</p>
+                            <p>Tel: +31 6 46 75 50 47<br>
+                            Email: sales@splendid.group</p>
                         </div>
                     </div>
-                    <div class="address-detail d-none" id="factory" contact-index="4">
+                    <div class="address-detail d-none" id="toronto-office" contact-index="4">
                         <div class="office-title text-uppercase">
-                            <p>Factory locations</p>
+                            <p>Toronto Office</p>
                         </div>
                         <div class="content office-address">
-                            <p>Dongguan, Guangzhou, Shenzhen.</p>
+                            <p>2425 Matheson Boulevard East,<br>
+                            Suite 800, Mississauga Ontario,<br>
+                             L4W 5K4, Canada</p>
+                        </div>
+                        <div class="content office-contact">
+                            <p>Tel: +14162620672<br>
+                            Email: sales@splendid.group</p>
+                        </div>
+                    </div>
+                    <div class="address-detail d-none" id="shanghai-office" contact-index="5">
+                        <div class="office-title text-uppercase">
+                            <p>Shanghai Office</p>
+                        </div>
+                        <div class="content office-address">
+                            <p>Pilot Free Trade Zone, Room 1331, 13th Floor<br>
+                             55 Xili Road, Shanghai,<br>
+                             China</p>
+                        </div>
+                        <div class="content office-contact">
+                            <p>Tel: +852 2555 6573<br>
+                            Email: sales@splendid.group</p>
                         </div>
                     </div>
                     <div class="control-btn">
@@ -81,7 +103,7 @@ description = "Solutions-Contact Us"
                             <p>Contact Us</p>
                         </div>
                         <div class="content">
-                            Headquartered in Hong Kong, with an office and our own production facilities in China, we are active in more than 20 countries around the world.
+                            Headquartered in Hong Kong, we have offices in China, Canada and The Netherlands. We are active in more than 20 countries around the world.
                         </div>
                     </div>
                 </div>

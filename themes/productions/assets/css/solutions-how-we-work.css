@@ -34,30 +34,38 @@
 }
 
 .how-we-work .container-fluid {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
 }
 
 .how-we-work .content-container {
-    width: 50%;
+    width: 70%;
     height: 100%;
-    margin-left: auto;
+    margin-left: 15rem;
     padding: 1rem;
 }
 
-.how-we-work .content-container .content-block{
-    width: 70%;
-    height: 20%;
+.how-we-work .content-container .title-block {
+    line-height: 1.2;
+}
+
+.how-we-work .content-container .content-block {
+    width: 75%;
     overflow: auto;
     padding-right: 1rem;
+}
+
+.how-we-work .content-block .left-p {
+    width: 60%;
+    display: inline-block;
 }
 
 .how-we-work .description-container {
     max-width: 95%;
     text-align: center;
     position: relative;
-    margin: 50px auto;
-    margin-top: -20rem;
+    margin: 30px auto;
+    /* margin-top: -20rem; */
 }
 
 .how-we-work .description-block {
@@ -72,7 +80,6 @@
     box-shadow: 9px 12px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     vertical-align: bottom;
-    cursor: pointer;
     opacity: 0;
 }
 
@@ -114,9 +121,12 @@
     transition: .5s ease;
 }
 
+.how-we-work .description-block.active::before {
+    outline-offset: -25px !important;
+}
+
 .how-we-work .description-block.active#come-together::before {
-    outline: solid 5rem #ffdd50 !important;
-    outline-offset: -80px !important;
+    outline: solid 1.6rem #ffdd50 !important;
 }
 
 .how-we-work .description-block#come-together::after {
@@ -137,8 +147,7 @@
 }
 
 .how-we-work .description-block.active#we-design::before {
-    outline: solid 5rem #f9b916 !important;
-    outline-offset: -80px !important;
+    outline: solid 1.6rem #f9b916 !important;
 }
 
 .how-we-work .description-block#we-design::after {
@@ -160,8 +169,7 @@
 }
 
 .how-we-work .description-block.active#we-produce::before {
-    outline: solid 5rem #ff7610 !important;
-    outline-offset: -80px !important;
+    outline: solid 1.6rem #ff7610 !important;
 }
 
 .how-we-work .description-block#we-produce::after {
@@ -182,8 +190,7 @@
 }
 
 .how-we-work .description-block.active#we-deliver::before {
-    outline: solid 5rem #f44a1c !important;
-    outline-offset: -80px !important;
+    outline: solid 1.6rem #f44a1c !important;
 }
 
 
@@ -194,7 +201,7 @@
 
 @media screen and (max-width: 2000px) {
     .how-we-work .description-container {
-        margin-top: -35rem;
+        margin-top: -2rem;
     }
 
     .how-we-work .description-block {
@@ -204,8 +211,8 @@
 }
 
 @media screen and (max-width: 1440px) {
-    .how-we-work .description-container {
-        margin-top: -50rem;
+    .how-we-work .content-block .left-p {
+        width: 100%;
     }
 
     .how-we-work .description-block {

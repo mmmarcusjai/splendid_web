@@ -1,0 +1,48 @@
+description = "Common-Splendid group description"
+
+[viewBag]
+==
+{% put styles %}
+    <link rel="stylesheet" href="{{ 'assets/css/common-footer.css'|theme }}">
+{% endput %}
+<div class="group-description scroll-section">
+    <div class="group-desc-block">
+        <div class="desc">
+            <div class="group-img-block">
+                <a href="http://splendid.group/"><img src="{{ 'footer/splendid_group_logo.png'|media }}" alt=""></a>
+            </div>
+            <div class="desc-title">Proud member of Splendid Group</div>
+            <br>
+            <div class="desc-content">
+                <p>Splendid Group created a one-stop solution for their customers that includes design, concept development, manufacturing, integrated sourcing, strategy, marketing, campaigns and total digital solutions. So, whether you need bespoke products or a successful marketing campaign, you can depend on Splendid Group for an efficient, cost-conscious and partner-focused collaboration. Our group of companies is composed of 6 different brands that are operating globally.</p>
+            </div>
+            <div class="desc-service-menu">
+                <ul>
+                    <li>
+                        <a href="http://splendid.group/productions/"><img alt="Productions" src="{{ 'footer/splendid_productions_logo.png'|media }}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/solutions') }}"><img alt="Solutions" src="{{ 'footer/splendid_solutions_logo.png'|media }}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://splendid.group/logistic/"><img alt="Logistic" src="{{ 'footer/splendid_logistics_logo.png'|media }}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://splendid.group/design/"><img alt="Design" src="{{ 'footer/splendid_design_logo.png'|media }}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img alt="Campaigns" src="{{ 'footer/splendid_campaigns_logo.png'|media }}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://splendid.group/digital/"><img alt="Digital" src="{{ 'footer/splendid_digital_logo.png'|media }}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

@@ -1,9 +1,9 @@
 .our-servise {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
-    margin: 5rem auto;
+    margin-bottom: 20rem;
 }
 
 .our-servise .our-servise-bg {
@@ -37,9 +37,9 @@
 .our-servise .content-container {
     width: 50%;
     height: 100%;
-    margin-right: auto;
-    text-align: right;
-    padding: 1rem;
+    margin: auto;
+    text-align: center;
+    padding: 5rem;
 }
 
 .our-servise .content-container .content-block{
@@ -65,15 +65,21 @@
     min-height: 80vh;
     color: #fff;
     width: 30%;
-    padding-top: 8rem;
+    padding-top: 10rem;
 }
 
 .servise-block .block .content-block{
-    width: 60%;
+    width: 65%;
 }
 
 .servise-block .block .title{
     font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.servise-block .block .content{
+    font-size: 1.1rem;
 }
 
 .servise-block .food-and-beverage {
@@ -118,6 +124,7 @@
 
 .servise-block .food-and-beverage .content-container {
     text-align: right;
+    padding-top: 8rem;
 }
 
 .servise-block .marketing-brand .content-container {
@@ -126,12 +133,12 @@
 }
 
 .servise-block .packaging-solutions .content-container {
-    padding-top: 15rem;
+    padding-top: 13rem;
     text-align: right;
 }
 
 .servise-block .warehouse-logistics .content-container {
-    padding-top: 17rem;
+    padding-top: 10rem;
     text-align: left;
     margin-left: auto;
 }
@@ -146,14 +153,43 @@
 
 .servise-block .material-img {
     position: absolute;
-    margin-top: -10%;
-    width: 100%;
+    /* margin-top: -10%; */
+    /* width: 100%; */
     text-align: center;
     z-index: 1;
 }
 
+.servise-block .material-img#cocoa-material {
+    margin-left: 60%;
+    margin-top: -18%;
+}
+
+.servise-block .material-img#alain-material {
+    margin-left: 5%;
+    margin-top: -10%;
+    z-index: 2;
+}
+
+.servise-block .material-img#alain-material-1 {
+    margin-left: 14%;
+    margin-top: -12%;
+    z-index: 1;
+}
+
+.servise-block .material-img#alain-packaging-material {
+    margin-left: 60%;
+    margin-top: -8%;
+    z-index: 2;
+}
+
+.servise-block .material-img#alain-packaging-material-1 {
+    margin-left: 68%;
+    margin-top: -11%;
+    z-index: 1;
+}
+
 .servise-block .material-img img {
-    width: 30%;
+    max-width: 80%;
 }
 
 /* Floating object */
@@ -166,94 +202,118 @@
 }
 
 .servise-block .floating-obj#bean-1 {
-    left: 25%;
-    top: 7%;
+    left: 70%;
+    top: 5%;
 }
 
 .servise-block .floating-obj#bean-2 {
-    left: 80%;
+    left: 60%;
     top: 10%;
 }
 
 .servise-block .floating-obj#bean-3 {
-    left: 72%;
-    top: 17%;
+    left: 47%;
+    top: 13%;
+    transform: rotate(45deg);
 }
 
 .servise-block .floating-obj#bean-4 {
-    left: 18%;
-    top: 18%;
+    left: 57%;
+    top: 16%;
 }
 
 .servise-block .floating-obj#bean-5 {
-    left: 79%;
-    top: 25%;
+    left: 47%;
+    top: 23%;
 }
 
-.servise-block .floating-obj#bean-6 {
-    left: 23%;
+.servise-block .floating-obj#chip-1 {
+    left: 34%;
     top: 28%;
 }
 
+.servise-block .floating-obj#chip-2 {
+    left: 20%;
+    top: 31%;
+}
+
+.servise-block .floating-obj#chip-3 {
+    left: 34%;
+    top: 34%;
+}
+
+.servise-block .floating-obj#chip-4 {
+    left: 40%;
+    top: 40%;
+}
+
 .servise-block .floating-obj#salt-1 {
-    left: 25%;
-    top: 49%;
-    transform: rotate(25deg);
+    left: 50%;
+    top: 70%;
 }
 
 .servise-block .floating-obj#salt-2 {
-    left: 20%;
-    top: 55%;
-}
-
-.servise-block .floating-obj#salt-3 {
-    left: 10%;
-    top: 45%;
-    transform: rotate(90deg);
-}
-
-.servise-block .floating-obj#salt-4 {
-    left: 11%;
+    left: 44%;
     top: 74%;
 }
 
+.servise-block .floating-obj#salt-3 {
+    left: 60%;
+    top: 77%;
+    transform: rotate(-25deg);
+}
+
+.servise-block .floating-obj#salt-4 {
+    left: 37%;
+    top: 79%;
+    transform: rotate(159deg);
+}
+
 .servise-block .floating-obj#salt-5 {
-    left: 19%;
-    top: 78%;
-    transform: scaleX(-1);
+    left: 53%;
+    top: 86%;
 }
 
 .servise-block .floating-obj#salt-6 {
-    left: 24%;
-    top: 83%;
-    transform: rotate(160deg);
-}
-
-.servise-block .floating-obj#salt-7 {
-    left: 11%;
-    top: 85%;
+    left: 40%;
+    top: 91%;
 }
 
 .servise-block .floating-obj#caramel-1 {
-    left: 85%;
-    top: 52%;
+    left: 65%;
+    top: 48%;
     transform: rotate(-40deg);
 }
 
 .servise-block .floating-obj#caramel-2 {
-    left: 60%;
-    top: 69%;
-    transform: rotate(20deg) scale(0.8);
+    left: 73%;
+    top: 55%;
+    transform: rotate(20deg);
 }
 
 .servise-block .floating-obj#caramel-3 {
-    left: 70%;
+    left: 45%;
     top: 60%;
-    transform: rotate(5deg);
+    transform: rotate(-63deg);
 }
 
 .servise-block .floating-obj#caramel-4 {
-    left: 85%;
-    top: 77%;
-    transform: rotate(-40deg);
+    left: 50%;
+    top: 66%;
+    transform: rotate(40deg);
+}
+
+.servise-block .floating-obj#rose-1 {
+    left: 20%;
+    top: 78%;
+}
+
+.servise-block .floating-obj#rose-2 {
+    left: 7%;
+    top: 85%;
+}
+
+.servise-block .floating-obj#rose-3 {
+    left: 20%;
+    top: 91%;
 }

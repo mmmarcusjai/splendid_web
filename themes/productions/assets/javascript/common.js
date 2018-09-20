@@ -30,3 +30,20 @@ function contactus_slide(action) {
     $('.address-detail[id='+ $('.slide-main').data('display') +']').removeClass('d-none');
     // console.log('ID ::: ' + $('.slide-main').attr('id'));
 }
+
+function customClass(classname, currNode, action) {
+    currNode.forEach(function(item){
+        switch (action) {
+            case 'add':
+                item.classList.add(classname);
+                break;
+            case 'remove':
+                item.classList.remove(classname);
+                break
+        }
+    });
+}
+
+function addClassById(classname, id) {
+    document.getElementById(id).classList.add(classname);
+}

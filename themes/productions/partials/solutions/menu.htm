@@ -1,0 +1,30 @@
+description = "Solutions-menu"
+
+[viewBag]
+==
+{% put styles %}
+    <!-- <link href="{{ 'assets/css/common-bubble-menu.css'|theme }}" rel="stylesheet"> -->
+    <link href="{{ 'assets/css/common-side-menu.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/solutions-menu.css'|theme }}" rel="stylesheet">
+{% endput %}
+
+<!--div class="bubble-menu font-lato">
+    <div class="opt active home-opt" id=""><label>Home</label><div class="bullet" id=""></div></div>
+    <div class="opt about-opt" id=""><label>About</label><div class="bullet" id=""></div></div>
+    <div class="opt how-we-work-opt" id=""><label>How we work</label><div class="bullet" id=""></div></div>
+    <div class="opt our-servise-opt" id=""><label>Our servise</label><div class="bullet" id=""></div></div>
+    <div class="opt sustainability-opt" id=""><label>Sustainability</label><div class="bullet" id=""></div></div>
+    <div class="opt news-opt" id=""><label>News</label><div class="bullet"  id=""></div></div>
+    <div class="opt contact-us-opt" id=""><label>Contact Us</label><div class="bullet" id=""></div></div>
+</div-->
+<div class="side-wrapper">
+    <ul>
+        <li><a href="{{ url('/solutions') }}#home" onclick="jump_to('home'); return false;">Home</a></li>
+        <li><a href="{{ url('/solutions') }}#about" onclick="jump_to('about'); return false;">About</a></li>
+        <li><a href="{{ url('/solutions') }}#how-we-work" onclick="jump_to('how-we-work'); return false;">How we work</a></li>
+        <li><a href="{{ url('/solutions') }}#our-servise" onclick="jump_to('our-servise'); return false;">Our services</a></li>
+        <li><a href="{{ url('/solutions') }}#sustainability" onclick="jump_to('sustainability'); return false;">Sustainability</a></li>
+        <li><a href="{{ url('/solutions') }}#news" onclick="jump_to('news'); return false;">News</a></li>
+        <li><a href="{{ url('/solutions') }}#contact-us" onclick="jump_to('contact-us'); return false;">Contact Us</a></li>
+    </ul>
+</div>

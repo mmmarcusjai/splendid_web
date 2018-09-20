@@ -1,4 +1,4 @@
-description = "Productions news detail"
+description = "Solutions news detail"
 
 [builderDetails newsDetails]
 modelClass = "sg\SplendidGroup\Models\GlobalNews"
@@ -11,7 +11,7 @@ notFoundMessage = "Record not found"
 use sg\SplendidGroup\Models\GlobalNews;
 function onStart()
 {
-    $news = GlobalNews::NewsCat('productions')->orderBy('id', 'desc')->get();
+    $news = GlobalNews::NewsCat('solutions')->orderBy('id', 'desc')->get();
     $this['news'] = $news;
 
     Session::put('fromNewsDetail', TRUE);
@@ -19,16 +19,15 @@ function onStart()
 ?>
 ==
 {% put styles %}
-    <link href="{{ 'assets/css/productions-theme.css'|theme }}" rel="stylesheet">
-    <link href="{{ 'assets/css/productions-hex.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/solutions-theme.css'|theme }}" rel="stylesheet">
 {% endput %}
 {% put header_content %}
-    {% partial 'productions/header' %}
+    {% partial 'solutions/header' %}
 {% endput %}
 {% put layout_content %}
-    {% partial 'productions/news-details' newsInfo=newsDetails.record %}
+    {% partial 'solutions/news-details' newsInfo=newsDetails.record %}
 {% endput %}
 {% put scripts %}
-    <script src="{{ 'assets/javascript/productions-news.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/solutions-news.js'|theme }}" type="text/javascript"></script>
 {% endput %}
 {% partial 'core' %}

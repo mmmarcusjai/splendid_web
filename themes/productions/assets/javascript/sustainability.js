@@ -1,4 +1,5 @@
 var auto_animate;
+var init_animate = false;
 var animate_counter = 0;
 var frame_display_arr = [1, 31, 51, 71];
 var instance = $(".animate-area").spriteClip({
@@ -45,23 +46,40 @@ function update_sustainability_target(target_frame) {
 }
 
 function auto_play() {
-    auto_animate = setInterval(function() {
-        if(animate_counter < frame_display_arr.length) {
-            if(animate_counter != 0) {
-                next_sustainability_animate(frame_display_arr[animate_counter]);
-                update_sustainability_target(frame_display_arr[animate_counter]);
-            }
-            animate_counter++;
-        } else {
-            animate_counter = 0;
-             next_sustainability_animate(frame_display_arr[animate_counter]);
-             update_sustainability_target(frame_display_arr[animate_counter]);
+    if(!init_animate) {
+        auto_animate = setInterval(function() {
+            sustainability_init();
+            console.log('start init play');
+        },4000);
+        init_animate = true;
+        console.log('already init');
+    }
+}
+
+function off_auto_play() {
+    clearInterval(auto_animate);
+    instance.gotoAndStop(1);
+    init_animate = false;
+    animate_counter = 0;
+    console.log('off!!!');
+}
+
+function sustainability_init() {
+    if(animate_counter < frame_display_arr.length) {
+        if(animate_counter != 0) {
+            next_sustainability_animate(frame_display_arr[animate_counter]);
+            update_sustainability_target(frame_display_arr[animate_counter]);
         }
-    },5000);
+        animate_counter++;
+    } else {
+        animate_counter = 0;
+         next_sustainability_animate(frame_display_arr[animate_counter]);
+         update_sustainability_target(frame_display_arr[animate_counter]);
+    }
 }
 
 $(document).ready(function() {
-    auto_play();
+    // auto_play();
     $('.control').on('click', function() {
         control = $(this).attr('id');
         to = parseInt($(this).attr('to'));
@@ -78,6 +96,7 @@ $(document).ready(function() {
             arr_index = frame_display_arr.indexOf(to);
             animate_counter = arr_index + 1;
             clearInterval(auto_animate);
+            init_animate = false;
             auto_play();
         }
     });

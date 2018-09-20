@@ -26,8 +26,14 @@ class GlobalNews extends Model
      */
     public $table = 'sg_splendidgroup_global_news';
 
-    public function scopeNewsCat($query, $type)
+    public function scopeNewsCat($query, $cat)
     {
-        return $query->where('news_category', $type)->orWhere('news_category', 'share');
+        return $query->where('news_category', $cat)->orWhere('news_category', 'share');
+    }
+
+    public function scopeNewsbyType($query, $cat, $type)
+    {
+        // return $query->where('news_type', $type)->where('news_category', $cat)->orWhere('news_category', 'share');
+        return $query->where('news_type', $type)->whereIn('news_category', [$cat, 'share']);
     }
 }

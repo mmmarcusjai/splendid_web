@@ -1,0 +1,45 @@
+description = "Solutions-News details"
+
+[viewBag]
+==
+
+{% put styles %}
+    <link href="{{ 'assets/css/solutions-news-details.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="news">
+    <div class="news">
+        <div class="news-details-bg"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <ul class="btn-list">
+                        <!-- <li class="btn-icon" id="back"><a href="{{ url('/solutions') }}#news"><img style="width:30%" src="{{ 'productions/back_button.png'|media }}" ></a></li> -->
+                        <li class="btn-icon"><a href="{{ url('/solutions') }}#news"><i class="fa fa-angle-left fa-4x" id="back" style=""></i><label>BACK</label></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="news-details row">
+                <div class="news-detail-image col-xl-6 col-md-12">
+                    <div class="details-image" style="background-image: url({{newsInfo.news_image|media}})"></div>
+                </div>
+                <div class="news-detail-content col-xl-4 col-md-12">
+                    <div class="title">{{ newsInfo.title }}</div>
+                    <div class="content">{{ newsInfo.content | raw }}</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="news-list-more">
+            {% for record in news %}
+                <div class="details-more">
+                    <div class="news-item">
+                        <a class="item" href="{{ record.id }}">
+                            <img class="main" src="{{ record.news_image_thumbnail|media }}" alt="" />
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

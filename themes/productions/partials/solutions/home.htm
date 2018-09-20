@@ -5,17 +5,17 @@ description = "Solutions-Home"
 {% put styles %}
     <link rel="stylesheet" href="{{ 'assets/css/solutions-home.css'|theme }}">
 {% endput %}
-<section id="home">
+<section class="scroll-section" id="home" data-section-name="home">
     <div class="home-video-wrapper">
-        <div class="home-bg"></div>
+        <!-- <div class="home-bg"></div> -->
         <div class="home-video">
             <video autoplay muted loop id="my-video">
-                <source src="storage/app/media/solutions/splendid_solution.mp4" type="video/mp4">
+                <source src="{{ 'solutions/splendid_solution.mp4'|media }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="hero-text font-lato">
-            <div class="hero-title text-uppercase">“People on the move”</div>
+            <!-- <div class="hero-title text-uppercase">“People on the move”</div> -->
             <!-- seperator -->
             <div class="hero-content">
                 Splendid Solutions has established a total food, beverage and packaging solution for 'People on the Move'. We can make anything possible!

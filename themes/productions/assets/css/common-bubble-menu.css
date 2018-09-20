@@ -1,0 +1,60 @@
+/* Bubble menu style */
+.bubble-menu {
+    position: fixed;
+    left: 87%;
+    top: 45%;
+    z-index: 100;
+    width: 13%;
+}
+
+.bubble-menu.hide {
+    display: none;
+}
+
+.bubble-menu .opt .bullet {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.bubble-menu .opt.active .bullet {
+    width: 18px;
+    height: 18px;
+    margin-left: -2px;
+}
+
+.bubble-menu .opt label {
+    width: 70%;
+    text-align: right;
+    margin-right: 0.5rem;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateX(-50px);
+    /* transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1); */
+    transition: 0.3s ease;
+}
+
+.bubble-menu .opt.active label {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.bubble-menu:hover .opt label{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+@media screen and (max-width: 1024px) {
+    .bubble-menu {
+        left: 83%;
+        width: 18%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bubble-menu {
+        display: none;
+    }
+}

@@ -3,15 +3,15 @@ description = "Solutions-Header"
 [viewBag]
 ==
 <nav class="navbar font-lato text-uppercase">
+    <a href="{{ url('/solutions') }}#home" onclick="jump_to('home'); return false;"><img class="logo" src="{{ 'solutions/logo.png'|media }}" alt=""></a>
     <ul class="nav-left-menu">
-        <li>about</li>
-        <li>how we work</li>
-    </ul>
-    <img class="logo" src="{{ 'solutions/logo.png'|media }}" alt="">
-    <ul class="nav-right-menu">
-        <li>service</li>
-        <li>news</li>
-        <li>contact</li>
+        <li class="menu-item" id="m-about"><a href="{{ url('/solutions') }}#about" onclick="jump_to('about'); return false;">about</a></li>
+        <li class="menu-item" id="m-how-we-work"><a href="{{ url('/solutions') }}#how-we-work" onclick="jump_to('how-we-work'); return false;">how we work</a></li>
+        <li class="menu-item" id="m-our-servise"><a href="{{ url('/solutions') }}#our-servise" onclick="jump_to('our-servise'); return false;">service</a></li>
+        <li class="menu-item" id="m-quality-and-safety"><a href="{{ url('/solutions') }}#quality-and-safety" onclick="jump_to('quality-and-safety'); return false;">Quality & Safety</a></li>
+        <li class="menu-item" id="m-sustainability"><a href="{{ url('/solutions') }}#sustainability" onclick="jump_to('sustainability'); return false;">sustainability</a></li>
+        <li class="menu-item" id="m-news"><a href="{{ url('/solutions') }}#news" onclick="jump_to('news'); return false;">news</a></li>
+        <li class="menu-item" id="m-contact-us"><a href="{{ url('/solutions') }}#contact-us" onclick="jump_to('contact-us'); return false;">contact</a></li>
     </ul>
 </nav>
 

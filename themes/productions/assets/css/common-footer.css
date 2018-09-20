@@ -1,0 +1,43 @@
+.group-description {
+    text-align: center;
+}
+
+.group-description .group-desc-block {
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+}
+
+.group-description .group-img-block img {
+    max-width: 16%;
+    margin: 5%;
+}
+
+.group-description .desc-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.group-description .desc-content {
+    width: 60%;
+    margin: auto;
+}
+
+.group-description .desc-service-menu {
+    margin: 4rem auto;
+}
+
+.group-description .desc-service-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.group-description .desc-service-menu ul li {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.group-description .desc-service-menu ul li img{
+    max-width: 130px;
+}

@@ -1,0 +1,48 @@
+/* Bubble menu style */
+.bubble-menu:hover .opt label {
+    font-weight: 400;
+}
+
+.bubble-menu .opt .bullet {
+    background-image: url(../images/solutions/menu_opt.png);
+}
+
+.bubble-menu .opt.active .bullet {
+    background-image: url(../images/solutions/menu_opt_selected.png);
+}
+
+.bubble-menu .opt.about-opt label {
+    transition-delay: 0.1s;
+}
+
+.bubble-menu .opt.how-we-work-opt label {
+    transition-delay: 0.2s;
+}
+
+.bubble-menu .opt.our-servise-opt label {
+    transition-delay: 0.3s;
+}
+
+.bubble-menu .opt.sustainability-opt label {
+    transition-delay: 0.4s;
+}
+
+.bubble-menu .opt.news-opt label {
+    transition-delay: 0.5s;
+}
+
+.bubble-menu .opt.contact-us-opt label {
+    transition-delay: 0.6s;
+}
+
+@media screen and (max-width: 1024px) {
+    .bubble-menu {
+        left: 83%;
+        width: 18%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .bubble-menu {
+        display: none;
+    }
+}
