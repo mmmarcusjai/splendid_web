@@ -69,7 +69,7 @@
 }
 
 .servise-block .block .content-block{
-    width: 65%;
+    width: 85%;
 }
 
 .servise-block .block .title{
@@ -124,7 +124,7 @@
 
 .servise-block .food-and-beverage .content-container {
     text-align: right;
-    padding-top: 8rem;
+    padding-top: 4rem;
 }
 
 .servise-block .marketing-brand .content-container {
@@ -161,7 +161,7 @@
 
 .servise-block .material-img#cocoa-material {
     margin-left: 60%;
-    margin-top: -18%;
+    margin-top: -23%;
 }
 
 .servise-block .material-img#alain-material {
@@ -198,7 +198,7 @@
 }
 
 .servise-block .floating-obj img {
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .servise-block .floating-obj#bean-1 {
@@ -316,4 +316,24 @@
 .servise-block .floating-obj#rose-3 {
     left: 20%;
     top: 91%;
+}
+
+@media screen and (max-width: 768px) {
+    .our-servise .content-container {
+        width: auto;
+    }
+
+    .servise-block .food-and-beverage {
+        -webkit-clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    .servise-block .block {
+        width: auto;
+    }
+
+    .servise-block .floating-container {
+        display: none;
+    }
+
 }

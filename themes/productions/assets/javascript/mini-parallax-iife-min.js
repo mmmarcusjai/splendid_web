@@ -61,9 +61,9 @@ var MiniParallax = function(t) {
             return t._updateElement(e)
         }), this._onScroll(this._scrollTop)
     }, i.prototype._getTransform = function(t) {
-        return "translate3d(0, " + t + "px, 0) rotate(" + t/20 + "deg)"
+        return "translate3d(-25px, " + t + "px, 0) rotate(" + t/20 + "deg)"
     }, i.prototype._getTransformRound = function(t) {
-        return "translate3d(0, " + Math.round(t) + "px, 0) rotate(" + Math.round(t)/20 + "deg)"
+        return "translate3d(-25px, " + Math.round(t) + "px, 0) rotate(" + Math.round(t)/20 + "deg)"
     };
     var n = function(t) {
             function o(o, i) {

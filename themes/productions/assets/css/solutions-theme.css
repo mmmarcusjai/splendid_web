@@ -44,8 +44,8 @@ nav ul.nav-left-menu {
 nav ul li {
     display: inline;
     padding: 0.3rem;
-    margin: 1rem;
-    letter-spacing: 2px;
+    margin: 0.3rem;
+    letter-spacing: 1px;
 }
 
 nav ul li.selected {
@@ -63,7 +63,7 @@ nav ul li a:hover {
 }
 
 nav img.logo {
-    width: 30%;
+    width: 50%;
     margin-left: 6rem;
 }
 
@@ -167,6 +167,10 @@ span.special-letter {
 }
 
 @media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    
     .title {
         font-size: 2rem;
     }

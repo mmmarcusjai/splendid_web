@@ -13,7 +13,7 @@
     width: 40%;
     height: 100%;
     margin-right: auto;
-    padding: 10rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .about .title-block {
@@ -26,9 +26,13 @@
 }
 
 .about .title-block .sub-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     line-height: 1;
+}
+
+.about .title-block .sub-title span {
+    display: block;
 }
 
 .about .content-block {
@@ -73,4 +77,38 @@
     background-color: #fff;
     opacity: 0.3;
     z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .about .carousel {
+        width: 100%;
+    }
+
+    .about .content-container {
+        width: 100%;
+        margin-right: auto;
+        padding: 5rem 0rem;
+    }
+
+
+    .about .content-block {
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        padding: unset;
+    }
+
+    .about .title-block {
+        width: auto;
+    }
+
+    .about .title-block div {
+        display: block;
+        text-align: center;
+    }
+
+    .about .title-block .sub-title span {
+        display: inline;
+        padding: 0px 5px;
+    }
 }

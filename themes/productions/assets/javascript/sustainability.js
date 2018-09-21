@@ -49,10 +49,8 @@ function auto_play() {
     if(!init_animate) {
         auto_animate = setInterval(function() {
             sustainability_init();
-            console.log('start init play');
         },4000);
         init_animate = true;
-        console.log('already init');
     }
 }
 
@@ -61,7 +59,6 @@ function off_auto_play() {
     instance.gotoAndStop(1);
     init_animate = false;
     animate_counter = 0;
-    console.log('off!!!');
 }
 
 function sustainability_init() {

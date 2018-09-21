@@ -102,7 +102,6 @@ document.querySelector('.explore-btn').addEventListener('click', () => {
 });
 
 $(document).ready(function() {
-    console.log(base_url);
     $('.menu-icon').click(function(){
 		$(this).toggleClass('change');
         $('nav').toggleClass('active');
@@ -130,7 +129,7 @@ $(document).ready(function() {
         // sectionName : "section-name",
         interstitialSection : "",
         easing: "easeOutExpo",
-        scrollSpeed: 1000,
+        scrollSpeed: 800,
         offset : 0,
         scrollbars: true,
         standardScrollElements: "",
