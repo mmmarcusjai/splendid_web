@@ -85,9 +85,22 @@
 }
 
 .news .more-news-arrow#left {
-    left: -3%;
+    left: -7%;
 }
 
 .news .more-news-arrow#right {
-    right: -3%;
+    right: -5%;
+}
+
+@media (max-width: 1200px) {
+    .news .news-list-more {
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .news .news-details-bg {
+        height: 25%;
+    }
 }

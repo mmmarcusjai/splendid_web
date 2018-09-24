@@ -41,3 +41,16 @@
 .group-description .desc-service-menu ul li img{
     max-width: 130px;
 }
+
+@media (max-width: 768px) {
+    .group-description {
+        margin-top: -5rem;
+    }
+    .group-description .group-img-block img {
+        max-width: 50%;
+    }
+
+    .group-description .desc-content {
+        width: 85%;
+    }
+}

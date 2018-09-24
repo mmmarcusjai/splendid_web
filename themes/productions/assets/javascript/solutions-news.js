@@ -2,8 +2,9 @@ $(document).ready(function() {
     $('.menu-icon').click(function(){
         $(this).toggleClass('change');
         $('nav').toggleClass('active');
+        $('.side-wrapper').toggleClass('active');
         if($(this).hasClass('change')) {
-            $('.menu-text').text('close');
+            $('.menu-text').text('');
         } else {
             $('.menu-text').text('menu');
         }

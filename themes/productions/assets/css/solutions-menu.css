@@ -45,4 +45,12 @@
     .bubble-menu {
         display: none;
     }
+
+    .side-wrapper {
+        background: #f5f4f4d9;
+    }
+    
+    .side-wrapper ul li a {
+        color: #000;
+    }
 }

@@ -318,14 +318,30 @@
     top: 91%;
 }
 
+@media screen and (max-width: 1440px) {
+    .servise-block .block .content {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .our-servise .content-container {
         width: auto;
     }
 
+    #servise-block {
+        margin-bottom: 5rem;
+    }
+
     .servise-block .food-and-beverage {
         -webkit-clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%);
         clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 100%);
+    }
+
+    .servise-block .warehouse-logistics {
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
     }
 
     .servise-block .block {
@@ -336,4 +352,35 @@
         display: none;
     }
 
+    .servise-block .block {
+        min-height: 100vh;
+        padding-top: 2rem;
+    }
+
+    .servise-block .food-and-beverage .content-container {
+        text-align: left;
+    }
+
+    .servise-block .packaging-solutions .content-container {
+        padding-top: 2rem;
+        text-align: left;
+    }
+
+    .servise-block .warehouse-logistics .content-container {
+        padding-top: 2rem;
+    }
+
+    .servise-block .food-and-beverage .content-container .content-block, .servise-block .packaging-solutions .content-container .content-block {
+        margin-left: unset;
+        margin-right: auto;
+    }
+
+    .servise-block .material-img#alain-material {
+        margin-left: 60%;
+    }
+
+    .servise-block .material-img#alain-material-1 {
+        margin-left: 68%;
+        margin-top: -11%;
+    }
 }

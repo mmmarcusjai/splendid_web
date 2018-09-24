@@ -82,6 +82,10 @@
     margin-top: -9%;
 }
 
+.sustainability-flip-images {
+    display: none;
+}
+
 @media (max-width: 1920px) {
     .sustainability .content-block .content > p {
         margin-top: 1rem;
@@ -109,6 +113,8 @@
 @media (max-width: 768px) {
     .sustainability .sustainability-bg {
         width: 100%;
+        height: 45%;
+        top: 0%;
     }
 
     .sustainability .title-block .title, .sustainability .content-block .content {
@@ -116,7 +122,58 @@
         text-align: center;
     }
 
+    .sustainability .animate-area {
+        width: 260px;
+        height: 260px;
+        background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
+        margin: auto;
+        margin-top: -4%;
+    }
+
     .sustainability-flip-content {
         display: none;
     }
+
+    .sustainability-flip-images {
+        display: block;
+        text-align: center;
+    }
+
+    .sustainability-flip-images img{
+        max-width: 90%;
+    }
+
+    .sustainability .container-fluid {
+        /* padding-top: unset; */
+    }
+
+    .sustainability .content-block {
+        width: 90%;
+        margin: auto;
+    }
+
+    .sustainability  .sustain-slick .sustain-slick-img img {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .sustainability .sustain-slick .more-arrow.slick-disabled {
+        opacity: 0;
+    }
+
+    .sustainability .sustain-slick .more-arrow {
+        position: absolute;
+        z-index: 1;
+        top: 36%;
+        cursor: pointer;
+    }
+
+    .sustainability .sustain-slick .more-arrow#left {
+        left: 3%;
+    }
+
+    .sustainability .sustain-slick .more-arrow#right {
+        right: 3%;
+    }
+
 }

@@ -49,7 +49,7 @@ function auto_play() {
     if(!init_animate) {
         auto_animate = setInterval(function() {
             sustainability_init();
-        },4000);
+        },3000);
         init_animate = true;
     }
 }

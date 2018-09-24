@@ -84,6 +84,10 @@
         width: 100%;
     }
 
+    .about .carousel::before {
+        opacity: 0.5;
+    }
+
     .about .content-container {
         width: 100%;
         margin-right: auto;
@@ -92,7 +96,7 @@
 
 
     .about .content-block {
-        width: 80%;
+        width: 90%;
         text-align: center;
         margin: auto;
         padding: unset;
