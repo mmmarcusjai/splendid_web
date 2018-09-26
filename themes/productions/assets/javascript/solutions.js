@@ -102,6 +102,15 @@ document.querySelector('.explore-btn').addEventListener('click', () => {
     jump_to('about');
 });
 
+const newsPages = document.querySelectorAll('ul.pagination li');
+newsPages.forEach(function(page){
+    page.addEventListener('click', () => {
+        type = page.parentElement.dataset.type;
+        cat = 'solutions';
+        pageNo = page.dataset.index;
+        get_page_news(type, cat, pageNo);
+    });
+});
 
 
 $(document).ready(function() {
@@ -187,4 +196,26 @@ function resize_update() {
         customClass('hide', news_desc, 'add');
         customClass('active', news_desc_hover, 'add');
     }
+}
+
+function get_page_news(type, cat, pageNo) {
+    axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
+    .then(function (response) {
+        if(response.data.data.length > 0) {
+            render_news(response.data.data, type);
+        }
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+function render_news(data, type) {
+    console.log(data);
+    var app = new Vue({
+        el: '#app',
+        data: {
+        message: 'Hello Vue!'
+        }
+    })
 }

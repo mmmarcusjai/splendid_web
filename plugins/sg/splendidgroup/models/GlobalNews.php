@@ -31,9 +31,13 @@ class GlobalNews extends Model
         return $query->where('news_category', $cat)->orWhere('news_category', 'share');
     }
 
-    public function scopeNewsbyType($query, $cat, $type)
+    public static function getNewsByType($type, $cat)
     {
-        // return $query->where('news_type', $type)->where('news_category', $cat)->orWhere('news_category', 'share');
-        return $query->where('news_type', $type)->whereIn('news_category', [$cat, 'share']);
+        // $type = product | company
+        // $cat = productions | solutions...
+        $query = GlobalNews::where('news_type', $type)->whereIn('news_category', [$cat, "share"])->orderBy('id', 'desc');
+        $news = $query;
+
+        return $news;
     }
 }

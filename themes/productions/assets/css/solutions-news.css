@@ -272,6 +272,16 @@ p.news-desc {
     padding: 5%;
 }
 
+.news ul.pagination {
+    justify-content: center;
+    margin-bottom: unset;
+}
+
+.news ul.pagination li {
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 2000px) {
     .news-grid .news-item {
         height: 300px;

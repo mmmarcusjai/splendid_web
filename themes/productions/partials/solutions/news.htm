@@ -27,7 +27,11 @@ description = "Solutions-News"
                 <div class="col-xl-9">
                     <section id="news-block">
                         <!-- News about Products/Marketing -->
-                        <div class="news-grid">
+                        <div id="app">
+                            {{ message }}
+                        </div>
+                        <div class="news-grid" type="product">
+                            <!-- <span>{{product_news.lastPage}}</span> -->
                             {% for record in product_news %}
                             <div class="news-item" news-type="product" style="background-image: url({{record.news_image_thumbnail|media}})" index="{{record.id}}">
                                 <div class="news-desc-block">
@@ -41,8 +45,18 @@ description = "Solutions-News"
                             </div>
                             {% endfor %}
                         </div>
+                        {% if product_news.lastPage > 1 %}
+                            <ul class="pagination" data-type="product">
+                                {% for i in 1..product_news.lastPage %}
+                                    <li class="page-no" data-index="{{i}}">{{i}}</li>
+                                    {% if i != product_news.lastPage %}
+                                        <span>|</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                         <!-- News about Company -->
-                        <div class="news-grid">
+                        <div class="news-grid" type="company">
                             {% for record in company_news %}
                             <div class="news-item" news-type="company" style="background-image: url({{record.news_image_thumbnail|media}})" index="{{record.id}}">
                                 <div class="news-desc-block">
@@ -56,7 +70,6 @@ description = "Solutions-News"
                             </div>
                             {% endfor %}
                         </div>
-
                     </section>
                 </div>
             </div>

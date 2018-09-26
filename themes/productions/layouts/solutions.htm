@@ -4,8 +4,11 @@ description = "Solutions"
 use sg\SplendidGroup\Models\GlobalNews;
 function onStart()
 {
-    $product_news = GlobalNews::NewsbyType('solutions', 'product')->orderBy('id', 'desc')->get();
-    $company_news = GlobalNews::NewsbyType('solutions', 'company')->orderBy('id', 'desc')->get();
+    $product_news = GlobalNews::getNewsByType('product', 'solutions')->paginate(3);
+    // echo '<pre>';
+    // print_r($product_news);
+    // exit;
+    $company_news = GlobalNews::getNewsByType('company', 'solutions')->paginate(3);
     $this['product_news'] = $product_news;
     $this['company_news'] = $company_news;
 

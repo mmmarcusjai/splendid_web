@@ -2,6 +2,7 @@ description = "Solutions-Header"
 
 [viewBag]
 ==
+{% if this.environment == 'production' %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126213464-2"></script>
 <script>
@@ -11,11 +12,12 @@ description = "Solutions-Header"
 
   gtag('config', 'UA-126213464-2');
 </script>
+{% endif %}
 
 <nav class="navbar font-lato text-uppercase">
     <a href="{{ url('/solutions') }}#home" onclick="jump_to('home'); return false;"><img class="logo" src="{{ 'solutions/logo.png'|media }}" alt=""></a>
     <ul class="nav-left-menu">
-        <li class="menu-item" id="m-about"><a href="{{ url('/solutions') }}#about" onclick="/*jump_to('about'); return false;*/">about</a></li>
+        <li class="menu-item" id="m-about"><a href="{{ url('/solutions') }}#about" onclick="jump_to('about'); return false;">about</a></li>
         <li class="menu-item" id="m-how-we-work"><a href="{{ url('/solutions') }}#how-we-work" onclick="jump_to('how-we-work'); return false;">how we work</a></li>
         <li class="menu-item" id="m-our-servise"><a href="{{ url('/solutions') }}#our-servise" onclick="jump_to('our-servise'); return false;">service</a></li>
         <li class="menu-item" id="m-quality-and-safety"><a href="{{ url('/solutions') }}#quality-and-safety" onclick="jump_to('quality-and-safety'); return false;">Quality & Safety</a></li>

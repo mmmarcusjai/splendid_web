@@ -11,9 +11,10 @@
 }
 
 .quality-and-safety .img-container img#quality-desktop {
-    max-width: 110%;
+    /* max-width: 110%;
     margin-top: 5rem;
-    margin-left: -5rem;
+    margin-left: -5rem; */
+    width: 100%;
 }
 
 .quality-and-safety .img-container img#quality-mobile {
