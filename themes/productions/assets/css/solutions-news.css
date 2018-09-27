@@ -300,6 +300,11 @@ p.news-desc {
     }
 }
 
+news-item {
+    display: contents    
+}
+
+
 @media screen and (max-width: 1440px) {
     .news-grid .news-item {
         height: 230px;
