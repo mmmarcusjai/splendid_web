@@ -3,14 +3,8 @@
 use sg\SplendidGroup\Models\GlobalNews;
 
 Route::get('api/getNewsByPage/{type}/{cat}/{pageNo}', function($type, $cat, $pageNo) {
-    // $type = 'product';
-    // $cat = 'solutions';
-    // $page = '2';
-    $get_all = GlobalNews::getNewsByType($type, $cat)->paginate(3, $pageNo);
+    $perpage = ($type == 'product') ? 6 : 3;
+    $get_all = GlobalNews::getNewsByType($type, $cat)->paginate($perpage, $pageNo);
 
     return $get_all;
 });
-//
-// Route::get('api/getNewsByPage/{type}', function($type) {
-//     return $type;
-// });

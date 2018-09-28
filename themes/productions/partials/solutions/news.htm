@@ -28,35 +28,13 @@ description = "Solutions-News"
                     <section id="news-block">
                         <!-- News about Products/Marketing -->
                         <div class="news-grid" id="news-product">
-                            <div v-for="news in newsList" v-bind:key="news.id" class="news-item" news-type="product" :style="{ 'background-image': 'url(/splendid_dev/storage/app/media' + news.news_image_thumbnail + ')' }" :index="news.id" :title="news.title">
-                                <div class="news-desc-block">
-                                    <p class="news-title text-uppercase">{{news.title}}</p>
-                                    <p class="news-desc">{{ news.description }}</p>
-                                </div>
-                                <div class="news-desc-block-hover">
-                                    <p class="news-title text-uppercase">{{ news.title }}</p>
-                                    <p class="news-desc">{{ news.description }}</p>
-                                </div>
-                            </div>
+                            <news-item v-bind:item="news" v-for="news in newsList" v-bind:key="news.id"></news-item>
                         </div>
-                        <!-- <div class="news-grid" id="news-product">
-                            {% for record in product_news %}
-                            <div class="news-item" news-type="product" style="background-image: url({{record.news_image_thumbnail|media}})" index="{{record.id}}">
-                                <div class="news-desc-block">
-                                    <p class="news-title text-uppercase">{{ record.title }}</p>
-                                    <p class="news-desc">{{ record.description }}</p>
-                                </div>
-                                <div class="news-desc-block-hover">
-                                    <p class="news-title text-uppercase">{{ record.title }}</p>
-                                    <p class="news-desc">{{ record.description }}</p>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div> -->
+                        <!-- pagination for Products/Marketing News -->
                         {% if product_news.lastPage > 1 %}
                             <ul class="pagination" data-type="product">
                                 {% for i in 1..product_news.lastPage %}
-                                    <li class="page-no" data-index="{{i}}" v-on:click="laodNews">{{i}}</li>
+                                    <li class="page-no" data-index="{{i}}">{{i}}</li>
                                     {% if i != product_news.lastPage %}
                                         <span>|</span>
                                     {% endif %}
@@ -66,19 +44,18 @@ description = "Solutions-News"
 
                         <!-- News about Company -->
                         <div class="news-grid" id="news-company">
-                            {% for record in company_news %}
-                            <div class="news-item" news-type="company" style="background-image: url({{record.news_image_thumbnail|media}})" index="{{record.id}}">
-                                <div class="news-desc-block">
-                                    <p class="news-title text-uppercase">{{ record.title }}</p>
-                                    <p class="news-desc">{{ record.description }}</p>
-                                </div>
-                                <div class="news-desc-block-hover">
-                                    <p class="news-title text-uppercase">{{ record.title }}</p>
-                                    <p class="news-desc">{{ record.description }}</p>
-                                </div>
-                            </div>
-                            {% endfor %}
+                            <news-item v-bind:item="news" v-for="news in newsList" v-bind:key="news.id"></news-item>
                         </div>
+                        {% if company_news.lastPage > 1 %}
+                            <ul class="pagination" data-type="company">
+                                {% for i in 1..company_news.lastPage %}
+                                    <li class="page-no" data-index="{{i}}">{{i}}</li>
+                                    {% if i != company_news.lastPage %}
+                                        <span>|</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </section>
                 </div>
             </div>

@@ -47,3 +47,11 @@ function customClass(classname, currNode, action) {
 function addClassById(classname, id) {
     document.getElementById(id).classList.add(classname);
 }
+
+function removeClassById(classname, id) {
+    document.getElementById(id).classList.remove(classname);
+}
+
+function toggleClassById(classname, id) {
+    document.getElementById(id).classList.toggle(classname);
+}

@@ -274,12 +274,17 @@ p.news-desc {
 
 .news ul.pagination {
     justify-content: center;
-    margin-bottom: unset;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .news ul.pagination li {
     margin: 0px 5px;
     cursor: pointer;
+}
+
+.news ul.pagination li.active {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 2000px) {
@@ -298,10 +303,6 @@ p.news-desc {
     .news-grid .news-item[news-type=company]:nth-child(1) .news-desc-block, .news-grid .news-item[news-type=company]:nth-child(2) .news-desc-block, .news-grid .news-item[news-type=company]:nth-child(3) .news-desc-block {
         margin:15% auto;
     }
-}
-
-news-item {
-    display: contents    
 }
 
 

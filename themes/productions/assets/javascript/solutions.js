@@ -18,9 +18,9 @@ window.onscroll = () => {
     // Navbar
     if(document.querySelector('.about') != null) {
         if(this.scrollY >= about_top) {
-            $('#layout-header').addClass('active');
+            addClassById('active', 'layout-header');
         } else {
-            $('#layout-header').removeClass('active');
+            removeClassById('active', 'layout-header');
         }
     }
 
@@ -88,10 +88,50 @@ newsPages.forEach(function(page){
         cat = 'solutions';
         pageNo = page.dataset.index;
         // get_page_news(type, cat, pageNo);
-        renderNews.fetchData(type, cat, pageNo);
+        if(type == 'product') {
+            renderNews.fetchData(type, cat, pageNo);
+        } else {
+            renderCompanyNews.fetchData(type, cat, pageNo);
+        }
+
     });
 });
 
+//  News item vue component
+Vue.component('news-item', {
+   props: ['item'],
+   template: `
+        <div class="news-item" :news-type="item.news_type" :style="{ 'background-image': 'url(/splendid_dev/storage/app/media' + item.news_image_thumbnail + ')' }" :index="item.id" @click="goNews($event)" @mouseover="mouseOver($event)" @mouseout="mouseOut($event)">
+            <div class="news-desc-block">
+                <p class="news-title text-uppercase">{{ item.title }}</p>
+                <p class="news-desc">{{ item.description }}</p>
+            </div>
+            <div class="news-desc-block-hover">
+                <p class="news-title text-uppercase">{{ item.title }}</p>
+                <p class="news-desc">{{ item.description }}</p>
+            </div>
+        </div>`,
+    methods: {
+        goNews: function (event) {
+            el = event.currentTarget;
+            var news_id = el.getAttribute('index');
+            window.location.href = base_url + "/solutions-news/" + news_id;
+        },
+        mouseOver: function (event) {
+            el = event.currentTarget;
+            init_news_item(el, 'mouseover');
+        },
+        mouseOut: function (event) {
+            el = event.currentTarget;
+            init_news_item(el, 'mouseout');
+        }
+    },
+    mounted: function() {
+        resize_update();
+    }
+});
+
+// Render product news
 var renderNews = new Vue({
    el: "#news-product",
    data: {
@@ -103,9 +143,8 @@ var renderNews = new Vue({
            axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
            .then(function (response) {
                if(response.data.data.length > 0) {
-                   // render_news(response.data.data, type);
                     self.newsList = response.data.data;
-                   console.log(response.data.data);
+                   // console.log(response.data.data);
                }
            })
            .catch(function (error) {
@@ -114,30 +153,51 @@ var renderNews = new Vue({
        }
     }
 });
-renderNews.fetchData('product', 'solutions', 1);
 
-const newsObj = document.querySelectorAll('.news-item');
-
-newsObj.forEach(function(news){
-    news.addEventListener('mouseover', () => {
-        news.children[0].classList.add('hide');
-        news.children[1].classList.add('active');
-        // Title slide from left
-        news.children[1].children[0].classList.add('slide-in-left');
-        // Description slide from left
-        news.children[1].children[1].classList.add('slide-in-right');
-    });
-    news.addEventListener('mouseout', () => {
-        news.children[0].classList.remove('hide');
-        news.children[1].classList.remove('active');
-        news.children[1].children[0].classList.remove('slide-in-left');
-        news.children[1].children[1].classList.remove('slide-in-right');
-    });
-    news.addEventListener('click', () => {
-        var news_id = news.getAttribute('index');
-        window.location.href = base_url + "/solutions-news/" + news_id;
-    });
+// Render company news
+var renderCompanyNews = new Vue({
+   el: "#news-company",
+   data: {
+       newsList: []
+   },
+   methods: {
+       fetchData: function(type, cat, pageNo) {
+           var self = this;
+           axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
+           .then(function (response) {
+               if(response.data.data.length > 0) {
+                    self.newsList = response.data.data;
+                   // console.log(response.data.data);
+               }
+           })
+           .catch(function (error) {
+               console.log(error);
+           });
+       }
+    }
 });
+
+renderNews.fetchData('product', 'solutions', 1);
+renderCompanyNews.fetchData('company', 'solutions', 1);
+
+function init_news_item(el, action) {
+    switch(action) {
+        case 'mouseover':
+            el.children[0].classList.add('hide');
+            el.children[1].classList.add('active');
+            // Title slide from left
+            el.children[1].children[0].classList.add('slide-in-left');
+            // Description slide from left
+            el.children[1].children[1].classList.add('slide-in-right');
+            break;
+        case 'mouseout':
+            el.children[0].classList.remove('hide');
+            el.children[1].classList.remove('active');
+            el.children[1].children[0].classList.remove('slide-in-left');
+            el.children[1].children[1].classList.remove('slide-in-right');
+            break;
+    }
+}
 
 $(document).ready(function() {
     $('.menu-icon').click(function(){
@@ -181,7 +241,7 @@ $(document).ready(function() {
     //     afterResize:function() {},
     //     afterRender:function() {}
     // });
-    resize_update();
+    // resize_update();
 
     $('.description-slick').slick({
         infinite: false,
@@ -197,10 +257,6 @@ $(document).ready(function() {
 });
 
 function jump_to(id) {
-    $('html, body').animate({
-        // scrollTop: document.getElementById(id).offsetTop
-        // scrollTop: sustainability_top
-    });
     // var selected_id = 'm-' + id;
     // addClassById('selected', selected_id);
     if($('.side-wrapper').hasClass('active')) {
@@ -222,49 +278,4 @@ function resize_update() {
         customClass('hide', news_desc, 'add');
         customClass('active', news_desc_hover, 'add');
     }
-}
-
-function get_page_news(type, cat, pageNo) {
-    axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
-    .then(function (response) {
-        if(response.data.data.length > 0) {
-            render_news(response.data.data, type);
-        }
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-}
-
-function render_news(newsData, type) {
-    Vue.component('news-item', {
-        props: ['news'],
-        template: `
-            <div class="news-item" news-type="product" :style="{ 'background-image': 'url(/splendid_dev/storage/app/media' + news.news_image_thumbnail + ')' }" :index="news.id">
-                <div class="news-desc-block">
-                    <p class="news-title text-uppercase">{{ news.title }}</p>
-                    <p class="news-desc">{{ news.description }}</p>
-                </div>
-                <div class="news-desc-block-hover">
-                    <p class="news-title text-uppercase">{{ news.title }}</p>
-                    <p class="news-desc">{{ news.description }}</p>
-                </div>
-            </div>
-            `
-    })
-    console.log(newsData);
-    var app = new Vue({
-        data: function() {
-            return {
-                newsList: newsData,
-                newsType: type
-            }
-        },
-        methods: {
-            laodNews: function () {
-                console.log('laodNews');
-            }
-        },
-        el: '#news-' + type
-    })
 }

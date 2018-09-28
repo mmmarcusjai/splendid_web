@@ -3,6 +3,8 @@ body {
     padding: 0;
     color: #28292b;
     font-family: 'Lato', sans-serif;
+    /* scroll-snap-type: y mandatory;
+    overflow-y: scroll; */
 }
 
 a {
@@ -158,6 +160,10 @@ nav img.logo {
 span.special-letter {
     font-size: 2rem;
 }
+
+/* .scroll-section {
+    scroll-snap-align: start;
+} */
 
 @media (max-width: 1440px) {
     .title {

@@ -10,8 +10,11 @@ description = "Common-scripts"
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.7/js/imageMapResizer.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+{% if this.environment == 'production' %}
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+{% else %}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+{% endif %}
 <script src="{{ 'assets/javascript/jquery.scrollify.js'|theme }}"></script>
 <script src="{{ 'assets/javascript/common.js'|theme }}"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script> -->
