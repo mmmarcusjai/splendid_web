@@ -1,4 +1,5 @@
 /bootstrap/compiled.php
+/tests
 /vendor
 composer.phar
 .DS_Store

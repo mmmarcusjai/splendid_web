@@ -1,12 +1,18 @@
 .group-description {
     text-align: center;
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
 }
 
 .group-description .group-desc-block {
     max-width: 1440px;
-    width: 90%;
-    margin: 0 auto;
+    margin: auto;
     padding-bottom: 10rem;
+    width: 90%;
+    /* width: 50%; */
+    /* margin-right: auto; */
+    /* display: inline-block; */
 }
 
 .group-description .group-img-block img {
@@ -42,6 +48,21 @@
     max-width: 130px;
 }
 
+.group-description .desc-video-block {
+    display: inline-block;
+    width: 50%;
+}
+
+.group-description .video-container {
+    /* margin-right: 20%; */
+    /* position: absolute;
+    top: 15%; */
+}
+
+.group-description .video-container video {
+    width: 60%;
+}
+
 @media (max-width: 768px) {
     .group-description {
         margin-top: -5rem;
@@ -52,5 +73,9 @@
 
     .group-description .desc-content {
         width: 85%;
+    }
+
+    .group-description .video-container video {
+        width: 100%;
     }
 }

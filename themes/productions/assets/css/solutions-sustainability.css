@@ -11,8 +11,8 @@
 
 .sustainability .content-block .content {
     width: 50%;
-    /* margin-left: auto;
-    text-align: right; */
+    margin-left: auto;
+    text-align: right;
 }
 
 .sustainability .content-block .content > p {
@@ -33,14 +33,15 @@
     width: 45%;
     height: 80%;
     position: absolute;
-    top: -17%;
-    right: 0%;
+    top: -10%;
+    left: 0%;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../images/solutions/sustainability_block_bg.jpg);
     -webkit-clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
     clip-path: polygon(36% 24%, 100% 0, 100% 100%, 70% 96%);
     z-index: 0;
+    transform: scaleX(-1);
 }
 
 .sustainability .sustainability-bg::before {
@@ -62,16 +63,16 @@
 .sustainability .object-container .control{
     position: absolute;
     z-index: 1;
-    margin-top: 35%;
+    margin-top: 25%;
     cursor: pointer;
 }
 
 .sustainability .object-container .control#left{
-    left: 20%;
+    left: 10%;
 }
 
 .sustainability .object-container .control#right{
-    left: 77%;
+    right: 9%;
 }
 
 .sustainability .animate-area {
@@ -79,7 +80,7 @@
     height: 850px;
     background: url(../images/solutions/solutions_cube_rotation_850.png) no-repeat 0 0;
     margin: auto;
-    margin-top: -9%;
+    margin-top: -13%;
 }
 
 .sustainability-flip-images {
@@ -106,7 +107,7 @@
     }
 
     .sustainability .object-container .control {
-        margin-top: 23%;
+        margin-top: 36%;
     }
 }
 
@@ -127,7 +128,7 @@
         height: 260px;
         background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
         margin: auto;
-        margin-top: -4%;
+        margin-top: -10%;
     }
 
     .sustainability-flip-content {

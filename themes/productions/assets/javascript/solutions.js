@@ -10,10 +10,17 @@ var sustainability_top = (document.querySelector('.sustainability') != null) ? d
 var quality_top = (document.querySelector('.quality-and-safety') != null) ? document.querySelector('.quality-and-safety').offsetTop : '';
 var news_top = (document.querySelector('.news') != null) ? document.querySelector('.news').offsetTop : '';
 var contactus_top = (document.querySelector('.contact-us') != null) ? document.querySelector('.contact-us').offsetTop : '';
+var group_desc_top = (document.querySelector('.group-description') != null) ? document.querySelector('.group-description').offsetTop : '';
 //
-// Description block
+// How we work Description block
 var desc_block = document.querySelectorAll('.description-block');
 //
+// Quality & Safety
+var quality_safety_replay = false;
+//
+// Common footer splendid Group
+var descVid = document.querySelector('#desc-video');
+
 window.onscroll = () => {
     // Navbar
     if(document.querySelector('.about') != null) {
@@ -41,37 +48,52 @@ window.onscroll = () => {
     } else if(this.scrollY >= our_servise_top && this.scrollY < quality_top) {
         // addClassById('selected', 'm-our-servise');
         customClass('roll-in-blurred-left', desc_block, 'remove');
-    }else if(this.scrollY >= quality_top && this.scrollY < sustainability_top) {
+        // Reset quality_safety_replay to false;
+        quality_safety_replay = false;
+    } else if(this.scrollY >= quality_top && this.scrollY < sustainability_top) {
         // addClassById('selected', 'm-quality-and-safety');
         // Off auto play sustainability cube
         off_auto_play();
+        // Replay gif
+        if(!quality_safety_replay) {
+            cw = document.body.clientWidth;
+            if (cw < 768) {
+                replayGif('quality-mobile');
+            } else {
+                replayGif('quality-desktop');
+            }
+            quality_safety_replay = true;
+        }
     }  else if(this.scrollY >= sustainability_top && this.scrollY < news_top) {
         // addClassById('selected', 'm-sustainability');
         // Init auto play sustainability cube
         auto_play();
+        // Reset quality_safety_replay to false;
+        quality_safety_replay = false;
     } else if(this.scrollY >= news_top && this.scrollY < contactus_top) {
         // addClassById('selected', 'm-news');
         // Off auto play sustainability cube
         off_auto_play();
-    } else if(this.scrollY >= contactus_top) {
+    } else if(this.scrollY >= contactus_top && this.scrollY < group_desc_top) {
         // addClassById('selected', 'm-contact-us');
+
+    } else if (this.scrollY >= group_desc_top) {
+        descVid.play();
     }
 
     if(this.scrollY >= our_servise_top && this.scrollY < parseInt(sustainability_top - 1000 )) {
         // Off auto play sustainability cube
-       off_auto_play();
-   }
+        off_auto_play();
+    }
+
+   // if(this.scrollY >= quality_top && this.scrollY <= parseInt(quality_top + 5)) {
+   //
+   // }
 };
 
 
 window.onresize = () => {
-    // var videoWidth = video.width();
-    // var windowWidth = ele_window.width();
-    // marginLeftAdjust =   (windowWidth - videoWidth) / 2;
     //
-    // video.css({
-    //     'left' : marginLeftAdjust
-    // });
     resize_update();
 }
 
@@ -87,7 +109,6 @@ newsPages.forEach(function(page){
         type = page.parentElement.dataset.type;
         cat = 'solutions';
         pageNo = page.dataset.index;
-        // get_page_news(type, cat, pageNo);
         if(type == 'product') {
             renderNews.fetchData(type, cat, pageNo);
         } else {
@@ -115,7 +136,9 @@ Vue.component('news-item', {
         goNews: function (event) {
             el = event.currentTarget;
             var news_id = el.getAttribute('index');
-            window.location.href = base_url + "/solutions-news/" + news_id;
+            if(news_id != undefined) {
+                window.location.href = base_url + "/solutions-news/" + news_id;
+            } 
         },
         mouseOver: function (event) {
             el = event.currentTarget;
@@ -143,8 +166,15 @@ var renderNews = new Vue({
            axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
            .then(function (response) {
                if(response.data.data.length > 0) {
-                    self.newsList = response.data.data;
-                   // console.log(response.data.data);
+                   if(response.data.data.length < 6) {
+                       var dummy = {'title': 'Coming Soon', 'news_image_thumbnail': '/solutions/news/coming_soon.jpg'};
+                       var max = 6 - response.data.data.length;
+                       for(var i = 0; i < max; i++) {
+                           response.data.data.push(dummy);
+                       }
+                       // console.log(response.data.data);
+                   }
+                   self.newsList = response.data.data;
                }
            })
            .catch(function (error) {
@@ -166,8 +196,15 @@ var renderCompanyNews = new Vue({
            axios.get(base_url+'/api/getNewsByPage/'+type+'/'+cat+'/'+pageNo)
            .then(function (response) {
                if(response.data.data.length > 0) {
-                    self.newsList = response.data.data;
-                   // console.log(response.data.data);
+                   if(response.data.data.length < 3) {
+                       var dummy = {'title': 'Coming Soon', 'news_image_thumbnail': '/solutions/news/coming_soon.jpg'};
+                       var max = 6 - response.data.data.length;
+                       for(var i = 0; i < max; i++) {
+                           response.data.data.push(dummy);
+                       }
+                       // console.log(response.data.data);
+                   }
+                   self.newsList = response.data.data;
                }
            })
            .catch(function (error) {

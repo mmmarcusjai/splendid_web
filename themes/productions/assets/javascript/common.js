@@ -55,3 +55,11 @@ function removeClassById(classname, id) {
 function toggleClassById(classname, id) {
     document.getElementById(id).classList.toggle(classname);
 }
+
+function replayGif(gifTarget) {
+    var gif = document.querySelector('#' + gifTarget);
+    var src = gif.getAttribute('src');
+    // Update src attribute
+    var rand = Math.floor(100000000 + Math.random() * 900000000);
+    gif.setAttribute('src', src.trim() + '?' + rand);
+}

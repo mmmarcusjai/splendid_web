@@ -66,6 +66,7 @@
     color: #fff;
     width: 30%;
     padding-top: 10rem;
+    text-align: right;
 }
 
 .servise-block .block .content-block{
@@ -123,32 +124,27 @@
 }
 
 .servise-block .food-and-beverage .content-container {
-    text-align: right;
+    /* text-align: right; */
     padding-top: 4rem;
 }
 
 .servise-block .marketing-brand .content-container {
-    text-align: left;
-    margin-left: auto;
+    padding-top: 4rem;
 }
 
 .servise-block .packaging-solutions .content-container {
-    padding-top: 13rem;
-    text-align: right;
+    padding-top: 5rem;
 }
 
 .servise-block .warehouse-logistics .content-container {
-    padding-top: 10rem;
-    text-align: left;
-    margin-left: auto;
+    padding-top: 6rem;
 }
 
-.servise-block .food-and-beverage .content-container .content-block, .servise-block .packaging-solutions .content-container .content-block {
+.servise-block .food-and-beverage .content-container .content-block,
+.servise-block .packaging-solutions .content-container .content-block,
+.servise-block .marketing-brand .content-container .content-block,
+.servise-block .warehouse-logistics .content-container .content-block {
     margin-left: auto;
-}
-
-.servise-block .marketing-brand .content-container .content-block, .servise-block .warehouse-logistics .content-container .content-block {
-    margin-right: auto;
 }
 
 .servise-block .material-img {
@@ -164,7 +160,7 @@
     margin-top: -23%;
 }
 
-.servise-block .material-img#alain-material {
+/* .servise-block .material-img#alain-material {
     margin-left: 5%;
     margin-top: -10%;
     z-index: 2;
@@ -173,6 +169,18 @@
 .servise-block .material-img#alain-material-1 {
     margin-left: 14%;
     margin-top: -12%;
+    z-index: 1;
+} */
+
+.servise-block .material-img#alain-material {
+    margin-left: 60%;
+    margin-top: -10%;
+    z-index: 2;
+}
+
+.servise-block .material-img#alain-material-1 {
+    margin-left: 68%;
+    margin-top: -11%;
     z-index: 1;
 }
 
@@ -229,22 +237,22 @@
 
 .servise-block .floating-obj#chip-1 {
     left: 34%;
-    top: 28%;
+    top: 23%;
 }
 
 .servise-block .floating-obj#chip-2 {
-    left: 20%;
-    top: 31%;
+    left: 55%;
+    top: 28%;
 }
 
 .servise-block .floating-obj#chip-3 {
     left: 34%;
-    top: 34%;
+    top: 40%;
 }
 
 .servise-block .floating-obj#chip-4 {
-    left: 40%;
-    top: 40%;
+    left: 49%;
+    top: 35%;
 }
 
 .servise-block .floating-obj#salt-1 {
@@ -258,7 +266,7 @@
 }
 
 .servise-block .floating-obj#salt-3 {
-    left: 60%;
+    left: 50%;
     top: 77%;
     transform: rotate(-25deg);
 }
@@ -280,13 +288,13 @@
 }
 
 .servise-block .floating-obj#caramel-1 {
-    left: 65%;
+    left: 52%;
     top: 48%;
     transform: rotate(-40deg);
 }
 
 .servise-block .floating-obj#caramel-2 {
-    left: 73%;
+    left: 60%;
     top: 55%;
     transform: rotate(20deg);
 }
@@ -304,18 +312,18 @@
 }
 
 .servise-block .floating-obj#rose-1 {
-    left: 20%;
-    top: 78%;
+    left: 75%;
+    top: 87%;
 }
 
 .servise-block .floating-obj#rose-2 {
-    left: 7%;
+    left: 62%;
     top: 85%;
 }
 
 .servise-block .floating-obj#rose-3 {
-    left: 20%;
-    top: 91%;
+    left: 55%;
+    top: 95%;
 }
 
 @media screen and (max-width: 1440px) {
@@ -357,7 +365,8 @@
         padding-top: 2rem;
     }
 
-    .servise-block .food-and-beverage .content-container {
+    .servise-block .food-and-beverage .content-container,
+    .servise-block .marketing-brand .content-container {
         text-align: left;
     }
 
@@ -368,19 +377,34 @@
 
     .servise-block .warehouse-logistics .content-container {
         padding-top: 2rem;
+        text-align: left;
     }
 
-    .servise-block .food-and-beverage .content-container .content-block, .servise-block .packaging-solutions .content-container .content-block {
+
+    .servise-block .food-and-beverage .content-container .content-block,
+    .servise-block .packaging-solutions .content-container .content-block,
+    .servise-block .marketing-brand .content-container .content-block,
+    .servise-block .warehouse-logistics .content-container .content-block {
         margin-left: unset;
         margin-right: auto;
     }
 
-    .servise-block .material-img#alain-material {
+    /* .servise-block .material-img img {
+        max-width: 100%;
+    } */
+
+    /* .servise-block .material-img#alain-material {
         margin-left: 60%;
     }
 
     .servise-block .material-img#alain-material-1 {
         margin-left: 68%;
         margin-top: -11%;
+    } */
+}
+
+@media screen and (max-width: 320px) {
+    .servise-block .block .title{
+        font-size: 1.7rem;
     }
 }

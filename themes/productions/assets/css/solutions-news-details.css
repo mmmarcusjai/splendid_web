@@ -85,11 +85,11 @@
 }
 
 .news .more-news-arrow#left {
-    left: -7%;
+    left: -4%;
 }
 
 .news .more-news-arrow#right {
-    right: -5%;
+    right: 0%;
 }
 
 @media (max-width: 1200px) {
@@ -102,5 +102,17 @@
 @media (max-width: 768px) {
     .news .news-details-bg {
         height: 25%;
+    }
+
+    .news .more-news-arrow {
+        top: 0%;
+    }
+
+    .news .more-news-arrow#left {
+        left: -8%;
+    }
+
+    .news .more-news-arrow#right {
+        right: -7%;
     }
 }

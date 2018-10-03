@@ -19,7 +19,7 @@
     width: 40%;
     height: 80%;
     position: absolute;
-    top: -20%;
+    top: -10%;
     left: 0%;
     background-size: cover;
     background-position: right;
@@ -53,6 +53,7 @@ section#news-block {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    /* transition: all 750ms ease-in-out; */
 }
 
 .news-grid .news-item {
@@ -349,5 +350,16 @@ p.news-desc {
 
     p.news-desc {
         font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    section#news-block {
+        margin-top: 3.5rem;
+    }
+
+    .news-grid .news-item {
+        flex: 0 1 100%;
+        margin: 0.5em;
     }
 }
