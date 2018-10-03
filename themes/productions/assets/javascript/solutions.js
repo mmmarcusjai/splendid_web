@@ -117,12 +117,16 @@ newsPages.forEach(function(page){
 
     });
 });
-
 //  News item vue component
 Vue.component('news-item', {
-   props: ['item'],
+   props: {
+       item: {},
+       baseUrl: {
+           default: base_url
+       }
+   },
    template: `
-        <div class="news-item" :news-type="item.news_type" :style="{ 'background-image': 'url(/splendid_dev/storage/app/media' + item.news_image_thumbnail + ')' }" :index="item.id" @click="goNews($event)" @mouseover="mouseOver($event)" @mouseout="mouseOut($event)">
+        <div class="news-item" :news-type="item.news_type" :style="{ 'background-image': 'url( ' + baseUrl + '/storage/app/media' + item.news_image_thumbnail + ')' }" :index="item.id" @click="goNews($event)" @mouseover="mouseOver($event)" @mouseout="mouseOut($event)">
             <div class="news-desc-block">
                 <p class="news-title text-uppercase">{{ item.title }}</p>
                 <p class="news-desc">{{ item.description }}</p>
@@ -138,7 +142,7 @@ Vue.component('news-item', {
             var news_id = el.getAttribute('index');
             if(news_id != undefined) {
                 window.location.href = base_url + "/solutions-news/" + news_id;
-            } 
+            }
         },
         mouseOver: function (event) {
             el = event.currentTarget;
