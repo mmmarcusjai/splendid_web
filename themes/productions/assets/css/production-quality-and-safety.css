@@ -5,6 +5,11 @@
     /* min-height: 900px; */
     background-color: #5c2c86;
     padding-top: 9rem;
+
+    background-image: url('../images/productions/quality_safety_bg.png');
+    background-repeat: no-repeat;
+    background-size: 113%;
+    background-position: 98% 89%;
 }
 
 .quality-content-main {
@@ -18,9 +23,6 @@
     /* height: calc( 100vh - 9rem - 20% ); */
     height: 100vh;
     position: relative;
-    background-image: url('../images/quality_safety_bg.png');
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .quality-content .content {
