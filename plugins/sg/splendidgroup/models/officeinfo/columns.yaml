@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: id
+        type: text
+    office_name:
+        label: office_name
+        type: text
+    office_address:
+        label: office_address
+        type: text
+    office_tel:
+        label: office_tel
+        type: text
+    contact_email:
+        label: contact_email
+        type: text
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        invisible: true

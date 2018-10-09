@@ -29,6 +29,18 @@
     font-weight: 300;
 }
 
+.quality-content .left-content {
+    padding-left: 2rem;
+}
+
+.quality-content .right-content .img-container img {
+    width: 95%;
+}
+
+.quality-content .right-content .img-container img#quality-mobile {
+    display: none;
+}
+
 /* Hexagon common style */
 
 .hexagon {
@@ -209,10 +221,6 @@
     text-align: center;
 }
 
-#hex-row-1 {
-
-}
-
 #hex-row-2 {
     margin-top: 10%;
     transform: translateX(-8%);
@@ -247,7 +255,7 @@
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
-    -ms-transform scale(1.1);
+    -ms-transform: scale(1.1);
     transform: scale(1.1);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -283,5 +291,13 @@
 
     .heax-item {
         width: 35%;
+    }
+
+    .quality-content .right-content .img-container img#quality-desktop {
+        display: none;
+    }
+
+    .quality-content .right-content .img-container img#quality-mobile {
+        display: block;
     }
 }

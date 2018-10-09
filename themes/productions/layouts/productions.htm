@@ -2,10 +2,16 @@ description = "Productions"
 ==
 <?php
 use sg\SplendidGroup\Models\GlobalNews;
+use sg\SplendidGroup\Models\OfficeInfo;
 function onStart()
 {
+    // Get News
     $news = GlobalNews::NewsCat('productions')->get();
     $this['news'] = $news;
+
+    // Get Office infomation
+    $office_list = OfficeInfo::all();
+    $this['office_list'] = $office_list;
 
     // Get Session
     $fromNewsDetail = Session::get('fromNewsDetail');

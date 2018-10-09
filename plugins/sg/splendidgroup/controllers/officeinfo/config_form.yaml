@@ -1,0 +1,10 @@
+name: OfficeInfo
+form: $/sg/splendidgroup/models/officeinfo/fields.yaml
+modelClass: sg\SplendidGroup\Models\OfficeInfo
+defaultRedirect: sg/splendidgroup/officeinfo
+create:
+    redirect: 'sg/splendidgroup/officeinfo/update/:id'
+    redirectClose: sg/splendidgroup/officeinfo
+update:
+    redirect: sg/splendidgroup/officeinfo
+    redirectClose: sg/splendidgroup/officeinfo

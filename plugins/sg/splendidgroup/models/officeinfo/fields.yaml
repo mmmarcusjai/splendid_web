@@ -1,0 +1,31 @@
+fields:
+    office_name:
+        label: 'Office Name'
+        span: auto
+        type: text
+    office_address:
+        label: 'Office Address'
+        size: ''
+        span: auto
+        type: textarea
+    office_tel:
+        label: 'Office Tel'
+        span: auto
+        type: text
+    contact_email:
+        label: Email
+        span: auto
+        type: text
+    office_prefix:
+        label: 'Office Prefix'
+        span: auto
+        type: text
+    image_position:
+        label: 'Image Position'
+        span: auto
+        type: text
+    office_image:
+        label: 'Office Image'
+        span: full
+        mode: image
+        type: mediafinder

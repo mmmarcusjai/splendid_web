@@ -18,3 +18,7 @@ navigation:
         label: 'Global News'
         url: sg/splendidgroup/globalnews
         icon: icon-newspaper-o
+    main-menu-item2:
+        label: 'Office Info'
+        url: sg/splendidgroup/officeinfo
+        icon: icon-life-ring

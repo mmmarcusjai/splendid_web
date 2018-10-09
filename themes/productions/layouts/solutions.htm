@@ -2,15 +2,18 @@ description = "Solutions"
 ==
 <?php
 use sg\SplendidGroup\Models\GlobalNews;
+use sg\SplendidGroup\Models\OfficeInfo;
 function onStart()
 {
+    // Get news list
     $product_news = GlobalNews::getNewsByType('product', 'solutions')->paginate(6);
-    // echo '<pre>';
-    // print_r($product_news);
-    // exit;
     $company_news = GlobalNews::getNewsByType('company', 'solutions')->paginate(3);
     $this['product_news'] = $product_news;
     $this['company_news'] = $company_news;
+
+    // Get Office infomation
+    $office_list = OfficeInfo::all();
+    $this['office_list'] = $office_list;
 
     // Load JS
     $this->addJs('assets/javascript/spriteclip.js');
