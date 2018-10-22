@@ -8,6 +8,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
 }
 
 .sustainability .sustainability-part-bg  {
@@ -96,23 +97,104 @@
 .sustainability .animate-area {
     width: 850px;
     height: 850px;
-    background: url(../images/productions/production_cube_rotation.png) no-repeat 0 0;
+    background: url(../images/solutions/solutions_cube_rotation_850.png) no-repeat 0 0;
     margin: auto;
     margin-top: -7%;
 
 }
-/*
-    background: url(../images/sustainability_frame_1.png) no-repeat 0 0;
-    background-size: cover;
-*/
-@media screen and (max-width: 1200px) {
+
+.sustainability-flip-images {
+    display: none;
+}
+
+.sustainability .sustain-footer {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.sustainability .sustain-footer ul {
+    padding-inline-start: 0px;
+}
+
+.sustainability .sustain-footer ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.sustainability .sustain-footer ul li img {
+    width: 90px;
+}
+
+@media screen and (max-width: 1440px) {
     .sustainability {
-        height: auto;
+        padding-top: 4rem;
+    }
+
+    .sustainability .animate-area {
+        width: 650px;
+        height: 650px;
+        background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
+        margin: auto;
+        margin-top: -4%;
     }
 }
 
 @media screen and (max-width: 768px) {
     .sustainability-flip-content {
         display: none;
+    }
+
+    .sustainability-flip-images {
+        display: block;
+        text-align: center;
+    }
+    .sustainability-flip-images img {
+        max-width: 90%;
+    }
+
+    .sustainability .content-block {
+        width: 90%;
+        margin: auto;
+    }
+
+    .sustainability .sustain-slick .sustain-slick-img img {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .sustainability .sustain-slick .more-arrow.slick-disabled {
+        opacity: 0;
+    }
+
+    .sustainability .sustain-slick .more-arrow {
+        position: absolute;
+        z-index: 1;
+        top: 36%;
+        cursor: pointer;
+    }
+
+    .sustainability .sustain-slick .more-arrow#left {
+        left: 3%;
+    }
+
+    .sustainability .sustain-slick .more-arrow#right {
+        right: 3%;
+    }
+
+    .sustainability .sustain-footer {
+        position: static;
+        width: 85%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .sustainability .sustain-footer .logo-container {
+        display: block;
+        width: 100%;
+    }
+
+    .sustainability .sustain-footer ul {
+        padding-inline-start: 0px;
     }
 }

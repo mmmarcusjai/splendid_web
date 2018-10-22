@@ -2,8 +2,8 @@
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    /* min-height: 900px; */
     background-color: #5c2c86;
+    position: relative;
     padding-top: 9rem;
 
     background-image: url('../images/productions/quality_safety_bg.png');
@@ -13,7 +13,7 @@
 }
 
 .quality-content-main {
-    height: 20%;
+    height: 100%;
 }
 
 .quality-content .button-block-container {
@@ -39,6 +39,36 @@
 
 .quality-content .right-content .img-container img#quality-mobile {
     display: none;
+}
+
+.quality-content .quality-footer {
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.quality-content .quality-footer .logo-container {
+    display: inline-block;
+    width: 50%;
+}
+
+.quality-content .quality-footer .logo-container .header {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.quality-content .quality-footer .logo-container .logo {
+    display: inline-block;
+}
+
+.quality-content .quality-footer ul li{
+    display: inline-block;
+    text-align: center;
+}
+
+.quality-content .quality-footer ul li img {
+    width: 90px;
 }
 
 /* Hexagon common style */
@@ -272,11 +302,17 @@
     margin-top: -55%;
 }
 
-@media screen and (max-width: 1200px) {
-    .quality-content {
-        height: auto;
-    }
+@media screen and (max-width: 2000px) {
 
+}
+
+@media screen and (max-width: 1440px) {
+    .quality-content .quality-footer {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .hexagon2 {
         width: 80%;
         height: 80%;
@@ -299,5 +335,21 @@
 
     .quality-content .right-content .img-container img#quality-mobile {
         display: block;
+    }
+
+    .quality-content .quality-footer {
+        position: static;
+        width: 85%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .quality-content .quality-footer .logo-container {
+        display: block;
+        width: 100%;
+    }
+
+    .quality-content .quality-footer ul {
+        padding-inline-start: 0px !important;
     }
 }

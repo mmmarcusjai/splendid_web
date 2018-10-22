@@ -7,9 +7,12 @@ description = "Production-menu"
     <link href="{{ 'assets/css/common-side-menu.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/productions-menu.css'|theme }}" rel="stylesheet">
 {% endput %}
-
+<div class="hints">
+    <img src="{{ 'productions/menu_hint.png'|media }}" alt="">
+</div>
 <div class="bubble-menu font-lato">
     <div class="opt active home-opt" id="home"><label>Home</label><div class="bullet" id="home"></div></div>
+    <div class="opt design-opt" id="design"><label>Design</label><div class="bullet" id="design"></div></div>
     <div class="opt facilities-opt" id="facilities"><label>Our Facility</label><div class="bullet" id="facilities"></div></div>
     <div class="opt quality-content-opt" id="quality"><label>Quality & Safety</label><div class="bullet" id="quality"></div></div>
     <div class="opt sustainability-opt" id="sustainability"><label>Sustainability</label><div class="bullet" id="sustainability"></div></div>
@@ -19,6 +22,7 @@ description = "Production-menu"
 <div class="side-wrapper font-lato">
     <ul>
         <li><a id="home">Home</a></li>
+        <li><a id="design">Design</a></li>
         <li><a id="facilities">Our Facility</a></li>
         <li><a id="quality">Quality & Safety</a></li>
         <li><a id="sustainability">Sustainability</a></li>

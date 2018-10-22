@@ -8,6 +8,7 @@
   overflow: hidden;
   font-size: 15px;
   list-style-type: none;
+  padding-inline-start: 0px;
 }
 
 .details-hex {
@@ -163,7 +164,7 @@
 
 @media (max-width: 900px) and (min-width:601px) { /* <- 2-3  hexagons per row */
     #hexGrid{
-        padding-bottom: 7.4%
+        padding-bottom: 7.4%;
     }
     .hex {
         width: 33.333%; /* = 100 / 3 */
@@ -175,7 +176,7 @@
 
 @media (max-width: 600px) { /* <- 2-1  hexagons per row */
     #hexGrid{
-        padding-bottom: 11.2%
+        padding-bottom: 11.2%;
     }
     .hex {
         width: 50%; /* = 100 / 3 */

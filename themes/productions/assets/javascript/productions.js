@@ -1,11 +1,68 @@
 AOS.init();
 var home_top = (document.querySelector('.home') != null) ? document.querySelector('.home').offsetTop : '';
+var design_top = (document.querySelector('.production-design') != null) ? document.querySelector('.production-design').offsetTop : '';
 var facilities_top = (document.querySelector('.facilities') != null) ? document.querySelector('.facilities').offsetTop : '';
 var quality_top = (document.querySelector('.quality-content') != null) ? document.querySelector('.quality-content').offsetTop : '';
 var sustainability_top = (document.querySelector('.sustainability') != null) ? document.querySelector('.sustainability').offsetTop : '';
 var news_top = (document.querySelector('.news') != null) ? document.querySelector('.news').offsetTop : '';
 var contactus_top = (document.querySelector('.contact-us') != null) ? document.querySelector('.contact-us').offsetTop : '';
+var group_desc_top = (document.querySelector('.group-description') != null) ? document.querySelector('.group-description').offsetTop : '';
 var vid = (document.querySelector('.facilities video') != null) ? document.querySelector('.facilities video') : '';
+// Home pin Content
+const pin_info = {
+    'pro': {
+        'title': 'COME TOGETHER',
+        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+    },
+    'du': {
+        'title': 'DESIGN & INNOVATE',
+        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+    },
+    'ct': {
+        'title': 'PRODUCE',
+        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+    },
+    'io': {
+        'title': 'OVERSEA',
+        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+    },
+    'ns': {
+        'title': 'DELIVER',
+        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+    }
+};
+//
+// Design pin info
+const design_pin_info = {
+    'Branding': {
+        'title': 'Branding',
+        'content': 'Branding is undoubtedly an essential aspect of your business, whether it is a logo or a complete brand identity. We will take your brand and set you apart from the competition.'
+    },
+    'MarketResearch': {
+        'title': 'Market Research',
+        'content': 'With our team of innovators, trend watchers and market researchers we study the global markets giving you the tools and advice on what will be the \'next thing\'.'
+    },
+    'Designdevelopmentgroup': {
+        'title': 'Design & development',
+        'content': 'Our experienced teams can design and develop everything in-house. Additionally, as we are part of Splendid Group, we can manufacture your products in our own production facilities.'
+    },
+    'Marketing': {
+        'title': 'Marketing',
+        'content': 'We do not only create products, we create the complete marketing campaigns. If it is below the line, above the line or activation, we have the ability and experience to make it happen. We create the hype!'
+    },
+    'AnimationVideoProduction': {
+        'title': 'Animation & Video Production',
+        'content': 'Consumers do not have much patience to read these days. Videos are a great way to present your services and the products in front of customers. Our video and animation production team makes sure we get your message across to your target audience while keeping them engaged and entertained.'
+    },
+    'DigitalSolutions': {
+        'title': 'Digital Solutions',
+        'content': 'With our creative- and online development teams in Europe and Asia we are always looking to create new innovate ideas or campaigns where East meets West. “WeCreate” is our in-house digital agency for the development of all online and mobile solutions.'
+    }
+};
+//
+//  Group description video
+var descVid = document.querySelector('#desc-video');
+//
 
 var curr_popup_index = 0;
 var total_home_popup = $('.home-pin').length;
@@ -15,7 +72,45 @@ var home_popup_arr = {
     3: 'ct',
     4: 'io',
     5: 'ns',
-}
+};
+
+// Quality & Safety
+var quality_safety_replay = false;
+//
+
+window.onload = () => {
+    const designSvg = document.querySelector('#design-svg');
+    const svgDoc = designSvg.contentDocument;
+    const signTag = svgDoc.querySelectorAll('.sign');
+    signTag.forEach(function (sign) {
+         sign.addEventListener('mouseover', () => {
+            $('.pin-hints').addClass('hidden');
+            document.querySelector('.design-pin-hints').classList.add('hidden');
+            mainObjs = svgDoc.querySelectorAll(`.mainObj:not([id=${sign.dataset.target}])`);
+            mainObjs.forEach(function (obj) {
+                obj.classList.add('dim');
+            });
+             document.querySelector('.design-tooltip-container #tooltip-title').innerHTML = design_pin_info[sign.dataset.target].title;
+             document.querySelector('.design-tooltip-container #tooltip-content').innerHTML = design_pin_info[sign.dataset.target].content;
+            document.querySelector('.design-tooltip-container').classList.add('active');
+         });
+         sign.addEventListener('mouseout', () => {
+             mainObjs = svgDoc.querySelectorAll('.mainObj');
+             mainObjs.forEach(function (obj) {
+                 obj.classList.remove('dim');
+             });
+             document.querySelector('.design-tooltip-container').classList.remove('active');
+         });
+    });
+    home_top = document.querySelector('.home').offsetTop;
+    facilities_top = document.querySelector('.facilities').offsetTop;
+    quality_top = document.querySelector('.quality-content').offsetTop;
+    sustainability_top = document.querySelector('.sustainability').offsetTop;
+    news_top = document.querySelector('.news').offsetTop;
+    contactus_top = document.querySelector('.contact-us').offsetTop;
+    update_nav_class(Math.round(this.scrollY));
+};
+
 window.onresize = () => {
     home_top = document.querySelector('.home').offsetTop;
     facilities_top = document.querySelector('.facilities').offsetTop;
@@ -24,19 +119,33 @@ window.onresize = () => {
     news_top = document.querySelector('.news').offsetTop;
     contactus_top = document.querySelector('.contact-us').offsetTop;
     update_nav_class(Math.round(this.scrollY));
-}
+};
 window.onscroll = () => {
     update_nav_class(Math.round(this.scrollY));
 };
 
 
 $('document').ready(function() {
+    // Welcome fadein/Out
+    var welcome_show = get_session_stroage('welcome_shown');
+    if (!welcome_show) {
+        setTimeout(function () {
+            $('section#productions-welcome').addClass('hide');
+            set_session_stroage('welcome_shown', true);
+        }, 7500);
+    } else {
+        $('section#productions-welcome').addClass('hide');
+    }
+    
     // Buddle menu
     $('.bubble-menu .opt , .side-wrapper ul li a').on('click', function() {
         var id = $(this).attr('id');
         switch (id) {
             case 'home':
                 to = home_top;
+                break;
+            case 'design':
+                to = design_top;
                 break;
             case 'facilities':
                 to = facilities_top;
@@ -67,32 +176,44 @@ $('document').ready(function() {
 
     // Home
     $('.home-pin').on('mouseover', function() {
+        $('.pin-hints').addClass('hidden');
         var toggle = $(this).data('toggle');
         $('.img-home-gif.dimmed').removeClass('active');
         $('.img-home-gif[id=main]').addClass('hidden');
         $('.img-home-gif[data-bg='+toggle+']').addClass('active');
         $('.home-pin').removeClass('active');
         $(this).addClass('active');
+
+        // document.querySelector('.tooltip-content').classList.add('visible');
+        document.querySelector('#tooltip-title').innerHTML = pin_info[toggle].title;
+        document.querySelector('#tooltip-content').innerHTML = pin_info[toggle].content;
+        document.querySelector('.pin-tooltip-container').classList.add('active');
     });
 
     $('.img-home-gif').on('mouseout', function() {
         $('.img-home-gif.dimmed').removeClass('active');
         $('.img-home-gif[id=main]').removeClass('hidden');
         $('.home-pin').removeClass('active');
+
+        document.querySelector('.pin-tooltip-container').classList.remove('active');
+        // document.querySelectorAll('.tooltip-content').forEach(function(tooltip) {
+        //     tooltip.classList.remove('visible');
+        // });
+        
     });
 
-    $('.home-pin').on('click', function() {
-        var index = $(this).attr('data-index');
-        show_home_popup(index);
-    });
+    // $('.home-pin').on('click', function() {
+    //     var index = $(this).attr('data-index');
+    //     show_home_popup(index);
+    // });
 
-    $('.close-container').on('click', function() {
-        hide_popup();
-    });
+    // $('.close-container').on('click', function() {
+    //     hide_popup();
+    // });
 
     $('.popup-arrow').on('click', function() {
         var target = $(this).attr('target');
-        change_home_popup_content(target)
+        change_home_popup_content(target);
     });
 
     // News
@@ -114,7 +235,7 @@ $('document').ready(function() {
         var position = $(this).data('position');
         news_popup_slider(position);
     });
-
+    
     $('#nav-icon').click(function(){
 		$(this).toggleClass('open');
         if($(this).hasClass('open')) {
@@ -126,41 +247,71 @@ $('document').ready(function() {
 
     // Active responsive image map
     $('map').imageMapResize();
+
+    $('.sustain-slick').slick({
+        infinite: false,
+        nextArrow: '<i class="fa fa-angle-right fa-3x more-arrow" id="right"></i>',
+        prevArrow: '<i class="fa fa-angle-left fa-3x more-arrow" id="left"></i>',
+    });
 });
 
 function update_nav_class(scroll_y) {
     scroll_y+=100;
-    const nav = document.querySelector('nav');
+    var nav = document.querySelector('nav');
     var class_name = '';
     $('.bubble-menu .opt').removeClass('active');
     if(scroll_y <= 100) {
         class_name = '';
         $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
+        $('.hints').removeClass('hidden');
+    } else if (scroll_y >= design_top && scroll_y < facilities_top) {
+        class_name = 'scroll-design';
+        $('.bubble-menu .opt .bullet#design').closest('.opt').addClass('active');
         vid.pause();
-    } else if(scroll_y >= facilities_top && scroll_y < quality_top) {
+    }else if(scroll_y >= facilities_top && scroll_y < quality_top) {
         class_name = 'hide';
         $('.bubble-menu .opt .bullet#facilities').closest('.opt').addClass('active');
         vid.play();
+        // Reset quality_safety_replay to false;
+        quality_safety_replay = false;
     } else if(scroll_y >= quality_top && scroll_y < sustainability_top){
         class_name = 'scroll-quality';
         $('.bubble-menu .opt .bullet#quality').closest('.opt').addClass('active');
+        if (!quality_safety_replay) {
+            cw = document.body.clientWidth;
+            if (cw < 768) {
+                replayGif('quality-mobile');
+            } else {
+                replayGif('quality-desktop');
+            }
+            quality_safety_replay = true;
+        }
         vid.pause();
+        // Off auto play sustainability cube
+        off_auto_play();
     } else if(scroll_y >= sustainability_top && scroll_y < news_top) {
         class_name = 'scroll-sustainability';
         $('.bubble-menu .opt .bullet#sustainability').closest('.opt').addClass('active');
-        vid.pause();
+        // Reset quality_safety_replay to false;
+        quality_safety_replay = false;
+        // Init auto play sustainability cube
+        auto_play();
     } else if(scroll_y >= news_top && scroll_y < contactus_top) {
         class_name = 'scroll-news';
         $('.bubble-menu .opt .bullet#news').closest('.opt').addClass('active');
-        vid.pause();
-    } else if(scroll_y >= contactus_top ) {
+        // Off auto play sustainability cube
+        off_auto_play();
+    } else if(scroll_y >= contactus_top && scroll_y < group_desc_top) {
         class_name = 'scroll-contactus';
         $('.bubble-menu .opt .bullet#contactus').closest('.opt').addClass('active');
-        vid.pause();
-    } else {
+    } else if (scroll_y >= group_desc_top) {
+        class_name = 'scroll-quality';
+        $('.bubble-menu .opt .bullet#contactus').closest('.opt').removeClass('active');
+        descVid.play();
+    }else {
         class_name = 'scroll-home';
         $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
-        vid.pause();
+        $('.hints').addClass('hidden');
     }
     // console.log('scrollY :::: ' + scrollY);
     // console.log('sustainability_top ::::: ' + sustainability_top);
@@ -238,13 +389,4 @@ function news_popup_slider(position) {
     var current = $('.details-img-1').data('detail');
     $('.news-details').addClass('d-none');
     $('.news-details[data-index='+current+']').removeClass('d-none');
-}
-
-function set_session_stroage(key, val) {
-    sessionStorage.setItem(key, val);
-}
-
-function get_session_stroage(key) {
-    var val = sessionStorage.getItem(key);
-    return val;
 }

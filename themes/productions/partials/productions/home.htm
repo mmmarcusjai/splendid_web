@@ -5,6 +5,7 @@ description = "Production-home"
 {% put styles %}
     <link href="{{ 'assets/css/production-home.css'|theme }}" rel="stylesheet">
 {% endput %}
+{% partial "productions/welcome" %}
 <section id="home">
     <div class="home">
         <div class="container-fluid">
@@ -27,6 +28,9 @@ description = "Production-home"
                 </div>
                 <div class="col-xl-8 col-md-6">
                     <div class="right-content">
+                        <div class="pin-hints">
+                            <img src="{{ 'productions/mouseover_hint.png'|media }}" alt="">
+                        </div>
                         <img class="img-home-gif dimmed" data-bg="pro" src="{{ 'productions/PRO_animation_dimmed.gif'|media }}" >
                         <img class="img-home-gif dimmed" data-bg="du" src="{{ 'productions/DU_animation_dimmed.gif'|media }}" >
                         <img class="img-home-gif dimmed" data-bg="ct" src="{{ 'productions/CT_animation_dimmed.gif'|media }}" >
@@ -54,6 +58,16 @@ description = "Production-home"
                         </map>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="pin-tooltip-container">
+        <div class="tooltip-content">
+            <div class="title text-uppercase font-homenaje">
+                <p id="tooltip-title"></p>
+            </div>
+            <div class="content font-lato">
+                <p id="tooltip-content"></p>
             </div>
         </div>
     </div>

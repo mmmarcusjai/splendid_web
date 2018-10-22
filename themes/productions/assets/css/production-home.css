@@ -4,6 +4,7 @@
     min-height: 1100px;
     background-color: #80cfd4;
     padding-top: 8rem;
+    position: relative;
 }
 
 .home .left-content {
@@ -12,10 +13,9 @@
 }
 
 .home .right-content {
-    /* background-color: #ffffff00;
-    opacity: 0.5; */
     text-align: center;
     position: relative;
+    height: 100vh;
 }
 
 .home-content {
@@ -27,7 +27,7 @@
 .home .img-home-gif {
     z-index: 1;
     position: absolute;
-    margin-left: -35%;
+    margin-left: -30%;
     margin-top: -7%;
     transition: 0.5s ease;
 }
@@ -63,47 +63,34 @@
 }
 
 .home .home-pin#home-pro-pin+img {
-    /* left: 56%; */
-    /* top: 6%; */
-    left: 44%;
-    margin-top: 2%;
+    left: 48%;
+    margin-top: -2%;
     max-width: 16%;
 }
 
 .home .home-pin#home-du-pin+img {
-    /* left:34%; */
-    /* top: 24%; */
-    left: 24%;
-    margin-top: 13%;
+    left: 26%;
+    margin-top: 10%;
     max-width: 16%;
 }
 
 .home .home-pin#home-ct-pin+img {
-    /* left: 63%; */
-    /* top: 41%; */
-    left: 48%;
-    margin-top: 22%;
+    left: 55%;
+    margin-top: 20%;
     max-width: 8%;
 }
 
 .home .home-pin#home-io-pin+img {
-    /* left: 29%; */
-    /* top: 47%; */
     left: 20%;
     margin-top: 28%;
     max-width: 8%;
 }
 
 .home .home-pin#home-ns-pin+img {
-    /* left: 54%; */
-    /* top: 66%; */
     left: 40%;
     margin-top: 37%;
     max-width: 9%;
 }
-
-
-
 
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
@@ -190,6 +177,24 @@
     top: -7%;
 }
 
+.home-popup .home-popup-bg[data-target=ct] {
+    width: 200%;
+    left: -81%;
+    top: -94%;
+}
+
+.home-popup .home-popup-bg[data-target=io] {
+    width: 170%;
+    top: -127%;
+    left: -6%;
+}
+
+.home-popup .home-popup-bg[data-target=ns] {
+    width: 170%;
+    top: -149%;
+    left: -60%;
+}
+
 .home-popup .popup-content {
     height: calc(100% - 30px);
     overflow: hidden;
@@ -211,8 +216,12 @@
     color: rgb(61, 79, 119);
 }
 
-.home-popup .popup-content.layout-1 .right-content  {
+/* .home-popup .popup-content.layout-1 .right-content  {
     padding-top: 50px;
+} */
+
+.home-popup .popup-content .left-content {
+    padding-left: 6rem;
 }
 
 .home-popup .popup-arrow {
@@ -236,6 +245,75 @@
 
 .home-popup .popup-arrow img{
     width: 80%;
+}
+
+.pin-tooltip-container {
+    position: absolute;
+    top: 10%;
+    left: 1%;
+    width: 40%;
+    background-color: #73bfc3;
+    opacity: 0;
+    transition: .2s;
+    -webkit-box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
+    -moz-box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
+    box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
+}
+
+.pin-tooltip-container::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 100%;
+    width: 0;
+    height: 0;
+    border: 80px solid transparent;
+    border-top-color: #73bfc3;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.pin-tooltip-container.active {
+    opacity: 1;
+}
+
+.pin-tooltip-container .tooltip-content {
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+}
+
+.pin-tooltip-container .tooltip-content .title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(61, 79, 119);
+}
+
+.pin-tooltip-container .tooltip-content .content {
+    font-size: 1.1em;
+    font-weight: 300;
+    text-align: justify;
+    overflow: auto;
+    height: 400px;
+}
+
+.pin-hints {
+    position: absolute;
+    z-index: 2;
+    right: 50%;
+    top: 0%;
+    width: 25%;
+    opacity: 1;
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.pin-hints.hidden {
+    opacity: 0;
+}
+
+.pin-hints img {
+    width: 50%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -269,6 +347,24 @@
     .home .img-home-gif {
         max-width: 65%;
     }
+
+    .home .home-pin#home-ct-pin+img {
+        left: 62%;
+        margin-top: 25%;
+        max-width: 11%;
+    }
+
+    .home .home-pin#home-io-pin+img {
+        left: 23%;
+        margin-top: 32%;
+        max-width: 11%;
+    }
+
+    .home .home-pin#home-ns-pin+img {
+        left: 47%;
+        margin-top: 42%;
+        max-width: 11%;
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -279,6 +375,11 @@
     .home .img-home-gif {
         max-width: 56%;
     }
+
+    .home .home-pin#home-ct-pin+img {
+        left: 53%;
+        margin-top: 22%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -288,6 +389,8 @@
 
     .home .img-home-gif {
         max-width: 90%;
+        margin-left: -45%;
+        margin-top: 15%;
     }
 }
 

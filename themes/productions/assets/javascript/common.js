@@ -68,3 +68,12 @@ function replayGif(gifTarget) {
     var rand = Math.floor(100000000 + Math.random() * 900000000);
     gif.setAttribute('src', src.trim() + '?' + rand);
 }
+
+function set_session_stroage(key, val) {
+    sessionStorage.setItem(key, val);
+}
+
+function get_session_stroage(key) {
+    var val = sessionStorage.getItem(key);
+    return val;
+}

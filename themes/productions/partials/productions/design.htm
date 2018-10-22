@@ -1,0 +1,46 @@
+description = "Production-design"
+
+[viewBag]
+==
+{% put styles %}
+<link href="{{ 'assets/css/production-design.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="production-design">
+    <div class="production-design">
+        <div class="design-pin-hints">
+            <img src="{{ 'productions/mouseover_hint_flip.png'|media }}" alt="">
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="svg-bg">
+                        <object id="design-svg" data="{{ 'productions/design_graphic.svg'|media }}" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="content-block">
+                        <div class="title font-homenaje text-uppercase">
+                            <p>About Splendid Design</p>
+                        </div>
+                        <div class="content font-lato">
+                            <p>Whether customers come to us with a specific direction or need our help in conceptualizing products or
+                                campaigns, our creative teams are there every step of the way. Between brainstorming, design & development, we
+                                make sure your vision becomes reality. We also keep on innovating in designing the best supply chain solutions
+                                to optimize pricing, quality, quantity and delivery of products. This allows speed to market.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="design-tooltip-container">
+            <div class="tooltip-content">
+                <div class="title text-uppercase font-homenaje">
+                    <p id="tooltip-title"></p>
+                </div>
+                <div class="content font-lato">
+                    <p id="tooltip-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
