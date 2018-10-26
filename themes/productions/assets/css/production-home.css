@@ -255,9 +255,10 @@
     background-color: #73bfc3;
     opacity: 0;
     transition: .2s;
-    -webkit-box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
-    -moz-box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
-    box-shadow: 10px 10px 22px 5px rgb(101, 101, 101);
+    -webkit-box-shadow: 5px 4px 22px 0px rgb(101, 101, 101);
+    -moz-box-shadow: 5px 4px 22px 0px rgb(101, 101, 101);
+    box-shadow: 5px 4px 22px 0px rgb(101, 101, 101);
+    border-radius: 10px;
 }
 
 .pin-tooltip-container::after {

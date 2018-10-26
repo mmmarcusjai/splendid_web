@@ -50,6 +50,14 @@
     transition-delay: 0.6s;
 }
 
+.bubble-menu {
+    transition: 1s;
+}
+
+.bubble-menu.hidden {
+    transform: translateX(1000px);
+}
+
 .hints {
     position: fixed;
     z-index: 2;

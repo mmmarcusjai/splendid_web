@@ -26,9 +26,10 @@
     background-color: rgb(237, 145, 59);
     opacity: 0;
     transition: .2s;
-    -webkit-box-shadow: 16px -7px 20px 0px rgb(101, 101, 101);
-    -moz-box-shadow: 16px -7px 20px 0px rgb(101, 101, 101);
-    box-shadow: 16px -7px 20px 0px rgb(101, 101, 101);
+    -webkit-box-shadow: 3px -3px 20px 0px rgb(101, 101, 101);
+    -moz-box-shadow: 3px -3px 20px 0px rgb(101, 101, 101);
+    box-shadow: 3px -3px 20px 0px rgb(101, 101, 101);
+    border-radius: 10px;
 }
 
 .design-tooltip-container::after {

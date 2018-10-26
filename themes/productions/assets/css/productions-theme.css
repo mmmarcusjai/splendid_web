@@ -85,12 +85,18 @@ section#productions-welcome.hide .productions-welcome {
 }
 
 .group-description {
-    background-color: #5c2c86;
-    background-image: url(../images/productions/production_group_desc_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+    color: #000;
 }
+
+.group-description .desc-title {
+    font-family: 'Homenaje', sans-serif;
+}
+
+.group-description .desc-content {
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+}
+    
 
 @media screen and (max-width: 1440px) {
     /* Page content */

@@ -7,8 +7,80 @@ description = "Production-OurFacilities"
 {% endput %}
 <section id="facilities">
     <div class="facilities">
-        <video muted controls playsinline>
-            <source src="{{ 'productions/Our_facilities_video.mp4'|media }}" type="video/mp4">
-        </video>
+        <div class="desktop-view">
+            {% partial "productions/facilities-video-frame" %}
+            <div class="facilities-video">
+                <video muted playsinline>
+                    <source src="{{ 'productions/our_facilities_video_v1.mp4'|media }}" type="video/mp4">
+                </video>
+                <div class="video-control">
+                    <ul>
+                        <li><img id="play" class="dim" src="{{ 'productions/play.png'|media }}" /></li>
+                        <li><img id="replay" class="dim" src="{{ 'productions/replay.png'|media }}" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-view">
+            <div class="facilities-card-container">
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/packing_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>Founded: 2005</p>
+                        <p>Number of employees: 48</p>
+                        <p><b>Products</b></p>
+                        <div class="product">
+                            <ul>
+                                <li>Consumer retail Products</li>
+                                <li>/ Food contact packaging(heatable and non-heatable)</li>
+                                <li>/ Graphic art products & design/ Industrial products & design/ POS materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/plastics_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>I AM TEXT</p>
+                    </div>
+                </div>
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/ware_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>I AM TEXT</p>
+                    </div>
+                </div>
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/luggage_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>I AM TEXT</p>
+                    </div>
+                </div>
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/fabric-plush_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>I AM TEXT</p>
+                    </div>
+                </div>
+                <div class="facilities-card">
+                    <div class="card-image">
+                        <img src="{{ 'productions/garment_m.png'|media }}" alt="">
+                    </div>
+                    <div class="card-content">
+                        <p>I AM TEXT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

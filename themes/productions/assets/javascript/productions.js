@@ -7,7 +7,9 @@ var sustainability_top = (document.querySelector('.sustainability') != null) ? d
 var news_top = (document.querySelector('.news') != null) ? document.querySelector('.news').offsetTop : '';
 var contactus_top = (document.querySelector('.contact-us') != null) ? document.querySelector('.contact-us').offsetTop : '';
 var group_desc_top = (document.querySelector('.group-description') != null) ? document.querySelector('.group-description').offsetTop : '';
+// facilities video
 var vid = (document.querySelector('.facilities video') != null) ? document.querySelector('.facilities video') : '';
+var vid_start = false;
 // Home pin Content
 const pin_info = {
     'pro': {
@@ -102,6 +104,46 @@ window.onload = () => {
              document.querySelector('.design-tooltip-container').classList.remove('active');
          });
     });
+
+    const facilitiesHex = document.querySelectorAll('.mask-content');
+    facilitiesHex.forEach(function(hex) {
+        hex.addEventListener('mouseover', () => {
+            hex.classList.add('active');
+        });
+
+        hex.addEventListener('mouseout', () => {
+            hex.classList.remove('active');
+        });
+
+        hex.addEventListener('click', () => {
+            time = hex.dataset.time;
+            event.preventDefault();
+            vid.currentTime = time;
+            vid.pause();
+            document.querySelector('.video-control img#play').classList.remove('dim');
+        });
+    });
+
+    const videoControl = document.querySelectorAll('.video-control img');
+    videoControl.forEach((btn) => {
+        let action = btn.id;
+        btn.addEventListener('click', () => {
+            switch(action) {
+                case "play":
+                if(vid.paused) {
+                    vid.play();
+                    document.querySelector('.video-control img#play').classList.add('dim');
+                }
+                break;
+                case "replay":
+                    vid.currentTime = '0';
+                    vid.play();
+                    document.querySelector('.video-control img#play').classList.add('dim');
+                break;
+            }
+        });
+    });
+
     home_top = document.querySelector('.home').offsetTop;
     facilities_top = document.querySelector('.facilities').offsetTop;
     quality_top = document.querySelector('.quality-content').offsetTop;
@@ -260,6 +302,7 @@ function update_nav_class(scroll_y) {
     var nav = document.querySelector('nav');
     var class_name = '';
     $('.bubble-menu .opt').removeClass('active');
+    $('.hints').addClass('hidden');
     if(scroll_y <= 100) {
         class_name = '';
         $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
@@ -267,16 +310,30 @@ function update_nav_class(scroll_y) {
     } else if (scroll_y >= design_top && scroll_y < facilities_top) {
         class_name = 'scroll-design';
         $('.bubble-menu .opt .bullet#design').closest('.opt').addClass('active');
-        vid.pause();
+        if ($('.bubble-menu').hasClass('hidden')) {
+            $('.bubble-menu').removeClass('hidden');
+        }
+        if (!vid.paused) {
+            vid.pause();
+            $('.video-control img#play').removeClass('dim');
+        }
     }else if(scroll_y >= facilities_top && scroll_y < quality_top) {
         class_name = 'hide';
         $('.bubble-menu .opt .bullet#facilities').closest('.opt').addClass('active');
-        vid.play();
+        $('.bubble-menu').addClass('hidden');
+        if(!vid_start) {
+            vid.play();
+            $('.video-control img#replay').removeClass('dim');
+            vid_start = true;
+        }
         // Reset quality_safety_replay to false;
         quality_safety_replay = false;
     } else if(scroll_y >= quality_top && scroll_y < sustainability_top){
         class_name = 'scroll-quality';
         $('.bubble-menu .opt .bullet#quality').closest('.opt').addClass('active');
+        if ($('.bubble-menu').hasClass('hidden')) {
+            $('.bubble-menu').removeClass('hidden');
+        }
         if (!quality_safety_replay) {
             cw = document.body.clientWidth;
             if (cw < 768) {
@@ -286,7 +343,10 @@ function update_nav_class(scroll_y) {
             }
             quality_safety_replay = true;
         }
-        vid.pause();
+        if (!vid.paused) {
+            vid.pause();
+            $('.video-control img#play').removeClass('dim');
+        }
         // Off auto play sustainability cube
         off_auto_play();
     } else if(scroll_y >= sustainability_top && scroll_y < news_top) {
@@ -305,13 +365,12 @@ function update_nav_class(scroll_y) {
         class_name = 'scroll-contactus';
         $('.bubble-menu .opt .bullet#contactus').closest('.opt').addClass('active');
     } else if (scroll_y >= group_desc_top) {
-        class_name = 'scroll-quality';
+        class_name = 'scroll-home';
         $('.bubble-menu .opt .bullet#contactus').closest('.opt').removeClass('active');
         descVid.play();
     }else {
         class_name = 'scroll-home';
         $('.bubble-menu .opt .bullet#home').closest('.opt').addClass('active');
-        $('.hints').addClass('hidden');
     }
     // console.log('scrollY :::: ' + scrollY);
     // console.log('sustainability_top ::::: ' + sustainability_top);
