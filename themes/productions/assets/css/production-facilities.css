@@ -111,7 +111,7 @@
 
 .facilities .facilities-card-container .facilities-card {
     text-align: center;
-    height: 550px;
+    height: 575px;
 }
 
 .facilities .facilities-card-container .facilities-card:nth-child(odd) {
@@ -132,12 +132,11 @@
     text-align: left;
     width: 80%;
     margin: auto;
-    line-height: 1;
+    line-height: 1.2;
 }
 
-.facilities .facilities-card .card-content ul {
-    list-style: none;
-    padding-inline-start: 0px;
+.facilities .facilities-card .card-content p {
+    margin-bottom: 0rem;
 }
 
 @media screen and (max-width: 768px) {
