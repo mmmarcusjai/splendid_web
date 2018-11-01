@@ -103,9 +103,13 @@
     display: none;
 }
 
+.facilities .mobile-view .mobile-header {
+    padding-top: 4rem;
+    text-align: center
+}
+
 .facilities .facilities-card-container {
     width: 100%;
-    padding-top: 3rem;
     padding-bottom: 3rem;
 }
 

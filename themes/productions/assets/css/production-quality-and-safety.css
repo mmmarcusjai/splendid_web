@@ -42,15 +42,16 @@
 }
 
 .quality-content .quality-footer {
-    width: 60%;
+    width: 30%;
     position: absolute;
     bottom: 0;
-    right: 0;
 }
 
 .quality-content .quality-footer .logo-container {
-    display: inline-block;
     width: 50%;
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
 }
 
 .quality-content .quality-footer .logo-container .header {
@@ -58,13 +59,15 @@
     vertical-align: top;
 }
 
-.quality-content .quality-footer .logo-container .logo {
-    display: inline-block;
+.quality-content .quality-footer ul {
+    padding-inline-start: 0px;
+    -webkit-padding-start: 0px;
 }
 
 .quality-content .quality-footer ul li{
-    display: inline-block;
+    display: block;
     text-align: center;
+    margin: 15px;
 }
 
 .quality-content .quality-footer ul li img {
@@ -308,7 +311,7 @@
 
 @media screen and (max-width: 1440px) {
     .quality-content .quality-footer {
-        width: 80%;
+        position: static;
     }
 }
 
@@ -320,6 +323,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .quality-content {
+        padding-top: 4rem;
+    }
+    
     .hexagon2 {
         width: 60%;
         height: 60%;
@@ -327,6 +334,10 @@
 
     .heax-item {
         width: 35%;
+    }
+
+    .quality-content .left-content {
+        padding-left: 15px;
     }
 
     .quality-content .right-content .img-container img#quality-desktop {
@@ -352,4 +363,5 @@
     .quality-content .quality-footer ul {
         padding-inline-start: 0px !important;
     }
+
 }

@@ -111,15 +111,24 @@
     width: 20%;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 2%;
+}
+
+.sustainability .sustain-footer .logo-container {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
 }
 .sustainability .sustain-footer ul {
     padding-inline-start: 0px;
+    -webkit-padding-start: 0px;
 }
 
 .sustainability .sustain-footer ul li {
-    display: inline-block;
+    display: block;
     text-align: center;
+    margin: 15px;
 }
 
 .sustainability .sustain-footer ul li img {
@@ -187,6 +196,7 @@
         width: 85%;
         text-align: center;
         margin: auto;
+        padding-top: 2rem;
     }
 
     .sustainability .sustain-footer .logo-container {

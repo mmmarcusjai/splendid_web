@@ -9,6 +9,7 @@
   font-size: 15px;
   list-style-type: none;
   padding-inline-start: 0px;
+  -webkit-padding-start: 0px;
 }
 
 .details-hex {

@@ -3,7 +3,7 @@ description = "Productions-welcome"
 [viewBag]
 ==
 <style>
-    .productions-welcome {
+    .productions-welcome, .productions-preload{
         position: fixed;
         top: 0%;
         left: 0%;
@@ -14,9 +14,35 @@ description = "Productions-welcome"
         width: 100vw;
         height: 100vh;
     }
+
+    .productions-preload {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+    }
+
+    .productions-preload img {
+        top: 50%;
+        position: absolute;
+        left: 45%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .productions-welcome {
+            display: none;
+        }
+
+        .productions-preload {
+            display: block;
+        }
+    }
 </style>
 <section id="productions-welcome">
     <div class="productions-welcome">
         <img src="{{ 'productions/production_home_logo.gif'|media }}" />
+    </div>
+    <div class="productions-preload">
+        <img src="{{ 'productions/preloader_1.gif'|media }}" />
     </div>
 </section>

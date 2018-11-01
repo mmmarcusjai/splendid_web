@@ -10,6 +10,8 @@ var group_desc_top = (document.querySelector('.group-description') != null) ? do
 // facilities video
 var vid = (document.querySelector('.facilities video') != null) ? document.querySelector('.facilities video') : '';
 var vid_start = false;
+// Detect user agent
+var detector = new MobileDetect(window.navigator.userAgent);
 // Home pin Content
 const pin_info = {
     'pro': {
@@ -81,30 +83,52 @@ var quality_safety_replay = false;
 //
 
 window.onload = () => {
+    // Design SVG event
     const designSvg = document.querySelector('#design-svg');
     const svgDoc = designSvg.contentDocument;
     const signTag = svgDoc.querySelectorAll('.sign');
-    signTag.forEach(function (sign) {
-         sign.addEventListener('mouseover', () => {
-            $('.pin-hints').addClass('hidden');
-            document.querySelector('.design-pin-hints').classList.add('hidden');
-            mainObjs = svgDoc.querySelectorAll(`.mainObj:not([id=${sign.dataset.target}])`);
-            mainObjs.forEach(function (obj) {
-                obj.classList.add('dim');
-            });
-             document.querySelector('.design-tooltip-container #tooltip-title').innerHTML = design_pin_info[sign.dataset.target].title;
-             document.querySelector('.design-tooltip-container #tooltip-content').innerHTML = design_pin_info[sign.dataset.target].content;
-            document.querySelector('.design-tooltip-container').classList.add('active');
-         });
-         sign.addEventListener('mouseout', () => {
-             mainObjs = svgDoc.querySelectorAll('.mainObj');
-             mainObjs.forEach(function (obj) {
-                 obj.classList.remove('dim');
-             });
-             document.querySelector('.design-tooltip-container').classList.remove('active');
-         });
-    });
+    const mainObj = svgDoc.querySelectorAll('.mainObj');
+   
+    if (detector.mobile() != null) {
+        // console.log(mainObj);
+        const closeBtn = document.querySelector('.svg-popup-container .close-btn');
+        const svgpopup = document.querySelector('.svg-popup-bg');
 
+        mainObj.forEach((obj) => {
+            obj.addEventListener('click', () => {
+                alert('clicked');
+                svgpopup.querySelector('#design-desc-content').innerHTML = design_pin_info[obj.id].content;
+                svgpopup.querySelector('.design-svg-container').dataset.active = obj.id;
+                svgpopup.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            svgpopup.classList.remove('active');
+        });
+    } else {
+        signTag.forEach(function (sign) {
+            sign.addEventListener('mouseover', () => {
+                $('.pin-hints').addClass('hidden');
+                document.querySelector('.design-pin-hints').classList.add('hidden');
+                mainObjs = svgDoc.querySelectorAll(`.mainObj:not([id=${sign.dataset.target}])`);
+                mainObjs.forEach(function (obj) {
+                    obj.classList.add('dim');
+                });
+                document.querySelector('.design-tooltip-container #tooltip-title').innerHTML = design_pin_info[sign.dataset.target].title;
+                document.querySelector('.design-tooltip-container #tooltip-content').innerHTML = design_pin_info[sign.dataset.target].content;
+                document.querySelector('.design-tooltip-container').classList.add('active');
+            });
+            sign.addEventListener('mouseout', () => {
+                mainObjs = svgDoc.querySelectorAll('.mainObj');
+                mainObjs.forEach(function (obj) {
+                    obj.classList.remove('dim');
+                });
+                document.querySelector('.design-tooltip-container').classList.remove('active');
+            });
+        });
+    }
+    // Facilities video frame event
     const facilitiesHex = document.querySelectorAll('.mask-content');
     facilitiesHex.forEach(function(hex) {
         hex.addEventListener('mouseover', () => {
@@ -123,7 +147,7 @@ window.onload = () => {
             document.querySelector('.video-control img#play').classList.remove('dim');
         });
     });
-
+    // Facilities video control event
     const videoControl = document.querySelectorAll('.video-control img');
     videoControl.forEach((btn) => {
         let action = btn.id;
@@ -151,6 +175,8 @@ window.onload = () => {
     news_top = document.querySelector('.news').offsetTop;
     contactus_top = document.querySelector('.contact-us').offsetTop;
     update_nav_class(Math.round(this.scrollY));
+    
+    $('section#productions-welcome').addClass('hide');
 };
 
 window.onresize = () => {
@@ -169,14 +195,16 @@ window.onscroll = () => {
 
 $('document').ready(function() {
     // Welcome fadein/Out
-    var welcome_show = get_session_stroage('welcome_shown');
-    if (!welcome_show) {
-        setTimeout(function () {
+    if (detector.mobile() == null) {
+        var welcome_show = get_session_stroage('welcome_shown');
+        if (!welcome_show) {
+            setTimeout(function () {
+                $('section#productions-welcome').addClass('hide');
+                set_session_stroage('welcome_shown', true);
+            }, 7500);
+        } else {
             $('section#productions-welcome').addClass('hide');
-            set_session_stroage('welcome_shown', true);
-        }, 7500);
-    } else {
-        $('section#productions-welcome').addClass('hide');
+        }
     }
     
     // Buddle menu
