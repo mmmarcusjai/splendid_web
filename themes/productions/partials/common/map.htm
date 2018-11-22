@@ -1,0 +1,28 @@
+description = "Common-map"
+
+[viewBag]
+==
+
+<style>
+    #map {
+        height: 50%;
+        width: 30%;
+        display: inline-block;
+    }
+
+    /* @media (max-width: 768px) {
+        #map {
+        display: none;
+        }
+    } */
+</style>{% put scripts %}
+    <script src="{{ 'assets/javascript/map.js'|theme }}"></script>
+{% endput %}
+<div id="map"></div>
+{% if this.environment != 'production' %}
+    <!-- Prod -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFrp2pAK74qUsjX1g4PVSHbgZJwZF4PO4"></script>
+{% else %}
+    <!-- Dev -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2TeiQ288nminXv4RaShypaiutEnctkhk"></script>
+{% endif %}

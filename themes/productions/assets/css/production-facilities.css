@@ -52,10 +52,26 @@
     letter-spacing: -2px;
     fill: #fff;
 }
-
+/* 
 .facilities .facilities-frame img {
     width: 100vw;
     height: 100vh;
+} */
+
+.facilities .facilities-frame .facilities-hint {
+    position: absolute;
+    right: 18%;
+    top: 10%;
+    z-index: 0;
+    width: 10%;
+}
+
+.facilities .facilities-frame .facilities-hint.hide {
+    display: none;
+}
+
+.facilities .facilities-frame .facilities-hint img {
+    width: 100%;
 }
 
 .facilities .facilities-video {

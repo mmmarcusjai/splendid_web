@@ -46,8 +46,10 @@ function onStart()
     {% partial 'productions/news' %}
     {% partial 'productions/contact-us' %}
     {% partial 'common/group-desc' %}
+    {% partial 'productions/footer' %}
     <script>
         var fromDetails = '{{fromNewsDetail}}';
+        var base_url = "{{url('/')}}";
     </script>
 {% endput %}
 {% put scripts %}

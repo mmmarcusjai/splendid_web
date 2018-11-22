@@ -63,33 +63,33 @@
 }
 
 .home .home-pin#home-pro-pin+img {
-    left: 48%;
+    left: 55%;
     margin-top: -2%;
-    max-width: 16%;
+    width: 17%;
 }
 
 .home .home-pin#home-du-pin+img {
-    left: 26%;
+    left: 31%;
     margin-top: 10%;
-    max-width: 16%;
+    width: 17%;
 }
 
 .home .home-pin#home-ct-pin+img {
-    left: 55%;
+    left: 59%;
     margin-top: 20%;
-    max-width: 8%;
+    width: 12%;
 }
 
 .home .home-pin#home-io-pin+img {
-    left: 20%;
+    left: 26%;
     margin-top: 28%;
-    max-width: 8%;
+    width: 12%;
 }
 
 .home .home-pin#home-ns-pin+img {
-    left: 40%;
+    left: 47%;
     margin-top: 37%;
-    max-width: 9%;
+    width: 12%;
 }
 
 @keyframes bounce {
@@ -127,20 +127,15 @@
 
 .home-popup .popup-base {
     background-color: #80cfd4;
-    height: 85%;
+    height: 95%;
     margin: 5%;
     width: 90%;
-    padding: 20px;
     position: relative;
 }
 
 .home-popup .popup-base.base-bg {
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.home-popup .close-container {
-    height: 30px;
 }
 
 .home-popup .close-container img.close{
@@ -167,41 +162,43 @@
     opacity: 0.5;
 }
 
-.home-popup .home-popup-bg[data-target=pro] {
-    left: -35%;
-    top: 22%;
+.home-popup .popup-base.base-bg[data-index=pro] {
+    background-image: url(../images/productions/cometogether_bg.png);
+    background-position: -275px 20px;
 }
 
-.home-popup .home-popup-bg[data-target=du] {
-    left: -1%;
-    top: -7%;
+.home-popup .popup-base.base-bg[data-index=du] {
+    background-image: url(../images/productions/design_Innovation_bg.png);
+    background-position: -30px -50px;
 }
 
-.home-popup .home-popup-bg[data-target=ct] {
-    width: 200%;
-    left: -81%;
-    top: -94%;
+.home-popup .popup-base.base-bg[data-index=ct] {
+    background-image: url(../images/productions/produce_bg.png);
+    background-position: -275px -170px;
 }
 
-.home-popup .home-popup-bg[data-target=io] {
-    width: 170%;
-    top: -127%;
-    left: -6%;
+.home-popup .popup-base.base-bg[data-index=io] {
+    background-image: url(../images/productions/oversea_bg.png);
+    background-position: 25px -240px;
 }
 
-.home-popup .home-popup-bg[data-target=ns] {
-    width: 170%;
-    top: -149%;
-    left: -60%;
+.home-popup .popup-base.base-bg[data-index=ns] {
+    background-image: url(../images/productions/deliver_bg.png);
+    background-position: -200px -330px;
 }
 
 .home-popup .popup-content {
-    height: calc(100% - 30px);
-    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    background-color: #80cfd4c9;
+    position: absolute;
+    bottom: 0;
+    overflow: auto;
+    padding: 20px;
 }
 
 .popup-section-content {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 300;
     text-align: justify;
     overflow: auto;
@@ -210,18 +207,10 @@
 
 .home-popup .popup-title {
     text-transform: uppercase;
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1;
     color: rgb(61, 79, 119);
-}
-
-/* .home-popup .popup-content.layout-1 .right-content  {
-    padding-top: 50px;
-} */
-
-.home-popup .popup-content .left-content {
-    padding-left: 6rem;
 }
 
 .home-popup .popup-arrow {
@@ -296,7 +285,7 @@
     font-weight: 300;
     text-align: justify;
     overflow: auto;
-    height: 400px;
+    height: 170px;
 }
 
 .pin-hints {
@@ -328,12 +317,12 @@
     }
 
     .home-popup .close-container img.close {
-        width: 5%;
+        width: 15%;
     }
 
-    .home-popup .popup-base.base-bg {
+    /* .home-popup .popup-base.base-bg {
         background-image: none !important;
-    }
+    } */
 
     .home .img-home-gif {
         max-width: 80%;
@@ -350,21 +339,18 @@
     }
 
     .home .home-pin#home-ct-pin+img {
-        left: 62%;
+        left: 68%;
         margin-top: 25%;
-        max-width: 11%;
     }
 
     .home .home-pin#home-io-pin+img {
-        left: 23%;
+        left: 28%;
         margin-top: 32%;
-        max-width: 11%;
     }
 
     .home .home-pin#home-ns-pin+img {
-        left: 47%;
+        left: 54%;
         margin-top: 42%;
-        max-width: 11%;
     }
 }
 
@@ -384,8 +370,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .pin-hints {
+        display: none;
+    }
+    
     .home-popup .popup-arrow {
-        top: 25%;
+        top: 45%;
     }
 
     .home .img-home-gif {
@@ -396,6 +386,14 @@
 }
 
 @media screen and (max-width: 425px) {
+    .home .right-content {
+        height: 70vh;
+    }
+
+    .home #gif-part {
+        order: -1;
+    }
+    
     .home-gif {
         background-size: 100%;
     }

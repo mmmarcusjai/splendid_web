@@ -34,7 +34,16 @@ function contactus_slide(action) {
 
     $('.address-detail[id='+ $('.slide-main').data('display') +']').removeClass('d-none');
     // console.log('ID ::: ' + $('.slide-main').attr('id'));
+    // changeMarkerPos($('.slide-main').data('lat'), $('.slide-main').data('lng'))
 }
+
+// function changeMarkerPos(lat, lon) {
+//     myLatLng = new google.maps.LatLng(lat, lon);
+//     // marker.setPosition(myLatLng);
+//     infowindow.close();
+//     map.setZoom(18);
+//     map.panTo(myLatLng);
+// }
 
 function customClass(classname, currNode, action) {
     currNode.forEach(function(item){

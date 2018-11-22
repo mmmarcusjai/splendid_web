@@ -231,6 +231,10 @@ section#productions-welcome.hide .productions-welcome {
         left: calc(50% - 5px);
         top: 19px;
     }
+
+    .group-description {
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width: 425px) {

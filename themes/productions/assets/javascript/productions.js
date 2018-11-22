@@ -16,23 +16,23 @@ var detector = new MobileDetect(window.navigator.userAgent);
 const pin_info = {
     'pro': {
         'title': 'COME TOGETHER',
-        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+        'content': 'We work closely with our customers to meet their individual needs.'
     },
     'du': {
         'title': 'DESIGN & INNOVATE',
-        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+        'content': 'We develop products and customize services for our customers.'
     },
     'ct': {
         'title': 'PRODUCE',
-        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+        'content': 'With our own production facilities we can make most of our customer products in house to guarantee quality and lead times.'
     },
     'io': {
-        'title': 'OVERSEA',
-        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+        'title': 'OVERSEE',
+        'content': 'We help our customers meet their quality needs, industry standards and local requirements. With our own and 3th party quality control checks we guarantee the best quality.'
     },
     'ns': {
         'title': 'DELIVER',
-        'content': 'Splendid Solutions works closely with their customers to meet their individual needs. With our in-house design studio, our own packaging production facility and a global supplier portfolio we have the ability to innovate, create, source and manufacture most of our customer’s products under the Splendid Solutions ‘roof’. Of course quality and industry standards are important in this process so with our own and 3rd party quality control checks we guarantee the highest standards. With our warehouse & logistics network we are able to deliver your products to every required delivery point in the world.'
+        'content': 'We always make sure our customers get their products where and when they need them to be in time.'
     }
 };
 //
@@ -77,7 +77,11 @@ var home_popup_arr = {
     4: 'io',
     5: 'ns',
 };
-
+// Home pin interval status
+var pin_interval;
+var pin_timeout;
+var pin_interval_status = false;
+var current_pin = 0;
 // Quality & Safety
 var quality_safety_replay = false;
 //
@@ -95,28 +99,30 @@ window.onload = () => {
         const svgpopup = document.querySelector('.svg-popup-bg');
 
         mainObj.forEach((obj) => {
-            obj.addEventListener('click', () => {
-                alert('clicked');
+            obj.addEventListener('touchstart', () => {
                 svgpopup.querySelector('#design-desc-content').innerHTML = design_pin_info[obj.id].content;
                 svgpopup.querySelector('.design-svg-container').dataset.active = obj.id;
                 svgpopup.classList.add('active');
             });
         });
 
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener('touchstart', () => {
             svgpopup.classList.remove('active');
         });
     } else {
-        signTag.forEach(function (sign) {
+        // signTag.forEach(function (sign) {
+        mainObj.forEach(function (sign) {
             sign.addEventListener('mouseover', () => {
+                // console.log(sign.querySelector('.sign').dataset.target);
+                let targetSign = sign.querySelector('.sign').dataset.target;
                 $('.pin-hints').addClass('hidden');
                 document.querySelector('.design-pin-hints').classList.add('hidden');
-                mainObjs = svgDoc.querySelectorAll(`.mainObj:not([id=${sign.dataset.target}])`);
+                mainObjs = svgDoc.querySelectorAll(`.mainObj:not([id=${targetSign}])`);
                 mainObjs.forEach(function (obj) {
                     obj.classList.add('dim');
                 });
-                document.querySelector('.design-tooltip-container #tooltip-title').innerHTML = design_pin_info[sign.dataset.target].title;
-                document.querySelector('.design-tooltip-container #tooltip-content').innerHTML = design_pin_info[sign.dataset.target].content;
+                document.querySelector('.design-tooltip-container #tooltip-title').innerHTML = design_pin_info[targetSign].title;
+                document.querySelector('.design-tooltip-container #tooltip-content').innerHTML = design_pin_info[targetSign].content;
                 document.querySelector('.design-tooltip-container').classList.add('active');
             });
             sign.addEventListener('mouseout', () => {
@@ -140,6 +146,11 @@ window.onload = () => {
         });
 
         hex.addEventListener('click', () => {
+            // Hide hine when clicked 
+            if (!document.querySelector('.facilities-hint').classList.contains('hide')) {
+                document.querySelector('.facilities-hint').classList.add('hide');
+            }
+            // Jump to video frame 
             time = hex.dataset.time;
             event.preventDefault();
             vid.currentTime = time;
@@ -175,8 +186,26 @@ window.onload = () => {
     news_top = document.querySelector('.news').offsetTop;
     contactus_top = document.querySelector('.contact-us').offsetTop;
     update_nav_class(Math.round(this.scrollY));
-    
-    $('section#productions-welcome').addClass('hide');
+
+    if (detector.mobile() != null) {
+        $('section#productions-welcome').addClass('hide');
+    } else {
+        // Welcome fadein/Out
+        $('section#productions-welcome .productions-preload').addClass('hide');
+        var welcome_show = get_session_stroage('welcome_shown');
+        if (!welcome_show) {
+            replayGif('welcome-gif');
+            setTimeout(function () {
+                $('section#productions-welcome').addClass('hide');
+                set_session_stroage('welcome_shown', true);
+            }, 7500);
+        } else {
+            $('section#productions-welcome').addClass('hide');
+        }
+        // Loop home pin
+        home_pin_loop();
+    }
+    // initMap();
 };
 
 window.onresize = () => {
@@ -188,25 +217,13 @@ window.onresize = () => {
     contactus_top = document.querySelector('.contact-us').offsetTop;
     update_nav_class(Math.round(this.scrollY));
 };
+
 window.onscroll = () => {
     update_nav_class(Math.round(this.scrollY));
 };
 
 
 $('document').ready(function() {
-    // Welcome fadein/Out
-    if (detector.mobile() == null) {
-        var welcome_show = get_session_stroage('welcome_shown');
-        if (!welcome_show) {
-            setTimeout(function () {
-                $('section#productions-welcome').addClass('hide');
-                set_session_stroage('welcome_shown', true);
-            }, 7500);
-        } else {
-            $('section#productions-welcome').addClass('hide');
-        }
-    }
-    
     // Buddle menu
     $('.bubble-menu .opt , .side-wrapper ul li a').on('click', function() {
         var id = $(this).attr('id');
@@ -245,47 +262,53 @@ $('document').ready(function() {
     });
 
     // Home
-    $('.home-pin').on('mouseover', function() {
-        $('.pin-hints').addClass('hidden');
-        var toggle = $(this).data('toggle');
-        $('.img-home-gif.dimmed').removeClass('active');
-        $('.img-home-gif[id=main]').addClass('hidden');
-        $('.img-home-gif[data-bg='+toggle+']').addClass('active');
-        $('.home-pin').removeClass('active');
-        $(this).addClass('active');
+    if(detector.mobile() == null) {
+        $('.home-pin').on('mouseover', function () {
+            $('.pin-hints').addClass('hidden');
+            var toggle = $(this).data('toggle');
+            // $('.img-home-gif.dimmed').removeClass('active');
+            // $('.img-home-gif[id=main]').addClass('hidden');
+            // $('.img-home-gif[data-bg=' + toggle + ']').addClass('active');
+            $('.home-pin').removeClass('active');
+            $(this).addClass('active');
+            clearTimeout(pin_timeout);
+            clearInterval(pin_interval);
+            pin_interval_status = false;
 
-        // document.querySelector('.tooltip-content').classList.add('visible');
-        document.querySelector('#tooltip-title').innerHTML = pin_info[toggle].title;
-        document.querySelector('#tooltip-content').innerHTML = pin_info[toggle].content;
-        document.querySelector('.pin-tooltip-container').classList.add('active');
-    });
+            document.querySelector('#tooltip-title').innerHTML = pin_info[toggle].title;
+            document.querySelector('#tooltip-content').innerHTML = pin_info[toggle].content;
+            document.querySelector('.pin-tooltip-container').classList.add('active');
+        });
 
-    $('.img-home-gif').on('mouseout', function() {
-        $('.img-home-gif.dimmed').removeClass('active');
-        $('.img-home-gif[id=main]').removeClass('hidden');
-        $('.home-pin').removeClass('active');
+        $('.img-home-gif').on('mouseout', function () {
+            // $('.img-home-gif.dimmed').removeClass('active');
+            // $('.img-home-gif[id=main]').removeClass('hidden');
+            $('.home-pin').removeClass('active');
+            pin_timeout = setTimeout(() => {
+                home_pin_loop();
+                pin_interval_status = true;
+            }, 1500);
+            document.querySelector('.pin-tooltip-container').classList.remove('active');
+            // document.querySelectorAll('.tooltip-content').forEach(function(tooltip) {
+            //     tooltip.classList.remove('visible');
+            // });
 
-        document.querySelector('.pin-tooltip-container').classList.remove('active');
-        // document.querySelectorAll('.tooltip-content').forEach(function(tooltip) {
-        //     tooltip.classList.remove('visible');
-        // });
-        
-    });
+        });
+    } else {
+        $('.home-pin').on('click', function() {
+            var index = $(this).attr('data-index');
+            show_home_popup(index);
+        });
 
-    // $('.home-pin').on('click', function() {
-    //     var index = $(this).attr('data-index');
-    //     show_home_popup(index);
-    // });
+        $('.close-container').on('click', function() {
+            hide_popup();
+        });
 
-    // $('.close-container').on('click', function() {
-    //     hide_popup();
-    // });
-
-    $('.popup-arrow').on('click', function() {
-        var target = $(this).attr('target');
-        change_home_popup_content(target);
-    });
-
+        $('.popup-arrow').on('click', function () {
+            var target = $(this).attr('target');
+            change_home_popup_content(target);
+        });
+    }
     // News
     if(fromDetails && fromDetails != undefined) {
         $('html, body').animate({
@@ -294,17 +317,17 @@ $('document').ready(function() {
     }
 
     // News popup
-    show_news_popup();
-    set_session_stroage('news_shown', true);
+    // show_news_popup();
+    // set_session_stroage('news_shown', true);
 
-    $('.news-popup .btn-container #btn-close').on('click', function() {
-        hide_news_popup();
-    });
+    // $('.news-popup .btn-container #btn-close').on('click', function() {
+    //     hide_news_popup();
+    // });
 
-    $('.news-popup-main-hex').on('click', function() {
-        var position = $(this).data('position');
-        news_popup_slider(position);
-    });
+    // $('.news-popup-main-hex').on('click', function() {
+    //     var position = $(this).data('position');
+    //     news_popup_slider(position);
+    // });
     
     $('#nav-icon').click(function(){
 		$(this).toggleClass('open');
@@ -406,6 +429,23 @@ function update_nav_class(scroll_y) {
     nav.className = class_name;
 }
 
+function home_pin_loop() {
+    if (!pin_interval_status) {
+        pin_interval = setInterval(() => {
+            if (current_pin >= total_home_popup) {
+                current_pin = 1;
+            } else {
+                current_pin++;
+            }
+            document.querySelectorAll('.home-pin').forEach((pin) => {
+                pin.classList.remove('active');
+            });
+            document.querySelector(`.home-pin#home-${home_popup_arr[current_pin]}-pin`).classList.add('active');
+        }, 1500);
+        pin_interval_status = true;
+    }
+}
+
 function show_home_popup(target) {
     $('html, body').css('overflow', 'hidden');
     $('.home-popup').addClass('show-popup');
@@ -416,8 +456,8 @@ function show_home_popup(target) {
 function change_home_popup_content(target) {
     curr_popup_index = target;
     update_home_popup_target();
+    document.querySelector('#home-block-popup').dataset.index = home_popup_arr[target];
     $('.popup-content').addClass('d-none');
-    // $('.home-popup .popup-base.base-bg').css('background-image', 'url(themes/productions/assets/images/'+target+'_bg.png)');
     $('.popup-content[data-index="'+target+'"]').removeClass('d-none');
 }
 

@@ -1,0 +1,29 @@
+description = "Production-Footer"
+
+[viewBag]
+==
+<style>
+    .production-footer {
+        color: black;
+        font-family: 'Homenaje', sans-serif;
+    }
+
+    .production-footer a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
+<section id="production-footer">
+    <div class="production-footer">
+        <div class="footer-tnc">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-8">&copy;2018 Splendid Solution ltd. All Rights Reserved</div>
+                    <div class="col-xl-2"><a href="{{ 'solutions/privacy_policy.pdf'|media }}" target="_blank">Privacy Policy</a></div>
+                    <div class="col-xl-2"><a href="{{ 'solutions/splendid_group_general_terms_conditions.pdf'|media }}" target="_blank">Terms
+                            of Use</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

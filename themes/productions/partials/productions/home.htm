@@ -1,6 +1,8 @@
 description = "Production-home"
 
 [viewBag]
+
+[Agent]
 ==
 {% put styles %}
     <link href="{{ 'assets/css/production-home.css'|theme }}" rel="stylesheet">
@@ -10,40 +12,41 @@ description = "Production-home"
     <div class="home">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-4 col-md-6">
+                <div class="col-xl-4 col-md-6" id="text-part">
                     <div class="left-content">
                         <div class="title text-uppercase font-homenaje">
-                            <p>People On the Move</p>
+                            <p>Splendid Productions</p>
                         </div>
                         <div class="sub-title text-uppercase font-homenaje">
-                            <p>We can make anthing possible!</p>
+                            <p>WE MAKE ANYTHING POSSIBLE</p>
                         </div>
                         <br>
                         <div class="home-content font-lato">
-                            <p>Splendid Solutions’ driven approach aims to improve the quality and consistency of what is offered to today’s traveler. We offer a wide range of services, from appealing, custom made products to end to end warehouse and logistics solutions.</p>
-                            <p>We have established the solution for ‘People on the Move’, which includes product development, design, manufacturing, sourcing, packaging and delivery to the end user. Our employees are passionate with a keen awareness of current culinary high street trends and will work with you to understand better what your customer wants.  With our proactive approach of new trends in combination with your needs we can make anything possible.</p>
-                            <p>So whether you need a salad in a box, hot snack, full meal service or a bespoke door to door service solution, you can depend on Splendid Solutions for an efficient, cost-conscious and partner-focused collaboration.</p>
+                            <p>Splendid Productions is a consumer goods design, development, production, and logistics company serving major retailers and brands around the world. As a group we are major share holder in different production facilities, this to ensure the highest quality and services for our customers. With our team of experts we try to make anything possible.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-8 col-md-6">
+                <div class="col-xl-8 col-md-6" id="gif-part">
                     <div class="right-content">
                         <div class="pin-hints">
                             <img src="{{ 'productions/mouseover_hint.png'|media }}" alt="">
                         </div>
-                        <img class="img-home-gif dimmed" data-bg="pro" src="{{ 'productions/PRO_animation_dimmed.gif'|media }}" >
-                        <img class="img-home-gif dimmed" data-bg="du" src="{{ 'productions/DU_animation_dimmed.gif'|media }}" >
-                        <img class="img-home-gif dimmed" data-bg="ct" src="{{ 'productions/CT_animation_dimmed.gif'|media }}" >
-                        <img class="img-home-gif dimmed" data-bg="io" src="{{ 'productions/IO_animation_dimmed.gif'|media }}" >
-                        <img class="img-home-gif dimmed" data-bg="ns" src="{{ 'productions/NS_animation_dimmed.gif'|media }}" >
-
+                        {% if Agent.isDesktop() %}
+                            <!-- <img class="img-home-gif dimmed" data-bg="pro" src="{{ 'productions/PRO_animation_dimmed.gif'|media }}" >
+                            <img class="img-home-gif dimmed" data-bg="du" src="{{ 'productions/DU_animation_dimmed.gif'|media }}" >
+                            <img class="img-home-gif dimmed" data-bg="ct" src="{{ 'productions/CT_animation_dimmed.gif'|media }}" >
+                            <img class="img-home-gif dimmed" data-bg="io" src="{{ 'productions/IO_animation_dimmed.gif'|media }}" >
+                            <img class="img-home-gif dimmed" data-bg="ns" src="{{ 'productions/NS_animation_dimmed.gif'|media }}" > -->
+                        {% endif %}
                         <!-- <div class="img-home-gif dimmed" data-bg="io"></div> -->
                         <!-- <div class="img-home-gif-mask" data-hover="default">
                             <div class="mask img-home-gif-io"></div>
                         </div> -->
-
-                        <img class="img-home-gif" id="main" src="{{ 'productions/home-n.gif'|media }}" usemap="#image-map">
-
+                        {% if Agent.isDesktop() %}
+                            <img class="img-home-gif" id="main" src="{{ 'productions/home-n.gif'|media }}" usemap="#image-map">
+                        {% else %}
+                            <img class="img-home-gif" id="main" src="{{ 'productions/home-n_m.png'|media }}" usemap="#image-map">
+                        {% endif %}
                         <map name="image-map">
                             <area class="home-pin" id="home-pro-pin" data-toggle="pro" data-index="1" coords="436,169,525,117,593,157,612,275,728,329,774,297,788,236,895,252,895,459,778,481,697,468,625,442,591,462,546,442,484,365,435,339,431,206" shape="poly">
                             <img src="{{ 'productions/come_together.png'|media }}">
@@ -71,17 +74,19 @@ description = "Production-home"
             </div>
         </div>
     </div>
-    {% partial "productions/news-popup" %}
+    <!-- {% partial "productions/news-popup" %} -->
+    {% if Agent.isPhone() %}
     <div class="home-popup" id="popup-bg">
-        <div class="popup-base base-bg">
+        <div class="popup-base base-bg" id="home-block-popup" data-index="">
             <div class="close-container"><img class="close" src="{{ 'productions/cross.png'|media }}" /></div>
-            <div class="popup-arrow" id="left-arrow" toggle="" target=""><img src="{{ 'productions/left_arrow.png'|media }}"/></div>
-            <div class="popup-arrow" id="right-arrow"toggle="" target=""><img src="{{ 'productions/right_arrow.png'|media }}"/></div>
-            <!-- {% partial "productions/come-together" %}
-            {% partial "productions/design-and-innovation" %}
+            <!-- <div class="popup-arrow" id="left-arrow" toggle="" target=""><img src="{{ 'productions/left_arrow.png'|media }}"/></div>
+            <div class="popup-arrow" id="right-arrow"toggle="" target=""><img src="{{ 'productions/right_arrow.png'|media }}"/></div> -->
+            {% partial "productions/come-together" %}
+            {% partial "productions/designInnovation" %}
             {% partial "productions/produce" %}
             {% partial "productions/oversea" %}
-            {% partial "productions/deliver" %} -->
+            {% partial "productions/deliver" %}
         </div>
     </div>
+    {% endif %}
 </section>

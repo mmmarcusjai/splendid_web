@@ -1,7 +1,7 @@
 .contact-us {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
+    min-height: 110vh;
     background-color: #fcdc00;
     padding-top: 8rem;
     color: black;
@@ -9,14 +9,16 @@
     background-image: url(../images/contact_us_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+}
+
+.contact-us a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .contact-us .contact-us-container {
     height: calc(100vh - 8rem);
-}
-
-.contact-us .contact-us-container > .row{
-    height: 100%;
 }
 
 /* Side slider part style */
@@ -24,6 +26,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    min-height: 110vh;
     overflow: hidden;
 }
 
@@ -55,23 +58,27 @@
     transition: transform 1s;
 }
 
-@media (max-width: 768px) {
-    #contact-us .side-slider {
-        display: none;
-    }
+.contact-us .contactus-detail {
+    height: 100%;
+    width: 65%;
+    margin-left: auto;
+}
+
+.contact-us .contactus-detail .contactus-content {
+    height: calc(100% - 70%);
+    width: 30%;
+    margin-left: auto;
+    margin-right: 10rem;
+    text-align: right;
 }
 
 /* Address part style */
-/* .contact-us .address-detail:not(#hk-office) {
-    display: none;
-} */
-
 .contact-us .address .address-detail {
-    width: 90%;
+    width: 30%;
     display: inline-block;
-    height: 100%;
+    height: 50%;
     padding-top: 1rem;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 .contact-us .address .address-detail .office-title{
@@ -79,11 +86,10 @@
 }
 
 .contact-us .control-btn {
-    width: calc(100% - 90% - 1rem);
     display: inline-block;
-    position: relative;
-    height: calc(100% - 1rem);
-    text-align: left;
+    height: 100%;
+    text-align: right;
+    padding-left: 2%;
 }
 
 .contact-us .control-btn img{
@@ -93,23 +99,111 @@
 }
 
 .contact-us .control-btn #up-btn {
-    top: 10%;
+    top: 50%;
 }
 
 .contact-us .control-btn #down-btn {
-    top: 60%;
+    top: 89%;
 }
 
 .contact-us .address {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left: 4%;
-    height: 25%;
+    padding-left: 1%;
+    height: 70%;
 }
+
+
 
 /* Contact-us Part style */
 .contact-us .content-us-content {
     height: 30%;
     margin-top: auto;
     margin-bottom: 3%;
+    padding-right: 5%;
 }
+
+.contact-us .email-btn {
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+    padding-top: 0.7rem;
+    margin-left: auto;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.contact-us .email-btn:hover {
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    #contact-us img.hex-main {
+        top: 46%;
+    }
+
+    .contact-us {
+        padding-top: 3rem;
+    }
+
+    .contact-us .contactus-detail {
+        width: 80%;
+    }
+
+    .contact-us .address {
+        height: 50%;
+    }
+
+    .contact-us .address .address-detail {
+        width: 85%;
+        vertical-align: top;
+    }
+
+    .contact-us .control-btn {
+        height: 50%;
+    }
+
+    .contact-us .control-btn #up-btn {
+        top: 0%;
+    }
+
+    .contact-us .contactus-detail .contactus-content {
+        height: calc(100% - 50%);
+        width: 80%;
+        margin-right: 1rem;
+    }
+/* 
+    #contact-us img.hex-main {
+        top: 70%;
+    }
+
+    #contact-us .address .address-detail {
+        padding-left: 7rem;
+    }
+
+    #contact-us .address {
+        order: -1;
+    }
+
+    #contact-us .control-btn #up-btn {
+        top: 0%;
+        z-index: 1;
+    }
+
+    #contact-us .control-btn #down-btn {
+        top: 135%;
+    } */
+}
+/* 
+@media (max-width: 320px) {
+    #contact-us .address .address-detail {
+        padding-left: 2.1rem;
+        margin-top: -75%;
+    }
+
+    #contact-us .address {
+        margin-top: 100%;
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+} */

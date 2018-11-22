@@ -16,16 +16,20 @@ description = "Productions-welcome"
     }
 
     .productions-preload {
-        display: none;
+        display: block;
         width: 100%;
         height: 100vh;
         background-color: #fff;
     }
 
-    .productions-preload img {
-        top: 50%;
+    .productions-preload.hide {
+        display: none;
+    }
+
+    .productions-preload .preload-content {
+        top: 40%;
         position: absolute;
-        left: 45%;
+        left: 50%;
     }
 
     @media screen and (max-width: 768px) {
@@ -33,16 +37,21 @@ description = "Productions-welcome"
             display: none;
         }
 
-        .productions-preload {
-            display: block;
+        .productions-preload .preload-content {
+            top: 40%;
+            position: absolute;
+            left: 44%;
         }
     }
 </style>
 <section id="productions-welcome">
     <div class="productions-welcome">
-        <img src="{{ 'productions/production_home_logo.gif'|media }}" />
+        <img id="welcome-gif" src="{{ 'productions/production_home_logo.gif'|media }}" />
     </div>
     <div class="productions-preload">
-        <img src="{{ 'productions/preloader_1.gif'|media }}" />
+        <div class="preload-content font-homenaje">
+            <img src="{{ 'productions/preloader_1.gif'|media }}" />
+            <div style="color: #000;">Loading...</div>
+        </div>
     </div>
 </section>

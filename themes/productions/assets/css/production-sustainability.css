@@ -110,15 +110,15 @@
 .sustainability .sustain-footer {
     width: 20%;
     position: absolute;
-    bottom: 0;
-    right: 2%;
+    left: 2%;
+    top: 10%;
 }
 
 .sustainability .sustain-footer .logo-container {
     width: 50%;
-    display: inline-block;
-    vertical-align: top;
+    display: block;
     text-align: center;
+    padding-bottom: 1rem;
 }
 .sustainability .sustain-footer ul {
     padding-inline-start: 0px;
