@@ -8,7 +8,7 @@ description = "Production-Contact Us"
 <section id="contact-us">
     <div class="side-slider">
         {% for record in office_list %}
-                <img class="hex-main slide-{{record.image_position}}" id="slide-{{record.office_prefix}}" data-display="{{record.office_prefix}}-office" data-lat={{record.office_lat}} data-lng={{record.office_lng}} data- src="{{ record.office_image|media }}" alt="" index="{{loop.index}}" />
+                <img class="hex-main slide-{{record.image_position}}" id="slide-{{record.office_prefix}}" data-display="{{record.office_prefix}}-office" src="{{ record.office_image|media }}" alt="" index="{{loop.index}}" />
         {% endfor %}
     </div>
     <div class="contact-us">
@@ -30,10 +30,10 @@ description = "Production-Contact Us"
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="control-btn">
-                        <img id="up-btn" action="prev" src="{{ 'productions/up_arrow.png'|media }}" alt="">
-                        <img id="down-btn" action="next" src="{{ 'productions/down_arrow.png'|media }}" alt="">
-                    </div>
+                </div>
+                <div class="control-btn">
+                    <img id="up-btn" action="prev" src="{{ 'productions/up_arrow.png'|media }}" alt="">
+                    <img id="down-btn" action="next" src="{{ 'productions/down_arrow.png'|media }}" alt="">
                 </div>
                 <div class="contactus-content">
                     <!-- Contact us content -->
@@ -43,49 +43,12 @@ description = "Production-Contact Us"
                         </div>
                         <div class="content font-lato">
                             <p>Headquartered in Hong Kong, with an office and our own production facilities in China, we are active in more than 20 countries around the world.</p>
-                            <p><b>Can we be of any service? You can reach us at +852 2555 0012 or by</b></p>
+                            <p><b>Can we be of any service? You can reach us at +852 2555 6573 or by</b></p>
                             <a href="mailto:sales@splendid.group"><div class="email-btn">EMAIL</div></a>
                         </div>
                     <!-- </div> -->
                 </div>
             </div>
-            <!-- <div class="row"> -->
-                <!-- Address img Slider -->
-                <!-- <div class="col-xl-4 col-md-4">
-                </div> -->
-                <!-- Address Detail -->
-                <!-- <div class="col-xl-4 col-md-4 address">
-                    {% for record in office_list %}
-                        <div class="address-detail {% if loop.index != 1 %}d-none{% endif %}" id="{{record.office_prefix}}-office" contact-index="{{loop.index}}">
-                            <div class="office-title text-uppercase">
-                                <p>{{record.office_name}}</p>
-                            </div>
-                            <div class="content office-address">
-                                <p>{{record.office_address}}</p>
-                            </div>
-                            <div class="content office-contact">
-                                <p>Tel: {{record.office_tel}}<br>
-                                Email: {{record.contact_email}}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                    <div class="control-btn">
-                        <img id="up-btn" action="prev" src="{{ 'productions/up_arrow.png'|media }}" alt="">
-                        <img id="down-btn" action="next" src="{{ 'productions/down_arrow.png'|media }}" alt="">
-                    </div>
-                </div> -->
-                <!-- Contact us content -->
-                <!-- <div class="content-us-content col-xl-4 col-md-4 text-right">
-                    <div class="title font-homenaje text-uppercase">
-                        <p>Contact Us</p>
-                    </div>
-                    <div class="content font-lato">
-                        <p>Headquartered in Hong Kong, with an office and our own production facilities in China, we are active in more than 20 countries around the world.</p>
-                        <p><b>Can we be of any service? You can reach us at +852 2555 0012 or by</b></p>
-                        <a href="mailto:sales@splendid.group"><div class="email-btn">EMAIL</div></a>
-                    </div>
-                </div> -->
-            <!-- </div> -->
         </div>
     </div>
 </section>

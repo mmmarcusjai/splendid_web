@@ -32,18 +32,8 @@ description = "Production-home"
                             <img src="{{ 'productions/mouseover_hint.png'|media }}" alt="">
                         </div>
                         {% if Agent.isDesktop() %}
-                            <!-- <img class="img-home-gif dimmed" data-bg="pro" src="{{ 'productions/PRO_animation_dimmed.gif'|media }}" >
-                            <img class="img-home-gif dimmed" data-bg="du" src="{{ 'productions/DU_animation_dimmed.gif'|media }}" >
-                            <img class="img-home-gif dimmed" data-bg="ct" src="{{ 'productions/CT_animation_dimmed.gif'|media }}" >
-                            <img class="img-home-gif dimmed" data-bg="io" src="{{ 'productions/IO_animation_dimmed.gif'|media }}" >
-                            <img class="img-home-gif dimmed" data-bg="ns" src="{{ 'productions/NS_animation_dimmed.gif'|media }}" > -->
-                        {% endif %}
-                        <!-- <div class="img-home-gif dimmed" data-bg="io"></div> -->
-                        <!-- <div class="img-home-gif-mask" data-hover="default">
-                            <div class="mask img-home-gif-io"></div>
-                        </div> -->
-                        {% if Agent.isDesktop() %}
                             <img class="img-home-gif" id="main" src="{{ 'productions/home-n.gif'|media }}" usemap="#image-map">
+                            <!-- <img class="img-home-gif" id="main" src="http://35.190.70.140/productions/home-n.gif" usemap="#image-map"> -->
                         {% else %}
                             <img class="img-home-gif" id="main" src="{{ 'productions/home-n_m.png'|media }}" usemap="#image-map">
                         {% endif %}

@@ -1,0 +1,244 @@
+.our-network {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #4d409c;
+}
+
+.our-network .content-container {
+    padding-top: 8rem;
+    /* padding-left: 2rem; */
+    width: 95%;
+    margin-left: auto;
+}
+
+.our-network .content-container ul {
+    list-style: none;
+    padding-inline-start: 20px;
+}
+
+.our-network .ournetwork-svg {
+    text-align: right;
+}
+
+.our-network .ournetwork-svg svg {
+    height: 100vh;
+    max-width: 100%;
+}
+
+.our-network .ournetwork-svg svg.animate .sp-logo {
+    transform-origin: 55% 50%;
+    animation-duration: 1s;
+    -webkit-animation: logoScale 1s; /*Safari 4.0 - 8.0*/
+    -webkit-animation-iteration-count: 1; /*Safari 4.0 - 8.0*/
+    /* -webkit-animation-iteration-count: infinite; Safari 4.0 - 8.0 */
+    animation: logoScale 1s;
+    animation-iteration-count: 1;
+    /* animation-iteration-count: infinite; */
+}
+
+.our-network .ournetwork-svg svg .hex-facility,
+.our-network .ournetwork-svg svg .oust7,
+.our-network .ournetwork-svg svg .oust8,
+.our-network .ournetwork-svg svg .outline {
+    opacity: 0;
+    transform-origin: 55% 50%;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility,
+.our-network .ournetwork-svg svg.animate .oust7,
+.our-network .ournetwork-svg svg.animate .outline {
+    /* opacity: 1;
+    transition: .5s;
+    transition-delay: 1.9s !important; */
+    opacity: 1;
+    transition: .5s;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8 {
+    opacity: 0.5;
+    transition: .5s;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility {
+    transition-delay: 1s !important;
+    animation: hexScale .5s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    /*Safari 4.0 - 8.0*/
+    -webkit-animation: hexScale .5s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7 {
+    transition-delay: 2s !important;
+    animation: hexScale 1s;
+    animation-iteration-count: 1;
+    animation-delay: 1.3s;
+    animation-timing-function: ease-out;
+    /*Safari 4.0 - 8.0*/
+    -webkit-animation: hexScale 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 1.3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8 {
+    transition-delay: 4s !important;
+    animation: hexScale 1s;
+    animation-iteration-count: 1;
+    animation-delay: 3.3s;
+    animation-timing-function: ease-out;
+    /*Safari 4.0 - 8.0*/
+    -webkit-animation: hexScale 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 3.3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.our-network .ournetwork-svg svg.animate .outline {
+    transition-delay: 3s !important;
+    animation: hexScale 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2.3s;
+    animation-timing-function: ease-out;
+    /*Safari 4.0 - 8.0*/
+    -webkit-animation: hexScale 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 2.3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+/* .our-network .ournetwork-svg svg.animate .hex-facility.order1 {
+    transition-delay: 2s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility.order2 {
+    transition-delay: 2.1s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility.order3 {
+    transition-delay: 2.2s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility.order4 {
+    transition-delay: 2.3s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility.order5 {
+    transition-delay: 2.4s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .hex-facility.order6 {
+    transition-delay: 2.5s !important;
+} 
+
+.our-network .ournetwork-svg svg.animate .oust7.order1 {
+    transition-delay: 2.6s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order2 {
+    transition-delay: 2.7s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order3 {
+    transition-delay: 2.8s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order4 {
+    transition-delay: 2.9s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order5 {
+    transition-delay: 3s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order6 {
+    transition-delay: 3.1s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order7 {
+    transition-delay: 3.2s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order8 {
+    transition-delay: 3.3s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order9 {
+    transition-delay: 3.4s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order10 {
+    transition-delay: 3.5s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order11 {
+    transition-delay: 3.6s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust7.order12 {
+    transition-delay: 3.7s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order1 {
+    transition-delay: 3.8s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order2 {
+    transition-delay: 3.9s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order3 {
+    transition-delay: 4s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order4 {
+    transition-delay: 4.1s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order5 {
+    transition-delay: 4.2s !important;
+}
+
+.our-network .ournetwork-svg svg.animate .oust8.order6 {
+    transition-delay: 4.3s !important;
+}
+*/
+@keyframes logoScale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes hexScale {
+    0% {
+        transform: scale(0.5);
+    }
+    
+    50% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .our-network .ournetwork-svg svg {
+        width: 100%;
+        height: auto;
+    }
+}

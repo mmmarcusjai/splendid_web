@@ -23,6 +23,13 @@ function onStart()
 {% put styles %}
     <link rel="stylesheet" href="{{ 'assets/css/solutions-theme.css'|theme }}">
 {% endput %}
+{% put scripts %}
+    {% if this.environment == 'production' %}
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% else %}
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    {% endif %}
+{% endput %}
 {% put header_content %}
     {% partial 'solutions/header' %}
 {% endput %}

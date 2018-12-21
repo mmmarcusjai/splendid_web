@@ -3,7 +3,6 @@
     height: 100%;
     min-height: 100vh;
     background-color: #00bc71;
-    padding-top: 7rem;
     background-image: url(../images/sustainability_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,11 +20,20 @@
 
 .sustainability .sustainability-content {
     text-align: center;
-    height: 50%;
+    height: 100vh;
+}
+
+.sustainability .sustainability-content > .row {
+    height: 100%;
 }
 
 .sustainability .sustainability-content-container {
     margin: auto;
+}
+
+.sustainability .main-content {
+    width: 70%;
+    margin-left: auto;
 }
 
 .sustainability .sustainability-text-content {
@@ -34,8 +42,8 @@
 }
 
 .sustainability .sustainability-flip-object{
-    height: calc(100vh - 7rem - 50%);
     text-align: center;
+    margin: auto;
 }
 
 .sustainability .sustainability-flip-content {
@@ -57,7 +65,7 @@
 .sustainability .object-container .control{
     position: absolute;
     z-index: 1;
-    margin-top: 24%;
+    margin-top: 20%;
     cursor: pointer;
 }
 
@@ -95,9 +103,12 @@
 }
 
 .sustainability .animate-area {
-    width: 850px;
+    /* width: 850px;
     height: 850px;
-    background: url(../images/solutions/solutions_cube_rotation_850.png) no-repeat 0 0;
+    background: url(../images/solutions/solutions_cube_rotation_850.png) no-repeat 0 0; */
+    width: 650px;
+    height: 650px;
+    background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
     margin: auto;
     margin-top: -7%;
 
@@ -108,15 +119,15 @@
 }
 
 .sustainability .sustain-footer {
-    width: 20%;
+    width: 70%;
     position: absolute;
-    left: 2%;
-    top: 10%;
+    left: 0;
+    bottom: 0;
 }
 
 .sustainability .sustain-footer .logo-container {
     width: 50%;
-    display: block;
+    display: inline-block;
     text-align: center;
     padding-bottom: 1rem;
 }
@@ -126,7 +137,7 @@
 }
 
 .sustainability .sustain-footer ul li {
-    display: block;
+    display: inline-block;
     text-align: center;
     margin: 15px;
 }
@@ -135,17 +146,101 @@
     width: 90px;
 }
 
+.panda-intro {
+    width: 30%;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 2%;
+}
+
+.panda-intro .intro-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.panda-intro img {
+    width: 25%;
+}
+
+.panda-intro .intro-container .intro {
+    display: inline-block;
+    background-color: #1e4a2f;
+    height: 70px;
+    width: 250px;
+    vertical-align: middle;
+    border-radius: 6px;
+}
+
+/* .panda-intro .intro-container .intro ::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 270px;
+    width: 0;
+    height: 0;
+    border: 27px solid transparent;
+    border-top-color: #1e4a2f;
+    border-bottom: 0;
+    border-left: 0;
+} */
+
+.panda-intro .intro-container .intro p {
+    padding: 10px;
+}
+
 @media screen and (max-width: 1440px) {
-    .sustainability {
-        padding-top: 4rem;
+    .sustainability .object-container .control {
+        margin-top: 40%;
     }
 
-    .sustainability .animate-area {
-        width: 650px;
-        height: 650px;
-        background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
+    .sustainability .object-container .control#left {
+        left: 9%;
+    }
+
+    .sustainability .object-container .control#right {
+        left: 95%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .sustainability .main-content {
         margin: auto;
-        margin-top: -4%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sustainability .sustain-footer {
+        position: static;
+        width: 85%;
+        text-align: center;
+        margin: auto;
+        padding-top: 20rem;
+    }
+
+    .sustainability .sustain-footer .logo-container {
+        display: block;
+        width: 100%;
+    }
+
+    .sustainability .sustain-footer ul {
+        padding-inline-start: 0px;
+    }
+
+    .panda-intro {
+        width: 80%;
+        position: unset;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .panda-intro .intro-container .intro ::after {
+        top: 35%;
+        left: 30px;
+        border-bottom: unset;
+        border-left: unset;
     }
 }
 
@@ -191,20 +286,7 @@
         right: 3%;
     }
 
-    .sustainability .sustain-footer {
-        position: static;
-        width: 85%;
-        text-align: center;
-        margin: auto;
-        padding-top: 2rem;
-    }
-
-    .sustainability .sustain-footer .logo-container {
+    .sustainability .sustain-footer ul li {
         display: block;
-        width: 100%;
-    }
-
-    .sustainability .sustain-footer ul {
-        padding-inline-start: 0px;
     }
 }

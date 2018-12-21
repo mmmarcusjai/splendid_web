@@ -44,7 +44,7 @@
 .quality-content .quality-footer {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -25px;
 }
 
 .quality-content .quality-footer .logo-container {

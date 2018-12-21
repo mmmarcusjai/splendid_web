@@ -2,21 +2,11 @@ var news_top = (document.querySelector('.news') != null) ? document.querySelecto
 
 window.onresize = () => {
     news_top = document.querySelector('.news').offsetTop;
-    update_nav_class(this.scrollY);
 }
-window.onscroll = () => {
-    update_nav_class(this.scrollY);
-};
 
-function update_nav_class(scroll_y) {
+window.onload = () => {
     const nav = document.querySelector('nav');
-    var class_name = '';
-
-    if(scroll_y <= 10) {
-        class_name = '';
-    } else {
-        class_name = 'scroll-news';
-    }
+    var class_name = 'scroll-news';
     nav.className = class_name;
 }
 

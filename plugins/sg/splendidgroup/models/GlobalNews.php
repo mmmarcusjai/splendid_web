@@ -33,9 +33,17 @@ class GlobalNews extends Model
 
     public static function getNewsByType($type, $cat)
     {
-        // $type = product | company
+        // $type = product | company | all
         // $cat = productions | solutions...
-        $query = GlobalNews::where('news_type', $type)->whereIn('news_category', [$cat, "share"])->orderBy('id', 'desc');
+        if($type == 'all') 
+        {
+            $query = GlobalNews::whereIn('news_category', [$cat, "share"])->orderBy('id', 'desc');
+        }
+        else 
+        {
+            $query = GlobalNews::where('news_type', $type)->whereIn('news_category', [$cat, "share"])->orderBy('id', 'desc');
+        }
+        
         $news = $query;
 
         return $news;

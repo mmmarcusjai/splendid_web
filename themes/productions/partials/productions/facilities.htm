@@ -9,24 +9,29 @@ description = "Production-OurFacilities"
     <div class="facilities">
         <div class="desktop-view">
             {% partial "productions/facilities-video-frame" %}
-            <div class="facilities-video">
-                <video muted playsinline>
-                    <source src="{{ 'productions/our_facilities_video_v1.mp4'|media }}" type="video/mp4">
-                </video>
+            <div class="title font-homenaje text-uppercase">Our Facilities</div>
+            {% partial "productions/facility-cupboard" %}
+            {% partial "productions/facility-fabrics" %}
+            {% partial "productions/facility-garment" %}
+            {% partial "productions/facility-kitchenware" %}
+            {% partial "productions/facility-luggage" %}
+            {% partial "productions/facility-plastic" %}
+            <!-- <div class="facilities-video">
+                <video muted playsinline src="http://35.244.177.149/productions/videos/our_facilities_video_v1.mp4""></video>
                 <div class="video-control">
                     <ul>
                         <li><img id="play" class="dim" src="{{ 'productions/play.png'|media }}" /></li>
                         <li><img id="replay" class="dim" src="{{ 'productions/replay.png'|media }}" /></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="mobile-view">
             <div class="container-fluid mobile-header">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="title text-uppercase font-homenaje">
-                            <p>Facilitites</p>
+                            <p>Facilities</p>
                         </div>
                     </div>
                 </div>

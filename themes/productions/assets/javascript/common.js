@@ -72,10 +72,19 @@ function toggleClassById(classname, id) {
 
 function replayGif(gifTarget) {
     var gif = document.querySelector('#' + gifTarget);
-    var src = gif.getAttribute('src');
+    // var src = gif.getAttribute('src');
+    var src = gif.dataset.src;
     // Update src attribute
     var rand = Math.floor(100000000 + Math.random() * 900000000);
     gif.setAttribute('src', src.trim() + '?' + rand);
+}
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
 }
 
 function set_session_stroage(key, val) {

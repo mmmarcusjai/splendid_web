@@ -18,63 +18,21 @@ description = "Production-News"
                     </div>
                 </div>
                 <div class="col-xl-9 col-md-12 news-list">
-                    <ul id="hexGrid">
-                    {% for record in news %}
-                    <li class="hex">
-                        <div class="hexIn">
-                            <a class="hexLink" href="./productions-news/{{record.id}}">
-                                <img class="hex-main" src="{{ record.news_image_thumbnail|media }}" alt="" />
-                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                <h1 class="font-homenaje">{{ record.title }}</h1>
-                            </a>
-                        </div>
-                    </li>
-                    {% endfor %}
-                    <!-- {% for record in coreList.records %}
-                    <li class="hex">
-                        <div class="hexIn">
-                            <a class="hexLink" href="./productions-news/{{record.id}}">
-                                <img class="hex-main" src="{{ record.news_image|media }}" alt="" />
-                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                <h1 class="font-homenaje">{{ record.title }}</h1>
-                            </a>
-                        </div>
-                    </li>
-                    {% endfor %}
-                    {% for record in coreList.records %}
-                    <li class="hex">
-                        <div class="hexIn">
-                            <a class="hexLink" href="./productions-news/{{record.id}}">
-                                <img class="hex-main" src="{{ record.news_image|media }}" alt="" />
-                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                <h1 class="font-homenaje">{{ record.title }}</h1>
-                            </a>
-                        </div>
-                    </li>
-                    {% endfor %}
-                    {% for record in coreList.records %}
-                    <li class="hex">
-                        <div class="hexIn">
-                            <a class="hexLink" href="./productions-news/{{record.id}}">
-                                <img class="hex-main" src="{{ record.news_image|media }}" alt="" />
-                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                <h1 class="font-homenaje">{{ record.title }}</h1>
-                            </a>
-                        </div>
-                    </li>
-                    {% endfor %}
-                    {% for record in coreList.records %}
-                    <li class="hex">
-                        <div class="hexIn">
-                            <a class="hexLink" href="./productions-news/{{record.id}}">
-                                <img class="hex-main" src="{{ record.news_image|media }}" alt="" />
-                                <img class="hover-bg" src=" {{ 'productions/news_hex_hover.png'|media }} " alt="" />
-                                <h1 class="font-homenaje">{{ record.title }}</h1>
-                            </a>
-                        </div>
-                    </li>
-                    {% endfor %} -->
+                    <i class="control hidden fa fa-angle-left fa-4x" id="left" to=""></i>
+                    <i class="control {% if news.lastPage == 1 %}hidden{% endif %} fa fa-angle-right fa-4x" id="right" to="2"></i>
+                    <ul class="news-grid" id="hexGrid">
+                        <news-item v-bind:item="news" v-for="news in newsList" v-bind:key="news.id"></news-item>
                     </ul>
+                    {% if news.lastPage > 1 %}
+                    <ul class="pagination" data-type="all">
+                        {% for i in 1..news.lastPage %}
+                        <li class="page-no {% if i == 1 %}active{% endif %}" data-index="{{i}}">{{i}}</li>
+                            {% if i != news.lastPage %}
+                                <span>|</span>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
             </div>
         </div>

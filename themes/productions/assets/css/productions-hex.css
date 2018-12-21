@@ -3,7 +3,7 @@
 #hexGrid {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 75%;
   margin: 0 auto;
   overflow: hidden;
   font-size: 15px;
@@ -94,11 +94,12 @@
 }
 
 .hex h1 {
-    width: 100%;
+    width: 90%;
     padding: 5%;
     bottom: 40%;
+    left: 5%;
     padding-top:40%;
-    font-size: 2.2em;
+    font-size: 1vw;
     z-index: 1;
     font-weight: 300;
     box-sizing:border-box;
@@ -138,8 +139,8 @@
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 @media (min-width:1201px) { /* <- 3-4  hexagons per row */
     #hexGrid{
+        padding-top: 1%;
         padding-bottom: 7%;
-        padding-top: 3%;
     }
     .hex {
         width: 25%; /* = 100 / 4 */

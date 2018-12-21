@@ -2,18 +2,12 @@ description = "Common-scripts"
 
 [viewBag]
 ==
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="{{ 'assets/javascript/jquery-3.3.1.min.js'|theme }}"></script>
+<script src="{{ 'assets/javascript/bootstrap.min.js'|theme }}"></script>
 <script src="{{ 'assets/javascript/aos.js'|theme }}"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.7/js/imageMapResizer.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-{% if this.environment == 'production' %}
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-{% else %}
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-{% endif %}
 <script src="{{ 'assets/javascript/jquery.scrollify.js'|theme }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.3/mobile-detect.min.js"></script>
 <script src="{{ 'assets/javascript/common.js'|theme }}"></script>

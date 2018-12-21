@@ -59,7 +59,7 @@
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1;
-    color: #ffbb01;
+    color: #fff;
 }
 
 .design-tooltip-container .tooltip-content .content {
@@ -118,7 +118,7 @@
     */
     width: 100%;
     height: 100%;
-    background-image: url(../images/productions/design_graphic.svg);
+    background-image: url(../images/productions/design_graphic.png);
     background-repeat: no-repeat;
     background-size: 980px;
     overflow: hidden;
@@ -201,6 +201,10 @@
     .design-svg-container[data-active=DigitalSolutions] {
         background-position: -95px -260px;
     }
+
+    .design-svg-container[data-active=Engineering] {
+        background-position: -433px 30px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -230,5 +234,9 @@
 
     .design-svg-container[data-active=DigitalSolutions] {
         background-position: -85px -180px;
+    }
+
+    .design-svg-container[data-active=Engineering] {
+        background-position: -450px 15px;
     }
 }

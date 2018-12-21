@@ -1,0 +1,8 @@
+.htaccess
+.env
+_sh
+storage/logs
+storage/cms
+storage/framework
+storage/temp
+config/database.php

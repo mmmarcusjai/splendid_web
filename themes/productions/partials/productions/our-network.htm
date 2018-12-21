@@ -1,0 +1,38 @@
+description = "Production-Our-people-network"
+
+[viewBag]
+==
+{% put styles %}
+    <link href="{{ 'assets/css/productions-ournetwork.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="our-network">
+    <div class="our-network">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="content-container">
+                        <div class="title font-homenaje text-uppercase">Our Network</div>
+                        <div class="content font-lato">
+                            <p>We currently have 6 production facilities, and our central sourcing team, which are the backbone of our Group.
+                                All our factories are ‘surrounded’ by partner factories which creates a network of over 50+ manufacturers that
+                                we can use for the production or sourcing of your products. Where needed we also have regional production
+                                partners for ad hoc production or smaller quantities.</p>
+                            <p>BENEFITS</p>
+                            <ul>
+                                <li>No middleman involved</li>
+                                <li>Extensive network</li>
+                                <li>Buying power</li>
+                                <li>Cost effective</li>
+                                <li>Joint experience and knowledge</li>
+                                <li>Teamwork</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 ournetwork-svg" style="text-align: right;">
+                    {% partial 'productions/our-network-svg' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

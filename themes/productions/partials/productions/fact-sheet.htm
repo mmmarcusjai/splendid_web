@@ -1,0 +1,23 @@
+description = "Production-fact-sheet"
+
+[viewBag]
+==
+{% put styles %}
+    <link href="{{ 'assets/css/productions-factsheet.css'|theme }}" rel="stylesheet">
+{% endput %}
+<section id="fact-sheet">
+    <div class="fact-sheet">
+        <div class="mobile-view">
+            <div class="fact-content">
+                {% for i in 1..6 %}
+                    <div class="fact-block">
+                        {% if loop.index == 1%}
+                            <div class="title font-homenaje text-uppercase">Facts</div>
+                        {% endif %}
+                        <img src="{{ ('productions/facts_icon0'~i~'.png')|media }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

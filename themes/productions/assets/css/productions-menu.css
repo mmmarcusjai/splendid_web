@@ -1,3 +1,32 @@
+nav ul li {
+    display: inline;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+nav ul.nav-right-menu {
+    margin-top: 1rem;
+    margin-left: auto;
+    font-size: 0.8vw;
+}
+
+nav ul {
+    display: inline;
+    font-weight: 300;
+    list-style-type: none;
+    -webkit-padding-start: 0px;
+}
+
+nav a {
+    width: 40%;
+}
+
+a {
+    color: inherit;
+}
+
 /* Bubble menu style */
 .bubble-menu .opt .bullet {
     background-image: url(../images/menu_opt.png);
@@ -78,6 +107,10 @@
 
 @media screen and (max-width: 768px) {
     .hints {
+        display: none;
+    }
+
+    nav ul.nav-right-menu {
         display: none;
     }
 }

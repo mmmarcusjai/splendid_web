@@ -1,0 +1,56 @@
+.products {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #ffa506;
+    position: relative;
+}
+
+.products .hex-grid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.products svg {
+    background: #ffa506;
+    min-height: 100vh;
+}
+
+.products polygon {
+    stroke-width: 3;
+    stroke: #ffa506;
+    opacity: 0.9;
+}
+
+.products polygon.hex-item.active {
+    opacity: 1;
+}
+
+.products .product-content-container {
+    display: flex;
+}
+
+.products .products-content {
+    width: 75%;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .products .hex-grid {
+        padding-top: 3rem;
+    }
+
+    .products svg {
+        min-height: auto;
+    }
+
+    .products polygon {
+        opacity: 1;
+    }
+
+    .products .products-content {
+        width: 100%;
+        padding-top: 5%;
+        text-align: center;
+    }
+}
