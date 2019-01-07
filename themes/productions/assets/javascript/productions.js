@@ -428,7 +428,7 @@ $('document').ready(function() {
                 to = facilities_top;
                 break;
             case 'our-network':
-                to = out_network_top;
+                to = our_network_top;
                 break;
             case 'quality':
                 to = quality_top;
