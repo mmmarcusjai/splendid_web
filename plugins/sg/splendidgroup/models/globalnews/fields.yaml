@@ -3,14 +3,27 @@ fields:
         label: Title
         span: auto
         type: text
+    title_fr:
+        label: Title(FR)
+        span: auto
+        type: text
     description:
         label: Description
+        span: auto
+        type: text
+    description_fr:
+        label: Description(FR)
         span: auto
         type: text
     content:
         label: Content
         size: ''
         span: full
+        type: richeditor
+    content_fr:
+        label: Content(FR)
+        span: full
+        size: ''
         type: richeditor
     news_image:
         label: 'News image'

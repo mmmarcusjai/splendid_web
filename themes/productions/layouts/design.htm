@@ -1,0 +1,45 @@
+description = "Design"
+==
+<?php
+use sg\SplendidGroup\Models\GlobalNews;
+use sg\SplendidGroup\Models\OfficeInfo;
+function onStart()
+{
+    // Get News
+    // $news = GlobalNews::NewsCat('productions')->get();
+    $news = GlobalNews::getNewsByType('all', 'productions')->paginate(10);
+    $this['news'] = $news;
+
+    // Get Office infomation
+    $office_list = OfficeInfo::all();
+    $this['office_list'] = $office_list;
+
+    // Load JS
+}
+?>
+==
+{% put styles %}
+    <link href="{{ 'assets/css/design-theme.css'|theme }}" rel="stylesheet">
+{% endput %}
+{% put scripts %}
+    {% if this.environment == 'production' %}
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% else %}
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    {% endif %}
+    <script src="{{ 'assets/javascript/design.js'|theme }}" type="text/javascript"></script>
+{% endput %}
+{% put header_content %}
+    
+{% endput %}
+{% put layout_content %}
+    {% partial 'design/home' %}
+<script>
+    var base_url = "{{url('/')}}";
+    var totalPageofNews = '{{ news.lastPage }}';
+</script>
+{% endput %}
+{% put scripts %}
+
+{% endput %}
+{% partial 'core' %}

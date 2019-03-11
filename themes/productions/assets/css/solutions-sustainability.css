@@ -104,10 +104,21 @@
         background: url(../images/solutions/solutions_cube_rotation_650.png) no-repeat 0 0;
         margin: auto;
         margin-top: -4%;
+        margin-left: -7%;
     }
 
     .sustainability .object-container .control {
         margin-top: 36%;
+    }
+
+    .sustainability .object-container .control#left {
+        left: 0%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sustainability .animate-area {
+        margin-left: -15%;
     }
 }
 

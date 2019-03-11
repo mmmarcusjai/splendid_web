@@ -3,8 +3,27 @@ description = "Solutions"
 <?php
 use sg\SplendidGroup\Models\GlobalNews;
 use sg\SplendidGroup\Models\OfficeInfo;
+use rainlab\translate\Models\Locale;
+
 function onStart()
 {
+    // Get Language
+    $locale = Locale::listEnabled();
+    $localeKey = array_keys($locale);
+    $currentUrl = explode('/', $_SERVER['REQUEST_URI']);
+
+    for($i = 0; $i < sizeof($localeKey); $i++)
+    {   
+        if (in_array($localeKey[$i], $currentUrl)) 
+        {
+            $this['lan'] = $localeKey[$i];
+        }
+        else 
+        {
+            $this['lan'] = 'en';
+        }
+    }
+
     // Get news list
     $product_news = GlobalNews::getNewsByType('product', 'solutions')->paginate(6);
     $company_news = GlobalNews::getNewsByType('company', 'solutions')->paginate(3);
@@ -50,6 +69,7 @@ function onStart()
     <!-- <script src="https://unpkg.com/mini-parallax" type="text/javascript"></script> -->
     <script>
         var base_url = "{{url('/')}}";
+        var lan = "{{lan}}";
     </script>
     <script src="{{ 'assets/javascript/mini-parallax-iife-min.js'|theme }}" type="text/javascript"></script>
     <script src="{{ 'assets/javascript/solutions.js'|theme }}" type="text/javascript"></script>

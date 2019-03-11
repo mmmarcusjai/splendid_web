@@ -6,6 +6,11 @@ description = "Solutions-Our servise"
 {% put styles %}
     <link rel="stylesheet" href="{{ 'assets/css/solutions-our-servise.css'|theme }}">
 {% endput %}
+{% if lan != 'en' %}
+    {% put styles %}
+        <link rel="stylesheet" href="../themes/productions/assets/css/solutions-our-servise-{{lan}}.css">
+    {% endput %}
+{% endif%}
 
 <section class="scroll-section" id="our-servise" data-section-name="our-servise">
     <div class="our-servise">
@@ -14,7 +19,7 @@ description = "Solutions-Our servise"
                 <div class="col-xl-12">
                     <div class="content-container">
                         <div class="title-block text-uppercase">
-                            <div class="title">Our Services</div>
+                            <div class="title">{{'Our Services'|_}}</div>
                         </div>
                     </div>
                 </div>
@@ -29,15 +34,7 @@ description = "Solutions-Our servise"
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="content-container block">
-                            <div class="title-block text-uppercase">
-                                <div class="title">food &<br>beverage<br>concepts</div>
-                            </div>
-                            <div class="content-block">
-                                <div class="content">
-                                    <p>Our tailor-made food & beverage solutions combine packaging, innovative food, brand partnerships and menu options. You will have access to a worldwide team of experts with impressive culinary development, procurement and retail skills.</p>
-                                    <p>With our in-house design studio, our own packaging factory, supply network and culinary development skills we provide speed to market and create better value for time, cost and quality. All our products are developed in a way to minimize handling for crew and caterers, maximize loading onboard and being cost conscious. Last but not least, we can guarantee a consistent product throughout the network.</p>
-                                </div>
-                            </div>
+                            {% content 'solutions/our-servise-fb.htm' %}
                         </div>
                     </div>
                 </div>
@@ -49,14 +46,7 @@ description = "Solutions-Our servise"
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="content-container block">
-                            <div class="title-block text-uppercase">
-                                <div class="title">marketing &<br>brand<br>activation</div>
-                            </div>
-                            <div class="content-block">
-                                <div class="content">
-                                    <p>Through our global network with major brands we are able to connect you to the right partners, giving your products the extra touch to amaze your customers. We are the bridge between the brand partner and the consumer which will bring your service to the next level. From promotional products to complete marketing & brand activation campaigns; we can make it happen!</p>
-                                </div>
-                            </div>
+                            {% content 'solutions/our-servise-mb.htm' %}
                         </div>
                     </div>
                 </div>
@@ -69,19 +59,7 @@ description = "Solutions-Our servise"
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="content-container block">
-                            <div class="title-block text-uppercase">
-                                <div class="title">packaging<br>solutions</div>
-                            </div>
-                            <div class="content-block">
-                                <div class="content">
-                                    <p>We bring extensive know-how to the arena of packaging to ensure your product cannot only be delivered correctly to the end client but to also ensure it can be handled efficiently during the sometimes very complex supply chain. With our in-house packaging factory & design studio we create speed to market but more importantly operate very cost effective. Our main focus is biodegradable materials!</p>
-                                </div>
-                            </div>
-                            <!-- <div class="content-block">
-                                <div class="content">
-                                    <p><span class="special-letter">S</span>plendid Group's inhouse plastics and paper factory heavily invests in biodegradable and compostable packaging and cutlery</p>
-                                </div>
-                            </div> -->
+                            {% content 'solutions/our-servise-ps.htm' %}
                         </div>
                     </div>
                 </div>
@@ -94,14 +72,7 @@ description = "Solutions-Our servise"
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="content-container block">
-                            <div class="title-block text-uppercase">
-                                <div class="title">warehouse &<br>logistics<br>solutions</div>
-                            </div>
-                            <div class="content-block">
-                                <div class="content">
-                                    <p>We will bring our very capable logistics and warehousing know-how to the relationship. We have a very cost-effective network operating globally where we manage your inventory and can reach any distribution point with nominated products.</p>
-                                </div>
-                            </div>
+                            {% content 'solutions/our-servise-wl.htm' %}
                         </div>
                     </div>
                 </div>

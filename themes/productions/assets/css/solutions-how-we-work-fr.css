@@ -1,0 +1,21 @@
+.how-we-work .description-block::after {
+    font-size: 2vw;
+}
+
+.how-we-work .description-block#come-together::after {
+    content: "NOUS\A NOUS\A RENCONTRONS";
+}
+
+.how-we-work .description-block#we-design::after {
+    content: "NOUS \A CRÉONS ET\A CONCEVONS";
+    white-space: pre;
+}
+
+.how-we-work .description-block#we-produce::after {
+    content: "NOUS\A PRODUISONS";
+}
+
+.how-we-work .description-block#we-deliver::after {
+    content: "NOUS\A DÉLIVRONS";
+    white-space: pre;
+}

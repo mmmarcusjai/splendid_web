@@ -16,6 +16,7 @@ php-errors.log
 sftp-config.json
 selenium.php
 composer.lock
-
+_sh
+_sql
 # for netbeans
 nbproject

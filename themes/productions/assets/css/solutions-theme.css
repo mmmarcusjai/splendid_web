@@ -44,10 +44,6 @@ nav ul {
     -webkit-padding-start: 0px;
 }
 
-nav ul.nav-left-menu {
-    padding-left: 8rem;
-}
-
 nav ul li {
     display: inline;
     padding: 0.3rem;
@@ -161,6 +157,18 @@ span.special-letter {
     font-size: 2rem;
 }
 
+.language-selector {
+    font-weight: 400;
+    position: fixed;
+    right: 2%;
+    top: 20px;
+    z-index: 1002;
+    transition: .2s;
+}
+
+.language-selector.hide {
+    opacity: 0;
+}
 /* .scroll-section {
     scroll-snap-align: start;
 } */

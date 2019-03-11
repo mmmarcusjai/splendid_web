@@ -8,9 +8,29 @@ displayColumn = "title"
 notFoundMessage = "Record not found"
 ==
 <?php
+
 use sg\SplendidGroup\Models\GlobalNews;
+use rainlab\translate\Models\Locale;
+
 function onStart()
 {
+    // Get Language
+    $locale = Locale::listEnabled();
+    $localeKey = array_keys($locale);
+    $currentUrl = explode('/', $_SERVER['REQUEST_URI']);
+
+    for($i = 0; $i < sizeof($localeKey); $i++)
+    {   
+        if (in_array($localeKey[$i], $currentUrl)) 
+        {
+            $this['lan'] = $localeKey[$i];
+        }
+        else 
+        {
+            $this['lan'] = 'en';
+        }
+    }
+
     $news = GlobalNews::NewsCat('solutions')->orderBy('id', 'desc')->get();
     $this['news'] = $news;
 
@@ -29,6 +49,11 @@ function onStart()
     {% partial 'solutions/news-details' newsInfo=newsDetails.record %}
 {% endput %}
 {% put scripts %}
+    <script>
+        var base_url = "{{url('/')}}";
+        var newsPage = "{{this.page.id}}";
+        var newsId = "{{newsDetails.record.id}}";
+    </script>
     <script src="{{ 'assets/javascript/solutions-news.js'|theme }}" type="text/javascript"></script>
 {% endput %}
 {% partial 'core' %}

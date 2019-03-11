@@ -1,3 +1,11 @@
+// Update language selector on menu bar
+let lanSelector = document.querySelectorAll('.language-selector p a');
+lanSelector.forEach(function(lan){
+    currLan = lan.dataset.lanselector;
+    targetHref = `${base_url}/${currLan}/${newsPage}/${newsId}`;
+    lan.setAttribute('href', targetHref);
+});
+
 $(document).ready(function() {
     $('.menu-icon').click(function(){
         $(this).toggleClass('change');

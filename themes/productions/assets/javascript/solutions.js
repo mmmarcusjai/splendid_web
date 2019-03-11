@@ -123,17 +123,28 @@ Vue.component('news-item', {
        item: {},
        baseUrl: {
            default: base_url
+       },
+       currLan: {
+           default: lan
        }
    },
    template: `
         <div class="news-item" :news-type="item.news_type" :style="{ 'background-image': 'url( ' + baseUrl + '/storage/app/media' + item.news_image_thumbnail + ')' }" :index="item.id" @click="goNews($event)" @mouseover="mouseOver($event)" @mouseout="mouseOut($event)">
-            <div class="news-desc-block">
+            <div class="news-desc-block" v-if="currLan==='en'">
                 <p class="news-title text-uppercase">{{ item.title }}</p>
                 <p class="news-desc">{{ item.description }}</p>
             </div>
-            <div class="news-desc-block-hover">
+            <div class="news-desc-block" v-else-if="currLan==='fr'">
+                <p class="news-title text-uppercase">{{ item.title_fr }}</p>
+                <p class="news-desc">{{ item.description_fr }}</p>
+            </div>
+            <div class="news-desc-block-hover" v-if="currLan==='en'">
                 <p class="news-title text-uppercase">{{ item.title }}</p>
                 <p class="news-desc">{{ item.description }}</p>
+            </div>
+            <div class="news-desc-block-hover" v-else-if="currLan==='fr'">
+                <p class="news-title text-uppercase">{{ item.title_fr }}</p>
+                <p class="news-desc">{{ item.description_fr }}</p>
             </div>
         </div>`,
     methods: {
@@ -141,7 +152,7 @@ Vue.component('news-item', {
             el = event.currentTarget;
             var news_id = el.getAttribute('index');
             if(news_id != undefined) {
-                window.location.href = base_url + "/solutions-news/" + news_id;
+                window.location.href = base_url + "/" + lan + "/solutions-news/" + news_id;
             }
         },
         mouseOver: function (event) {
@@ -247,8 +258,10 @@ $(document).ready(function() {
         $('.side-wrapper').toggleClass('active');
         if($(this).hasClass('change')) {
             $('.menu-text').text('');
+            $('.language-selector').addClass('hide');
         } else {
             $('.menu-text').text('menu');
+            $('.language-selector').removeClass('hide');
         }
 	});
 
@@ -295,6 +308,10 @@ $(document).ready(function() {
         nextArrow: '<i class="fa fa-angle-right fa-3x more-arrow" id="right"></i>',
         prevArrow: '<i class="fa fa-angle-left fa-3x more-arrow" id="left"></i>',
     });
+
+    setTimeout(() => {
+        document.querySelector('.hero-content').classList.add('show');
+    }, 3000)
 });
 
 function jump_to(id) {
@@ -304,6 +321,8 @@ function jump_to(id) {
         $('.side-wrapper').removeClass('active');
         $('.menu-icon').removeClass('change');
         $('nav').removeClass('active');
+        $('.language-selector').removeClass('hide');
+
     }
     window.location.href = '#' + id;
     // $('html, body').scrollTop(document.getElementById(id).offsetTop);

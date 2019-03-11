@@ -69,6 +69,12 @@
     margin: auto;
     letter-spacing: 1px;
     padding: 2.3rem 0;
+    opacity: 0;
+    transition: .5s; 
+}
+
+.home-video-wrapper .hero-text .hero-content.show {
+    opacity: 1;
 }
 
 .home-video-wrapper .hero-text .hero-content span.header{

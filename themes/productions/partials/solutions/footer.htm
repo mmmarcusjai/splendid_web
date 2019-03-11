@@ -15,13 +15,7 @@ description = "Solutions-Footer"
                 <div class="col-xl-6 col-md-6">
                     <div class="page-content">
                         <ul class="page">
-                            <li><a href="{{ url('/solutions') }}#about" onclick="jump_to('about'); return false;">About splendid</a></li>
-                            <li><a href="{{ url('/solutions') }}#sustainability" onclick="jump_to('sustainability'); return false;">Sustainability</a></li>
-                            <li><a href="{{ url('/solutions') }}#how-we-work" onclick="jump_to('how-we-work'); return false;">How we work</a></li>
-                            <li><a href="{{ url('/solutions') }}#news" onclick="jump_to('news'); return false;">News</a></li>
-                            <li><a href="{{ url('/solutions') }}#our-servise" onclick="jump_to('our-servise'); return false;">Our services</a></li>
-                            <li><a href="{{ url('/solutions') }}#contact-us" onclick="jump_to('contact-us'); return false;">Contact us</a></li>
-                            <li><a href="{{ url('/solutions') }}#quality-and-safety" onclick="jump_to('quality-and-safety'); return false;">Quality & Safety</a></li>
+                            {% content 'solutions/footermenu.htm' %}
                         </ul>
                         <!-- <ul class="follow-us">
                             <li>Follow us on</li>

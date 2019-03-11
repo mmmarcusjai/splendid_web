@@ -1,6 +1,7 @@
 .htaccess
 .env
 _sh
+_sql
 storage/logs
 storage/cms
 storage/framework
