@@ -30,8 +30,7 @@ description = "Solutions-Header"
     <span class="menu-text js-menu-text">menu</span>
 </div>
 <div class="language-selector">
-    <p>
-        <a href="{{url('/en/solutions')}}" data-lanselector="en" data-request="onSwitchLocale" data-request-data="locale: 'en'">ENG</a> / <a href="{{url('/fr/solutions')}}" data-lanselector="fr" data-request="onSwitchLocale" data-request-data="locale: 'fr'">FRENCH</a>
-    </p>
+        <!-- <a href="{{url('/en/solutions')}}" data-lanselector="en" data-request="onSwitchLocale" data-request-data="locale: 'en'">ENG</a> / <a href="{{url('/fr/solutions')}}" data-lanselector="fr" data-request="onSwitchLocale" data-request-data="locale: 'fr'">FRENCH</a> -->
+        {% component 'localePicker' %}
 </div>
 
