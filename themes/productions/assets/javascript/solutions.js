@@ -251,6 +251,12 @@ function init_news_item(el, action) {
     }
 }
 
+const lanSelector = document.querySelector('select.form-control');
+lanSelector.addEventListener('change', () => {
+    console.log(lanSelector.value);
+    window.location = `${base_url}/${lanSelector.value}/solutions`;
+});
+
 $(document).ready(function() {
     $('.menu-icon').click(function(){
 		$(this).toggleClass('change');

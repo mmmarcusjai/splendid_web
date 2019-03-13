@@ -1,10 +1,16 @@
 // Update language selector on menu bar
-let lanSelector = document.querySelectorAll('.language-selector p a');
-lanSelector.forEach(function(lan){
-    currLan = lan.dataset.lanselector;
-    targetHref = `${base_url}/${currLan}/${newsPage}/${newsId}`;
-    lan.setAttribute('href', targetHref);
+// let lanSelector = document.querySelectorAll('.language-selector p a');
+// lanSelector.forEach(function(lan){
+//     currLan = lan.dataset.lanselector;
+//     targetHref = `${base_url}/${currLan}/${newsPage}/${newsId}`;
+//     lan.setAttribute('href', targetHref);
+// });
+
+const lanSelector = document.querySelector('select.form-control');
+lanSelector.addEventListener('change', () => {
+    window.location = `${base_url}/${lanSelector.value}/${newsPage}/${newsId}`;
 });
+
 
 $(document).ready(function() {
     $('.menu-icon').click(function(){
